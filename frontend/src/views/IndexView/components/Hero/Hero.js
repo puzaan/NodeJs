@@ -74,7 +74,7 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
 
   const title = (
     <Typography variant="h2" component="span" className={classes.fontWeight900}>
-      A modern design system for your new
+      Enterprise Software Development
       <br />
       <TypedText
         component="span"
@@ -83,28 +83,20 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
         className={classes.fontWeight900}
         typedProps={{
           strings: [
-            'e-commerce',
-            'expo',
+            'Enhancing business agility',
+            'Efficiency with cuttin-edge web and mob Solution',
             'startup',
             'online course',
-            'coworking space',
-            'job listing',
             'and many more...',
           ],
-          typeSpeed: 50,
+          typeSpeed: 100,
           loop: true,
         }}
       />
     </Typography>
   );
 
-  const subtitle = 'TheFront will make your product look modern and professional while saving you precious time.';
-
-  const docsButton = (
-    <Button size="large" variant="outlined" color="primary" component="a" href="/documentation">
-      Documentation
-    </Button>
-  );
+  const subtitle = 'Achieverss Groups will make your product look modern and professional while saving you precious time.';
 
   const buyButton = (
     <Button
@@ -114,7 +106,7 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
       component="a"
       href="/home"
     >
-      Get started
+      Read more
     </Button>
   );
 
@@ -127,7 +119,7 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
         variant: 'h2',
         color: 'textPrimary',
       }}
-      ctaGroup={[docsButton, buyButton]}
+      ctaGroup={[buyButton]}
       data-aos="fade-right"
       disableGutter
       className={classes.leftSideContent}

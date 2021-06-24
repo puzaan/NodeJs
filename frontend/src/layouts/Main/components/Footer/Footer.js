@@ -146,25 +146,12 @@ const Footer = props => {
   const SupportedPages = () => {
     const {
       career,
-      helpCenter,
-      company,
-      contact,
-      blog,
-      portfolio,
+      
     } = supportedPages.children;
     return (
       <div className={classes.menu}>
         <div>
           <MenuGroup item={career} />
-          <MenuGroup item={helpCenter} />
-        </div>
-        <div>
-          <MenuGroup item={company} />
-          <MenuGroup item={contact} />
-        </div>
-        <div>
-          <MenuGroup item={blog} />
-          <MenuGroup item={portfolio} />
         </div>
       </div>
     );
