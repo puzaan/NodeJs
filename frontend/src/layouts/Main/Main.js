@@ -29,27 +29,24 @@ const Main = ({ children, themeToggler, themeMode }) => {
           pages: [
             {
               title: 'Coworking',
-              href: '/coworking',
+              href: '/',
             },
             {
               title: 'Rental',
-              href: '/rental',
+              href: '/',
             },
-            {
-              title: 'Job Listing',
-              href: '/job-listing',
-            },
+            
             {
               title: 'E-Learning',
-              href: '/e-learning',
+              href: '/',
             },
             {
               title: 'E-commerce',
-              href: '/e-commerce',
+              href: '/',
             },
             {
               title: 'Expo',
-              href: '/expo',
+              href: '/',
             },
           ],
         },
@@ -58,11 +55,11 @@ const Main = ({ children, themeToggler, themeMode }) => {
           pages: [
             {
               title: 'Desktop App',
-              href: '/desktop-app',
+              href: '/',
             },
             {
               title: 'Mobile App',
-              href: '/mobile-app',
+              href: '/',
             },
           ],
         },
@@ -79,7 +76,7 @@ const Main = ({ children, themeToggler, themeMode }) => {
             },
             {
               title: 'Basic',
-              href: '/web-basic',
+              href: '/',
             },
             {
               title: 'Service',
@@ -87,27 +84,27 @@ const Main = ({ children, themeToggler, themeMode }) => {
             },
             {
               title: 'Startup',
-              href: '/startup',
+              href: '/',
             },
             {
               title: 'Enterprise',
-              href: '/enterprise',
+              href: '/',
             },
             {
               title: 'Cloud Hosting',
-              href: '/cloud-hosting',
+              href: '/',
             },
             {
               title: 'Agency',
-              href: '/agency',
+              href: '/',
             },
             {
               title: 'Design Company',
-              href: '/design-company',
+              href: '/',
             },
             {
               title: 'Logistics',
-              href: '/logistics',
+              href: '/',
             },
           ],
         },
@@ -135,6 +132,10 @@ const Main = ({ children, themeToggler, themeMode }) => {
             {
               title: 'Opening',
               href: '/career-opening',
+            },
+            {
+              title: 'Job Listing',
+              href: '/job-listing',
             },
           ],
         },

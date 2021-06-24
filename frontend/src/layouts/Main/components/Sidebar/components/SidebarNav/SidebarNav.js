@@ -110,24 +110,15 @@ const SidebarNav = props => {
   const SupportedPages = () => {
     const {
       career,
-      helpCenter,
-      company,
-      contact,
-      blog,
-      portfolio,
+      
     } = supportedPages.children;
     return (
       <div className={classes.menu}>
         <div className={classes.menuItem}>
           <MenuGroup item={career} />
-          <MenuGroup item={helpCenter} />
-          <MenuGroup item={company} />
+          
         </div>
-        <div className={classes.menuItem}>
-          <MenuGroup item={contact} />
-          <MenuGroup item={blog} />
-          <MenuGroup item={portfolio} />
-        </div>
+        
       </div>
     );
   };
@@ -187,7 +178,7 @@ const SidebarNav = props => {
           component="a"
           href="/documentation"
         >
-          Documentation
+          Join-Us
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -199,7 +190,7 @@ const SidebarNav = props => {
           target="blank"
           href="https://material-ui.com/store/items/the-front-landing-page/"
         >
-          Buy Now
+          Hire Us
         </Button>
       </ListItem>
     </List>
