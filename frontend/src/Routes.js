@@ -60,6 +60,7 @@ const Routes = () => {
           />
         )}
       />
+
       <Route
         exact
         path="/career-listing-minimal"

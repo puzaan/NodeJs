@@ -149,7 +149,7 @@ const SidebarNav = props => {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Typography variant="h6" color="textPrimary" gutterBottom>
-          Landings
+          Services
         </Typography>
         <LandingPages />
       </ListItem>
@@ -158,7 +158,7 @@ const SidebarNav = props => {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Typography variant="h6" color="textPrimary" gutterBottom>
-          Pages
+          Careers
         </Typography>
         <SupportedPages />
       </ListItem>
@@ -167,7 +167,7 @@ const SidebarNav = props => {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Typography variant="h6" color="textPrimary" gutterBottom>
-          Account
+          Blogs
         </Typography>
         <AccountPages />
       </ListItem>
@@ -176,7 +176,7 @@ const SidebarNav = props => {
           variant="outlined"
           fullWidth
           component="a"
-          href="/documentation"
+          href="/signup-simple"
         >
           Join-Us
         </Button>
@@ -188,7 +188,7 @@ const SidebarNav = props => {
           fullWidth
           component="a"
           target="blank"
-          href="https://material-ui.com/store/items/the-front-landing-page/"
+          href="/"
         >
           Hire Us
         </Button>

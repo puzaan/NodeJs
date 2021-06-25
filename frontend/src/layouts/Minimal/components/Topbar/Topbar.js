@@ -35,11 +35,11 @@ const Topbar = ({ themeMode, className, ...rest }) => {
   return (
     <Toolbar className={clsx(classes.toolbar, className)} {...rest}>
       <div className={classes.logoContainer}>
-        <a href="/" title="Acheivers Groups">
+        <a href="/" title="AchieverGroups">
           <Image
             className={classes.logoImage}
             src={themeMode === 'light' ? 'assets/achiever.svg' : 'assets/achiever.svg'}
-            alt="Acheivers Groups"
+            alt="AchieverGroups"
             lazy={false}
           />
         </a>

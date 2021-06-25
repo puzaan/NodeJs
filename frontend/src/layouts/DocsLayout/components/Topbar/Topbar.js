@@ -72,11 +72,11 @@ const TopBar = ({
     >
       <Toolbar>
         <div className={classes.logoContainer}>
-          <a href="/" title="thefront">
+          <a href="/" title="AchieverGroups">
             <Image
               className={classes.logoImage}
-              src={themeMode === 'light' ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg' : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'}
-              alt="thefront"
+              src={themeMode === 'light' ? 'assets/achiever.svg' : 'assets/achiever.svg'}
+              alt="AchieverGroups"
               lazy={false}
             />
           </a>
@@ -86,13 +86,13 @@ const TopBar = ({
         <Hidden smDown>
           <List disablePadding className={classes.navigationContainer}>
             <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-              <Button
-                className={classes.listItemText}
-                component="a"
-                href="/"
-                variant="outlined"
-              >
-                SEE ALL PAGES
+            <Button
+              variant="outlined"
+              component="a"
+              href="/signup-simple"
+              className={classes.listItemButton}
+            >
+                Join-Us
               </Button>
             </ListItem>
             <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
@@ -101,10 +101,10 @@ const TopBar = ({
                 color="primary"
                 component="a"
                 target="blank"
-                href="https://material-ui.com/store/items/the-front-landing-page/"
+                href="/"
                 className={classes.listItemButton}
               >
-                Buy Now
+                Hire Us
               </Button>
             </ListItem>
           </List>
