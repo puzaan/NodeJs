@@ -12,3 +12,4 @@ export { default as ContactPageCover } from './ContactPageCover';
 export { default as AboutSideCover } from './AboutSideCover';
 export { default as Documentation } from './Documentation';
 
+export { default as SignupSimple } from './SignupSimple';

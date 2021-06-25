@@ -293,7 +293,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
             <Button
               variant="outlined"
               component="a"
-              href="/"
+              href="/signup-simple"
               className={classes.listItemButton}
             >
               Join-US

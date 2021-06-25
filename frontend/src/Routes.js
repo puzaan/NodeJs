@@ -21,7 +21,7 @@ import {
   ContactPageSidebarMap as ContactPageSidebarMapView,
   ContactPageCover as ContactPageCoverView,
   Documentation as DocumentationView,
-
+  SignupSimple as SignupSimpleView,
 } from './views';
 
 const Routes = () => {
@@ -170,6 +170,18 @@ const Routes = () => {
             {...matchProps}
             component={DocumentationView}
             layout={DocsLayout}
+          />
+        )}
+      />
+      
+      <Route
+        exact
+        path="/signup-simple"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={SignupSimpleView}
+            layout={MinimalLayout}
           />
         )}
       />
