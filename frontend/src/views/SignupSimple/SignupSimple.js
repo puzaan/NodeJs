@@ -1,9 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Form } from './components';
+import { Form, Contact} from './components';
 import { SectionHeader } from 'components/molecules';
 import { Section } from 'components/organisms';
-
+import {  mapData} from './data';
 const useStyles = makeStyles(theme => ({
   formContainer: {
     height: '100%',
@@ -36,7 +36,9 @@ const SignupSimple = () => {
             }}
           />
           <Form />
+          
         </div>
+        <Contact data={mapData} />
       </Section>
     </div>
   );

@@ -98,7 +98,7 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
 
   const subtitle = 'Achieverss Groups will make your product look modern and professional while saving you precious time.';
 
-  const buyButton = (
+  const redButton = (
     <Button
       size="large"
       variant="contained"
@@ -119,7 +119,7 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
         variant: 'h2',
         color: 'textPrimary',
       }}
-      ctaGroup={[buyButton]}
+      ctaGroup={[redButton]}
       data-aos="fade-right"
       disableGutter
       className={classes.leftSideContent}
