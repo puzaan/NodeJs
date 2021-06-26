@@ -1,10 +1,11 @@
 import React from 'react';
 import { makeStyles, Divider } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
-import { GetStarted, Features, Reviews, QuickStart, Services, Hero ,  VideoSection} from './components';
+import { GetStarted, Features, Reviews, QuickStart, Services, Hero , Works, VideoSection} from './components';
 import {
 
   partners,
+  reviews
 
 } from './data';
 const useStyles = makeStyles(() => ({
@@ -25,13 +26,16 @@ const IndexView = ({ themeMode }) => {
   return (
     <div>
       <Hero themeMode={themeMode} />
-      {/* <Services /> */}
+      <Services />
       <SectionAlternate className={classes.sectionAlternateNoPaddingTop}>
         <QuickStart />
       </SectionAlternate>
       <SectionAlternate>
         <VideoSection data={partners} />
       </SectionAlternate>
+      <Section>
+        <Works data={reviews} />
+      </Section>
       <SectionAlternate>
         <Features />
       </SectionAlternate>
@@ -39,6 +43,7 @@ const IndexView = ({ themeMode }) => {
       <Section>
         <Reviews />
       </Section>
+      
       <Section className={classes.dividerSection}>
         <Divider />
       </Section>
