@@ -150,6 +150,7 @@ const Form = () => {
           placeholder="Write your message here ..."
           label="Message"
           multiline
+          fullWidth
           rows={4}
           variant="outlined"
         />
