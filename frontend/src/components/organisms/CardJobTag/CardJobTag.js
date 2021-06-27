@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Typography, colors } from '@material-ui/core';
+import { Grid, Typography, colors, Button } from '@material-ui/core';
 import { CardBase } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
@@ -59,6 +59,7 @@ const CardJobTag = props => {
     jobLocation,
     jobType,
     className,
+    href,
     ...rest
   } = props;
 
@@ -110,6 +111,11 @@ const CardJobTag = props => {
           >
             {jobType}
           </Typography>
+        </Grid>
+        <Grid item xs={12}>
+        <Button href={href} variant="outlined" >
+Apply
+        </Button>
         </Grid>
       </Grid>
       </>

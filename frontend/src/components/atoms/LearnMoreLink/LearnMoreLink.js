@@ -46,6 +46,7 @@ const LearnMoreLink = props => {
   const children = (
     <>
       <Typography
+      href={href}
         component="span"
         className={clsx('learn-more-link__typography', classes.title)}
         variant={variant}
@@ -59,14 +60,13 @@ const LearnMoreLink = props => {
         color={color || 'primary'}
         {...iconProps}
       >
-        <ArrowRightAltIcon className="learn-more-link__arrow" />
+        <ArrowRightAltIcon className="learn-more-link__arrow" href={href}/>
       </IconButton>
     </>
   );
 
   return (
     <a
-      href={href}
       className={clsx('learn-more-link', classes.root, className)}
       {...rest}
     >
@@ -77,7 +77,7 @@ const LearnMoreLink = props => {
 
 LearnMoreLink.defaultProps = {
   variant: 'subtitle1',
-  href: '#',
+  // href: '/',
   typographyProps: {},
   iconProps: {},
   component: 'a',

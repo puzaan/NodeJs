@@ -8,9 +8,8 @@ import {
   FormControl,
   OutlinedInput,
   InputAdornment,
-  Button,
 } from '@material-ui/core';
-import { Image, Icon, IconText } from 'components/atoms';
+import { Image, Icon } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 
 const useStyles = makeStyles(theme => ({

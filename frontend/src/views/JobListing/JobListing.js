@@ -5,12 +5,12 @@ import { Section, SectionAlternate } from 'components/organisms';
 
 import {
   Hero,
-
   Newsletter,
   Partners,
+  Jobs,
   PromoNumbers,
   TrustedCompanies,
-  Companies,
+
 } from './components';
 
 import {
@@ -54,7 +54,7 @@ const JobListing = () => {
         <Partners data={partners} />
       </Section>
       <Section>
-        <Companies data ={jobs} />
+        <Jobs data ={jobs} />
       </Section>
       <SectionAlternate>
         <PromoNumbers />

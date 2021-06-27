@@ -4,6 +4,7 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom'
 import {
   List,
   ListItem,
@@ -57,9 +58,7 @@ const SidebarNav = props => {
   const { pages, onClose, className, ...rest } = props;
   const classes = useStyles();
 
-  const landings = pages.landings;
   const supportedPages = pages.pages;
-  const account = pages.account;
   const traningPages = pages.traning
 
   const MenuGroup = props => {
@@ -93,20 +92,7 @@ const SidebarNav = props => {
     );
   };
 
-  const LandingPages = () => {
-    const { services, apps, web } = landings.children;
-    return (
-      <div className={classes.menu}>
-        <div className={classes.menuItem}>
-          <MenuGroup item={services} />
-          <MenuGroup item={apps} />
-        </div>
-        <div className={classes.menuItem}>
-          <MenuGroup item={web} />
-        </div>
-      </div>
-    );
-  };
+
   const TraningPages = () => {
     const {
       course,
@@ -137,23 +123,7 @@ const SidebarNav = props => {
     );
   };
 
-  const AccountPages = () => {
-    const { settings, signup, signin, password, error } = account.children;
-    return (
-      <div className={classes.menu}>
-        <div className={classes.menuItem}>
-          <MenuGroup item={settings} />
-          <MenuGroup item={signup} />
-        </div>
-        <div className={classes.menuItem}>
-          <MenuGroup item={signin} />
-          <MenuGroup item={password} />
-          <MenuGroup item={error} />
-        </div>
-      </div>
-    );
-  };
-
+  
   return (
     <List {...rest} className={clsx(classes.root, className)}>
       <ListItem className={classes.closeIcon} onClick={() => onClose()}>
@@ -163,24 +133,38 @@ const SidebarNav = props => {
       </ListItem>
 
       <ListItem className={classes.listItem}>
-        <Typography variant="h6" color="textPrimary" gutterBottom>
+        <Typography variant="h6" color="textPrimary" gutterBottom
+        component={Link}
+        to='/about'
+        >
           About
         </Typography>
-        <AccountPages />
+        
       </ListItem>
+
+
       <ListItem className={classes.listItem}>
-        <Divider className={classes.divider} />
+        <Typography variant="h6" color="textPrimary" gutterBottom
+        component={Link}
+        to='/sadfdsfsdf'
+        >
+          Services
+        </Typography>
+        
       </ListItem>
 
       <ListItem className={classes.listItem}>
-        <Typography variant="h6" color="textPrimary" gutterBottom>
-          Services
+        <Typography variant="h6" color="textPrimary" gutterBottom
+        component={Link}
+        to='/job-listing'
+        >
+          Careers
         </Typography>
-        <LandingPages />
+        
       </ListItem>
-      <ListItem className={classes.listItem}>
-        <Divider className={classes.divider} />
-      </ListItem>
+
+
+
       <ListItem className={classes.listItem}>
         <Typography variant="h6" color="textPrimary" gutterBottom>
           Careers

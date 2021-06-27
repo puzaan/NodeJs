@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Typography, Avatar } from '@material-ui/core';
+import { Grid, Typography, Avatar ,Button} from '@material-ui/core';
 import { CardBase } from 'components/organisms';
 import { LearnMoreLink } from 'components/atoms';
 
@@ -90,8 +90,13 @@ const CardJobCompany = props => {
             {companyInfo}
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <LearnMoreLink title={jobsCount} variant="subtitle1" />
+        </Grid> */}
+        <Grid item xs={12}>
+        <Button>
+Apply
+        </Button>
         </Grid>
       </Grid>
     </CardBase>

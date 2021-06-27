@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -92,6 +93,9 @@ const useStyles = makeStyles(theme => ({
   navLink: {
     color: 'rgba(255,255,255,.6)',
   },
+  tcolor:{
+    color: 'white'
+  }
 }));
 
 const Footer = props => {
@@ -99,10 +103,11 @@ const Footer = props => {
 
   const classes = useStyles();
 
-  const landings = pages.landings;
+
   const supportedPages = pages.pages;
-  const account = pages.account;
   const traningPages = pages.traning
+
+
   const MenuGroup = props => {
     const { item } = props;
     return (
@@ -131,21 +136,7 @@ const Footer = props => {
 
   
 
-  const LandingPages = () => {
-    const { services, apps, web } = landings.children;
-    return (
-      <div className={classes.menu}>
-        <div>
-          <MenuGroup item={services} />
-          <MenuGroup item={apps} />
-        </div>
-        <div>
-          <MenuGroup item={web} />
-        </div>
-      </div>
-    );
-  };
-
+  
   const SupportedPages = () => {
     const {
       career,
@@ -160,22 +151,7 @@ const Footer = props => {
     );
   };
 
-  const AccountPages = () => {
-    const { settings, signup, signin, password, error } = account.children;
-    return (
-      <div className={classes.menu}>
-        <div>
-          <MenuGroup item={settings} />
-          <MenuGroup item={signup} />
-        </div>
-        <div>
-          <MenuGroup item={signin} />
-          <MenuGroup item={password} />
-          <MenuGroup item={error} />
-        </div>
-      </div>
-    );
-  };
+  
 
   const TraningPages = () => {
     const {
@@ -227,19 +203,67 @@ const Footer = props => {
           </Grid>
           <Grid item xs={12} md={10} className={classes.menuListContainer}>
             <Grid container spacing={0}>
+              
+              
               <Grid item>
-                <LandingPages />
+              <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
+      <Typography
+                  
+                  color="textPrimary"
+                  className={classes.menuGroupTitle}
+                  component={Link}
+                  to='/about'
+                >
+                  About
+                </Typography>
+          </ListItem>
               </Grid>
+
+
               <Grid item>
+              <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
+      <Typography
+                  
+                  color="textPrimary"
+                  className={classes.menuGroupTitle}
+                  component={Link}
+                  to='/sadfdsfsdf'
+                >
+                  Services
+                </Typography>
+          </ListItem>
+              </Grid>
+
+
+
+              <Grid item>
+              <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
+      <Typography
+                  
+                  color="textPrimary"
+                  className={classes.menuGroupTitle}
+                  component={Link}
+                  to='/job-listing'
+                >
+                  Career
+                </Typography>
+          </ListItem>
+              </Grid>
+
+
+
+
+          
+
+              
+              <Grid item>
+              
                 <SupportedPages />
+                
               </Grid>
               <Grid item>
                 <TraningPages />
               </Grid>
-              <Grid item>
-                <AccountPages />
-              </Grid>
-              
             </Grid>
           </Grid>
         </Grid>

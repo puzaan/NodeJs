@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -12,6 +13,7 @@ import {
   Typography,
   IconButton,
   Button,
+
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -130,9 +132,8 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
     setOpenedPopoverId(null);
   };
 
-  const landings = pages.landings;
+
   const supportedPages = pages.pages;
-  const account = pages.account;
   const traningPages = pages.traning
 
   const MenuGroup = props => {
@@ -148,6 +149,13 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
             {item.groupTitle}
           </Typography>
         </ListItem>
+
+
+
+        
+
+
+
         {item.pages.map((page, i) => (
           <ListItem disableGutters key={i} className={classes.menuGroupItem}>
             <Typography
@@ -166,39 +174,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
     );
   };
 
-  const AccountPages = () => {
-    const { settings, signup, signin, password, error } = account.children;
-    return (
-      <div className={classes.menu}>
-        <div className={classes.menuItem}>
-          <MenuGroup item={settings} />
-        </div>
-        <div className={classes.menuItem}>
-          <MenuGroup item={signup} />
-          <MenuGroup item={signin} />
-        </div>
-        <div className={classes.menuItem}>
-          <MenuGroup item={password} />
-          <MenuGroup item={error} />
-        </div>
-      </div>
-    );
-  };
 
-  const LandingPages = () => {
-    const { services, apps, web } = landings.children;
-    return (
-      <div className={classes.menu}>
-        <div className={classes.menuItem}>
-          <MenuGroup item={services} />
-          <MenuGroup item={apps} />
-        </div>
-        <div className={classes.menuItem}>
-          <MenuGroup item={web} />
-        </div>
-      </div>
-    );
-  };
 
   const SupportedPages = () => {
     const {
@@ -231,12 +207,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
   
 
   const renderPages = id => {
-    if (id === 'account') {
-      return <AccountPages />;
-    }
-    if (id === 'landing-pages') {
-      return <LandingPages />;
-    }
+    
     if (id === 'supported-pages') {
       return <SupportedPages />;
     }
@@ -260,8 +231,47 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
       </div>
       <div className={classes.flexGrow} />
       <Hidden smDown>
+    
         <List disablePadding className={classes.navigationContainer}>
-          {[account,landings, supportedPages,  traningPages].map((page, i) => (
+
+          
+        <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
+      <Typography
+                  variant="body1"
+                  color="textPrimary"
+                  className={clsx(classes.listItemText, 'menu-item')}
+                  component={Link}
+                  to='/about'
+                >
+                  About
+                </Typography>
+          </ListItem>
+
+
+          <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
+      <Typography
+                  variant="body1"
+                  color="textPrimary"
+                  className={clsx(classes.listItemText, 'menu-item')}
+                  component={Link}
+                  to='/sadfdsfsdf'
+                >
+                  Services
+                </Typography>
+          </ListItem>
+
+          <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
+      <Typography
+                  variant="body1"
+                  color="textPrimary"
+                  className={clsx(classes.listItemText, 'menu-item')}
+                  component={Link}
+                  to='/job-listing'
+                >
+                  Carrers
+                </Typography>
+          </ListItem>
+          {[ supportedPages,  traningPages].map((page, i) => (
             <div key={page.id}>
               <ListItem
                 aria-describedby={page.id}
@@ -307,7 +317,6 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
               </Popover>
             </div>
           ))}
-          
           <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
             <Button
               variant="outlined"

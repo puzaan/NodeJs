@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, useTheme,  Grid,  useMediaQuery,  } from '@material-ui/core';
+import { makeStyles, useTheme,  Grid,  useMediaQuery,} from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
 
 

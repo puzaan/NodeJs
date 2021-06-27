@@ -35,11 +35,10 @@ export const jobs = [
     title: 'Flutter',
     jobTitle: 'Flutter Devlopment internship',
     type: 'Full time',
-    logo: 'https://assets.maccarianagency.com/the-front/logos/atlassian.svg',
     salary:
     "Salary Range can be from 25,000NPR to 50,000NPR based on your skills, very fast increment based on performance. ",
 educationRequirement: `Bachelors in Information Technology, Engineering and related field.[Education can be considered if you're highly skilled at this job.]`,
-    location: 'putalisadak, Kathmandu',
+location: 'putalisadak, Kathmandu',
     date: '3 days ago',
     companyLogo: 'https://assets.maccarianagency.com/the-front/logos/slack.svg',
     jobReq: [

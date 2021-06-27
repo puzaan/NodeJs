@@ -1,19 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
 import { Grid, Button, useMediaQuery } from '@material-ui/core';
+
+import { LearnMoreLink } from 'components/atoms';
 import { SectionHeader, TypedText } from 'components/molecules';
-import { CardJobCompany } from 'components/organisms';
+import { CardJobTag } from 'components/organisms';
 
-const useStyles = makeStyles(() => ({
-  typed: {
-    fontWeight: 'bold',
-  },
-}));
-
-const Companies = props => {
+const Jobs = props => {
   const { data, className, ...rest } = props;
-  const classes = useStyles();
 
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
@@ -25,12 +20,12 @@ const Companies = props => {
       <SectionHeader
         title={
           <>
-            Job You love {isMd ? null : <br />} you love &nbsp;
+            Job You love {isMd ? null : <br />} &nbsp;
             <TypedText
               component="span"
               variant="h4"
               color="secondary"
-              className={classes.typed}
+              
               typedProps={{
                 strings: [
                   'Mobile Developer',
@@ -47,8 +42,8 @@ const Companies = props => {
         }
         subtitle={
           <>
-            Find your second home.
-          </>
+          Find your second home.
+        </>
         }
         align="left"
       />
@@ -65,23 +60,21 @@ const Companies = props => {
             md={4}
             data-aos="fade-up"
           >
-            <CardJobCompany
+            <CardJobTag
               variant="outlined"
               liftUp
               jobTitle={item.jobTitle}
+              badgeColor={item.color}
+              badgeTitle={item.title}
               jobLocation={item.location}
-              companyLogo={item.logo}
-              companyName={item.title}
-              companyInfo={item.type}
-              jobsCount="Apply"
-              href='/'
-              
+              jobType={item.type}
+              href= {`/jobdec/${item.id}`}
             />
           </Grid>
         ))}
         <Grid item container justify="center" xs={12} data-aos="fade-up">
-          <Button variant="contained" color="secondary" size="large">
-            See all jobs
+          <Button variant="outlined" color="primary" size="large">
+            See all list
           </Button>
         </Grid>
       </Grid>
@@ -89,7 +82,7 @@ const Companies = props => {
   );
 };
 
-Companies.propTypes = {
+Jobs.propTypes = {
   /**
    * External classes
    */
@@ -100,4 +93,4 @@ Companies.propTypes = {
   data: PropTypes.array.isRequired,
 };
 
-export default Companies;
+export default Jobs;
