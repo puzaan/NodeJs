@@ -133,6 +133,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
   const landings = pages.landings;
   const supportedPages = pages.pages;
   const account = pages.account;
+  const traningPages = pages.traning
 
   const MenuGroup = props => {
     const { item } = props;
@@ -165,6 +166,25 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
     );
   };
 
+  const AccountPages = () => {
+    const { settings, signup, signin, password, error } = account.children;
+    return (
+      <div className={classes.menu}>
+        <div className={classes.menuItem}>
+          <MenuGroup item={settings} />
+        </div>
+        <div className={classes.menuItem}>
+          <MenuGroup item={signup} />
+          <MenuGroup item={signin} />
+        </div>
+        <div className={classes.menuItem}>
+          <MenuGroup item={password} />
+          <MenuGroup item={error} />
+        </div>
+      </div>
+    );
+  };
+
   const LandingPages = () => {
     const { services, apps, web } = landings.children;
     return (
@@ -194,34 +214,35 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
     );
   };
 
-  const AccountPages = () => {
-    const { settings, signup, signin, password, error } = account.children;
+  const TraningPages = () => {
+    const {
+      course,
+      
+    } = traningPages.children;
     return (
       <div className={classes.menu}>
         <div className={classes.menuItem}>
-          <MenuGroup item={settings} />
-        </div>
-        <div className={classes.menuItem}>
-          <MenuGroup item={signup} />
-          <MenuGroup item={signin} />
-        </div>
-        <div className={classes.menuItem}>
-          <MenuGroup item={password} />
-          <MenuGroup item={error} />
+          <MenuGroup item={course} />
         </div>
       </div>
     );
   };
 
+  
+
   const renderPages = id => {
+    if (id === 'account') {
+      return <AccountPages />;
+    }
     if (id === 'landing-pages') {
       return <LandingPages />;
     }
     if (id === 'supported-pages') {
       return <SupportedPages />;
     }
-    if (id === 'account') {
-      return <AccountPages />;
+    
+    if (id === 'traning-pages'){
+      return <TraningPages />
     }
   };
 
@@ -240,7 +261,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
       <div className={classes.flexGrow} />
       <Hidden smDown>
         <List disablePadding className={classes.navigationContainer}>
-          {[landings, supportedPages, account].map((page, i) => (
+          {[account,landings, supportedPages,  traningPages].map((page, i) => (
             <div key={page.id}>
               <ListItem
                 aria-describedby={page.id}
@@ -286,9 +307,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
               </Popover>
             </div>
           ))}
-          <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-            <DarkModeToggler themeMode={themeMode} onClick={() => themeToggler()} />
-          </ListItem>
+          
           <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
             <Button
               variant="outlined"
@@ -300,16 +319,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
             </Button>
           </ListItem>
           <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-            <Button
-              variant="contained"
-              color="primary"
-              component="a"
-              target="blank"
-              href="/"
-              className={classes.listItemButton}
-            >
-              Hire Us
-            </Button>
+            <DarkModeToggler themeMode={themeMode} onClick={() => themeToggler()} />
           </ListItem>
         </List>
       </Hidden>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles, Divider } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
-import { GetStarted, Features, Reviews, QuickStart, Services, Hero , Works, VideoSection} from './components';
+import { GetStarted, Features, Reviews, QuickStart,  Hero , Works, VideoSection} from './components';
 import {
 
   partners,
@@ -26,7 +26,7 @@ const IndexView = ({ themeMode }) => {
   return (
     <div>
       <Hero themeMode={themeMode} />
-      <Services />
+
       <SectionAlternate className={classes.sectionAlternateNoPaddingTop}>
         <QuickStart />
       </SectionAlternate>

@@ -110,8 +110,38 @@ const Main = ({ children, themeToggler, themeMode }) => {
         },
       },
     },
-
-
+    
+    traning: {
+      title: 'Traning',
+      id: 'traning-pages',
+      children: {
+        course: {
+          groupTitle: 'Traning',
+          pages: [
+            {
+              title: 'App Devlopment',
+              href: '/',
+            },
+            {
+              title: 'Web Devlopment',
+              href: '/',
+            },
+            {
+              title: 'entrepreneur program',
+              href: '/',
+            },
+            {
+              title: 'Digital Marketing',
+              href: '/',
+            },
+            {
+              title: 'AWS Certification',
+              href: '/',
+            },
+          ],
+        },
+      },
+    },
 
 
     pages: {
@@ -122,7 +152,7 @@ const Main = ({ children, themeToggler, themeMode }) => {
           groupTitle: 'Career',
           pages: [
             {
-              title: 'Lising',
+              title: 'Lising pages',
               href: '/career-listing',
             },
             {
@@ -142,10 +172,9 @@ const Main = ({ children, themeToggler, themeMode }) => {
       },
     },
 
-
-
+    
     account: {
-      title: 'Blog',
+      title: 'About',
       id: 'account',
       children: {
         settings: {

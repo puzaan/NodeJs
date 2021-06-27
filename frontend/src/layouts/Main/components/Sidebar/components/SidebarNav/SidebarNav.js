@@ -60,6 +60,7 @@ const SidebarNav = props => {
   const landings = pages.landings;
   const supportedPages = pages.pages;
   const account = pages.account;
+  const traningPages = pages.traning
 
   const MenuGroup = props => {
     const { item } = props;
@@ -106,6 +107,19 @@ const SidebarNav = props => {
       </div>
     );
   };
+  const TraningPages = () => {
+    const {
+      course,
+      
+    } = traningPages.children;
+    return (
+      <div className={classes.menu}>
+        <div className={classes.menuItem}>
+          <MenuGroup item={course} />
+        </div>
+      </div>
+    );
+  };
 
   const SupportedPages = () => {
     const {
@@ -147,6 +161,17 @@ const SidebarNav = props => {
           <CloseIcon fontSize="small" />
         </ListItemIcon>
       </ListItem>
+
+      <ListItem className={classes.listItem}>
+        <Typography variant="h6" color="textPrimary" gutterBottom>
+          About
+        </Typography>
+        <AccountPages />
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Divider className={classes.divider} />
+      </ListItem>
+
       <ListItem className={classes.listItem}>
         <Typography variant="h6" color="textPrimary" gutterBottom>
           Services
@@ -167,9 +192,9 @@ const SidebarNav = props => {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Typography variant="h6" color="textPrimary" gutterBottom>
-          Blogs
+          Traning
         </Typography>
-        <AccountPages />
+        <TraningPages />
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
@@ -178,21 +203,10 @@ const SidebarNav = props => {
           component="a"
           href="/signup-simple"
         >
-          Join-Us
+          Contact Us
         </Button>
       </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-          variant="contained"
-          color="primary"
-          fullWidth
-          component="a"
-          target="blank"
-          href="/"
-        >
-          Hire Us
-        </Button>
-      </ListItem>
+      
     </List>
   );
 };
