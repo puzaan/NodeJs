@@ -116,7 +116,7 @@ const Main = ({ children, themeToggler, themeMode }) => {
       id: 'traning-pages',
       children: {
         course: {
-          groupTitle: 'Traning',
+          groupTitle: 'Course',
           pages: [
             {
               title: 'App Devlopment',

@@ -92,19 +92,7 @@ const TopBar = ({
               href="/signup-simple"
               className={classes.listItemButton}
             >
-                Join-Us
-              </Button>
-            </ListItem>
-            <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-              <Button
-                variant="contained"
-                color="primary"
-                component="a"
-                target="blank"
-                href="/"
-                className={classes.listItemButton}
-              >
-                Hire Us
+                Contact Us
               </Button>
             </ListItem>
           </List>

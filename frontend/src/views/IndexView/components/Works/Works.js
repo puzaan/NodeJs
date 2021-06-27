@@ -80,7 +80,7 @@ const Works = props => {
     <div className={className} {...rest}>
       <SectionHeader
         title="Our work does the talking"
-        // subtitle="After 3 days all of your offers will arrive and you will have another 7 days to select your new company."
+    
       />
       <div className={clsx('swiper-container', classes.swiperContainer)}>
         <div className={clsx('swiper-wrapper', classes.swiperWrapper)}>

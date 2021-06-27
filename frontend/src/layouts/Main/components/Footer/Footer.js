@@ -102,7 +102,7 @@ const Footer = props => {
   const landings = pages.landings;
   const supportedPages = pages.pages;
   const account = pages.account;
-
+  const traningPages = pages.traning
   const MenuGroup = props => {
     const { item } = props;
     return (
@@ -127,6 +127,9 @@ const Footer = props => {
       </List>
     );
   };
+
+
+  
 
   const LandingPages = () => {
     const { services, apps, web } = landings.children;
@@ -169,6 +172,20 @@ const Footer = props => {
           <MenuGroup item={signin} />
           <MenuGroup item={password} />
           <MenuGroup item={error} />
+        </div>
+      </div>
+    );
+  };
+
+  const TraningPages = () => {
+    const {
+      course,
+      
+    } = traningPages.children;
+    return (
+      <div className={classes.menu}>
+        <div>
+          <MenuGroup item={course} />
         </div>
       </div>
     );
@@ -217,8 +234,12 @@ const Footer = props => {
                 <SupportedPages />
               </Grid>
               <Grid item>
+                <TraningPages />
+              </Grid>
+              <Grid item>
                 <AccountPages />
               </Grid>
+              
             </Grid>
           </Grid>
         </Grid>

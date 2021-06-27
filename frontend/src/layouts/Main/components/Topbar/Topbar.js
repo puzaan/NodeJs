@@ -315,7 +315,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
               href="/signup-simple"
               className={classes.listItemButton}
             >
-              Join-US
+              Contact Us
             </Button>
           </ListItem>
           <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>

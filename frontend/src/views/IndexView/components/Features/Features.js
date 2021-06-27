@@ -6,40 +6,35 @@ import { CardBase, DescriptionListIcon } from 'components/organisms';
 
 const useStyles = makeStyles(() => ({
   fontWeight900: {
-    fontWeight: 900,
+    fontWeight: 1000,
   },
 }));
 
-const data = [{
-  icon: 'fas fa-cubes',
-  color: colors.indigo,
-  title: 'Atomic',
-  subtitle: 'theFront follows atomic design methodologies for all components.',
-}, {
+const data = [ {
   icon: 'fas fa-palette',
   color: colors.indigo,
-  title: 'Theamable',
-  subtitle: 'Customize any part of our components to match your design needs.',
+  title: 'Digital Consulting',
+  subtitle: 'Our research based and goal driven approach in consulting, lays the perfect foundation and strategy.',
 }, {
   icon: 'fas fa-code',
   color: colors.indigo,
-  title: 'Composable',
-  subtitle: 'Designed with composition in mind. Compose new components with ease.',
+  title: `Web Design & Development`,
+  subtitle: 'Be it complex web applications, or informative lead-gen websites, we have a portfolio which speaks.',
 }, {
   icon: 'fas fa-moon',
   color: colors.indigo,
-  title: 'Light and Dark UI',
-  subtitle: 'Optimized for multiple color modes. Use light or dark, your choice.',
+  title: 'Mobile App Solutions',
+  subtitle: 'Immersive mobile app solutions, that transforms businesses and deliver great customer experience.',
 }, {
   icon: 'fas fa-rocket',
   color: colors.indigo,
-  title: 'Developer Experience',
-  subtitle: 'Guaranteed to boost your productivity when building your app or website.',
+  title: 'UX/UI Design',
+  subtitle: 'World Class UX/UI Design solutions, following the best-in-class process and practices.',
 }, {
   icon: 'fas fa-hand-holding-heart',
   color: colors.indigo,
-  title: 'Continuous Updates',
-  subtitle: 'We continually deploy improvements and new updates to theFront.',
+  title: `Custom Software Development`,
+  subtitle: 'Expert engineered, robust & custom tailored software, that are ready to fulfill business goals.',
 }];
 
 const Features = ({ className, ...rest }) => {
@@ -48,7 +43,8 @@ const Features = ({ className, ...rest }) => {
   return (
     <div className={className} {...rest}>
       <SectionHeader
-        title="An experience you'd expect from a design system"
+        title="Our Services"
+        subtitle='End-to-end expertise across the digital ecosystem.'
         fadeUp
         titleProps={{
           variant: 'h3',
