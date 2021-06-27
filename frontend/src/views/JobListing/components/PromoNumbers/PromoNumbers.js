@@ -82,9 +82,7 @@ const PromoNumbers = props => {
             md={2}
             data-aos="fade-up"
           >
-            <Button color="primary" variant="contained" fullWidth size="large">
-              Post a job
-            </Button>
+            
           </Grid>
         </Grid>
       </CardBase>

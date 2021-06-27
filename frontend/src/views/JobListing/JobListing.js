@@ -2,33 +2,21 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
+
 import {
-  AboutBottom,
-  AboutMiddle,
-  AboutTop,
-  Advantages,
-  Customers,
-  Features,
   Hero,
-  Jobs,
+
   Newsletter,
   Partners,
-  Process,
   PromoNumbers,
-  PromoSwiper,
-  Questions,
   TrustedCompanies,
+  Companies,
 } from './components';
 
 import {
   partners,
-  process,
-  features,
   jobs,
-  advantages,
   companies,
-  promo,
-  reviews,
 } from './data';
 
 const useStyles = makeStyles(theme => ({
@@ -55,44 +43,23 @@ const JobListing = () => {
 
   return (
     <div>
+      
+      <Section>
+        <TrustedCompanies data={companies} />
+      </Section>
       <Section className={classes.pagePaddingTop}>
         <Hero />
       </Section>
       <Section className={classes.sectionNoPaddingTop}>
         <Partners data={partners} />
       </Section>
-      <SectionAlternate>
-        <Questions />
-      </SectionAlternate>
       <Section>
-        <Process data={process} />
-      </Section>
-      <SectionAlternate>
-        <AboutTop />
-      </SectionAlternate>
-      <Section>
-        <Jobs data={jobs} />
+        <Companies data ={jobs} />
       </Section>
       <SectionAlternate>
         <PromoNumbers />
       </SectionAlternate>
-      <AboutMiddle />
-      <Section>
-        <Features data={features} />
-      </Section>
-      <section className={classes.promoSection}>
-        <PromoSwiper data={promo} />
-      </section>
-      <Section>
-        <Advantages data={advantages} />
-      </Section>
-      <SectionAlternate>
-        <TrustedCompanies data={companies} />
-      </SectionAlternate>
-      <AboutBottom />
-      <Section>
-        <Customers data={reviews} />
-      </Section>
+
       <Section className={classes.sectionNoPaddingTop}>
         <Newsletter />
       </Section>

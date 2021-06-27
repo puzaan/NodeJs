@@ -72,18 +72,8 @@ const Hero = props => {
             data-aos={'fade-up'}
           >
             <SectionHeader
-              title="Find the world’s best remote job"
-              subtitle="Productivity tools can either help you or get in the way. TheFront aims to remove all barriers between you and just getting stuff done. "
-              ctaGroup={[
-                <Button variant="contained" color="primary" size="large">
-                  Explore
-                </Button>,
-                <IconText
-                  fontIconClass="fas fa-play"
-                  color={theme.palette.primary.main}
-                  title="Watch a video"
-                />,
-              ]}
+              title="Explore Opportunities"
+              subtitle="If you love everything web & mobile, you have landed on the right page. Pick what describes you the best and we will walk the talk."
               align="left"
               titleVariant="h3"
             />

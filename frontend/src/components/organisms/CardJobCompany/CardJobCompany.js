@@ -84,13 +84,14 @@ const CardJobCompany = props => {
             {jobLocation}
           </Typography>
         </Grid>
-        <Grid item xs={12}>
-          <LearnMoreLink title={jobsCount} variant="subtitle1" />
-        </Grid>
+        
         <Grid item xs={12}>
           <Typography component="p" variant="body2" color="textSecondary">
             {companyInfo}
           </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <LearnMoreLink title={jobsCount} variant="subtitle1" />
         </Grid>
       </Grid>
     </CardBase>

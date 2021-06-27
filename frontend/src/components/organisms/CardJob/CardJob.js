@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import {
   Grid,
   Typography,
@@ -9,6 +10,7 @@ import {
   ListItemAvatar,
   Avatar,
   ListItemText,
+  colors, IconButton
 } from '@material-ui/core';
 import { CardBase } from 'components/organisms';
 
@@ -39,6 +41,11 @@ const useStyles = makeStyles(theme => ({
   dotMargin: {
     margin: theme.spacing(0, 1),
   },
+  categoryIconButton: {
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'flex-end',
+  },
 }));
 
 /**
@@ -54,9 +61,11 @@ const CardJob = props => {
     jobLocation,
     jobType,
     jobDate,
+    color,
     companyLogo,
     companyName,
     className,
+    href,
     ...rest
   } = props;
 
@@ -74,7 +83,7 @@ const CardJob = props => {
             className={clsx(classes.dot, classes.dotBig)}
             style={{ background: badgeColor }}
           />
-          <Typography component="span" variant="body2" color="textPrimary">
+          <Typography component="span" variant="body2" color="textPrimary" href={href}>
             {badgeTitle}
           </Typography>
         </Grid>
@@ -111,6 +120,17 @@ const CardJob = props => {
         </ListItemAvatar>
         <ListItemText primary={companyName} secondary={jobDate} />
       </ListItem>
+      <a
+        href={href}
+        className={clsx('card-category-link__item', classes.categoryIconButton)}
+      >
+        <IconButton className="card-category-link__icon-button">
+          <ArrowRightAltIcon
+            className="card-category-link__icon"
+            style={{ color: color[500] }}
+          />
+        </IconButton>
+      </a>
     </CardBase>
   );
 };
@@ -152,6 +172,28 @@ CardJob.propTypes = {
    * Company name of the card
    */
   companyName: PropTypes.string.isRequired,
+
+  color: PropTypes.oneOf([
+    colors.red,
+    colors.pink,
+    colors.purple,
+    colors.deepPurple,
+    colors.indigo,
+    colors.blue,
+    colors.lightBlue,
+    colors.cyan,
+    colors.teal,
+    colors.green,
+    colors.lightGreen,
+    colors.lime,
+    colors.yellow,
+    colors.amber,
+    colors.orange,
+    colors.deepOrange,
+    colors.brown,
+    colors.grey,
+    colors.blueGrey,
+  ]).isRequired,
 };
 
 export default CardJob;

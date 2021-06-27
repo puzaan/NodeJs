@@ -25,33 +25,14 @@ const TrustedCompanies = props => {
       <Grid container spacing={isMd ? 4 : 2}>
         <Grid item xs={12} md={6}>
           <SectionHeader
-            title="Trusted by Millions of People"
-            subtitle="We are registered as a distributor with AMFI, as an investment advisor with SEBI and platform partners with BSE."
+            title="CAREERS"
+            subtitle="We're looking for brilliant minds to join our top-notch team and make it even better. Are you ready?"
             fadeUp
             disableGutter
             align={isMd ? 'left' : 'center'}
           />
         </Grid>
-        <Grid item container xs={12} md={6}>
-          {data.map((partner, index) => (
-            <Grid
-              item
-              container
-              justify="center"
-              alignItems="center"
-              xs={4}
-              key={index}
-              data-aos="fade-up"
-            >
-              <Image
-                src={partner.logo}
-                alt={partner.name}
-                className={classes.promoLogo}
-                lazy={false}
-              />
-            </Grid>
-          ))}
-        </Grid>
+        
       </Grid>
     </div>
   );
