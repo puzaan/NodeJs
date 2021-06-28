@@ -49,19 +49,20 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Main = props => {
+const Main = ({props})=> {
   const { data, className, ...rest } = props;
   const classes = useStyles();
-
+  
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
   });
 
   return (
+    
     <div className={clsx(classes.root, className)} {...rest}>
       <DescriptionCta
-        title="UX /UI Designer"
+        title= '{data.title}'
         subtitle="San Francisco, CA · Full time"
         primaryCta={
           <Button variant="outlined" color="primary" size="large">
@@ -191,6 +192,8 @@ const Main = props => {
       </Grid>
     </div>
   );
+
+  
 };
 
 Main.propTypes = {

@@ -58,7 +58,7 @@ const SidebarNav = props => {
   const { pages, onClose, className, ...rest } = props;
   const classes = useStyles();
 
-  const supportedPages = pages.pages;
+
   const traningPages = pages.traning
 
   const MenuGroup = props => {
@@ -107,21 +107,7 @@ const SidebarNav = props => {
     );
   };
 
-  const SupportedPages = () => {
-    const {
-      career,
-      
-    } = supportedPages.children;
-    return (
-      <div className={classes.menu}>
-        <div className={classes.menuItem}>
-          <MenuGroup item={career} />
-          
-        </div>
-        
-      </div>
-    );
-  };
+  
 
   
   return (
@@ -166,10 +152,6 @@ const SidebarNav = props => {
 
 
       <ListItem className={classes.listItem}>
-        <Typography variant="h6" color="textPrimary" gutterBottom>
-          Careers
-        </Typography>
-        <SupportedPages />
       </ListItem>
       <ListItem className={classes.listItem}>
         <Divider className={classes.divider} />

@@ -74,7 +74,7 @@ const Routes = () => {
       />
       <Route
         exact
-        path="/career-opening"
+        path={`/career-opening/:id`}
         render={matchProps => (
           <WithLayout
             {...matchProps}

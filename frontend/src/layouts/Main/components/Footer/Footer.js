@@ -103,8 +103,6 @@ const Footer = props => {
 
   const classes = useStyles();
 
-
-  const supportedPages = pages.pages;
   const traningPages = pages.traning
 
 
@@ -134,24 +132,7 @@ const Footer = props => {
   };
 
 
-  
 
-  
-  const SupportedPages = () => {
-    const {
-      career,
-      
-    } = supportedPages.children;
-    return (
-      <div className={classes.menu}>
-        <div>
-          <MenuGroup item={career} />
-        </div>
-      </div>
-    );
-  };
-
-  
 
   const TraningPages = () => {
     const {
@@ -247,23 +228,12 @@ const Footer = props => {
                 >
                   Career
                 </Typography>
-          </ListItem>
-              </Grid>
-
-
-
-
-          
-
-              
-              <Grid item>
-              
-                <SupportedPages />
                 
+          </ListItem>
+          
               </Grid>
-              <Grid item>
-                <TraningPages />
-              </Grid>
+
+              <TraningPages />
             </Grid>
           </Grid>
         </Grid>

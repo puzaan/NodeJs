@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { useTheme } from '@material-ui/core/styles';
 import { Grid, Button, useMediaQuery } from '@material-ui/core';
 
-import { LearnMoreLink } from 'components/atoms';
 import { SectionHeader, TypedText } from 'components/molecules';
 import { CardJobTag } from 'components/organisms';
 
@@ -68,7 +67,7 @@ const Jobs = props => {
               badgeTitle={item.title}
               jobLocation={item.location}
               jobType={item.type}
-              href= {`/jobdec/${item.id}`}
+              href= {`/career-opening/${item.id}`}
             />
           </Grid>
         ))}

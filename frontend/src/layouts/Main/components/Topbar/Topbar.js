@@ -133,7 +133,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
   };
 
 
-  const supportedPages = pages.pages;
+
   const traningPages = pages.traning
 
   const MenuGroup = props => {
@@ -174,22 +174,6 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
     );
   };
 
-
-
-  const SupportedPages = () => {
-    const {
-      career,
-      
-    } = supportedPages.children;
-    return (
-      <div className={classes.menu}>
-        <div className={classes.menuItem}>
-          <MenuGroup item={career} />
-        </div>
-      </div>
-    );
-  };
-
   const TraningPages = () => {
     const {
       course,
@@ -208,9 +192,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
 
   const renderPages = id => {
     
-    if (id === 'supported-pages') {
-      return <SupportedPages />;
-    }
+   
     
     if (id === 'traning-pages'){
       return <TraningPages />
@@ -271,7 +253,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
                   Carrers
                 </Typography>
           </ListItem>
-          {[ supportedPages,  traningPages].map((page, i) => (
+          {[  traningPages].map((page, i) => (
             <div key={page.id}>
               <ListItem
                 aria-describedby={page.id}
