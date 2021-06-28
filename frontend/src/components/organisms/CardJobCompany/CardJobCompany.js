@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography, Avatar ,Button} from '@material-ui/core';
 import { CardBase } from 'components/organisms';
-import { LearnMoreLink } from 'components/atoms';
+
 
 const useStyles = makeStyles(theme => ({
   root: {

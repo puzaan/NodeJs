@@ -265,7 +265,7 @@ const CareerOpening = ({ match }) => {
             </Grid>
           </Grid>
         </div>
-        );
+        
       </Section>
       <SectionAlternate innerNarrowed>
         <Application />

@@ -236,7 +236,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
                   color="textPrimary"
                   className={clsx(classes.listItemText, 'menu-item')}
                   component={Link}
-                  to='/sadfdsfsdf'
+                  to='/service'
                 >
                   Services
                 </Typography>

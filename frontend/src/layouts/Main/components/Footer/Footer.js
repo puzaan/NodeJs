@@ -208,7 +208,7 @@ const Footer = props => {
                   color="textPrimary"
                   className={classes.menuGroupTitle}
                   component={Link}
-                  to='/sadfdsfsdf'
+                  to='/service'
                 >
                   Services
                 </Typography>

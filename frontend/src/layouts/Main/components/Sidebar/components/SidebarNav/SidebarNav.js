@@ -132,7 +132,7 @@ const SidebarNav = props => {
       <ListItem className={classes.listItem}>
         <Typography variant="h6" color="textPrimary" gutterBottom
         component={Link}
-        to='/sadfdsfsdf'
+        to='/service'
         >
           Services
         </Typography>
