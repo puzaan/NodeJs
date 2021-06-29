@@ -1,4 +1,4 @@
-
+import { colors } from '@material-ui/core';
 
 export const partners = [
   {
@@ -54,4 +54,58 @@ export const reviews = [
     authorName:'Custom engineered this robust on-demand streaming platform with AI and ML capabilities.',
     authorOccupation: 'Unified Infotech designed and developed this highly sophisticated on-demand streaming platform for short movies, along with advanced AI capabilities and usage of big data.',
     feedback:'Sofy Tv'  },
+];
+
+
+
+
+export const courseCategories = [
+  {
+    color: colors.blue,
+    icon: 'fas fa-pen-nib',
+    title: 'Web Design',
+    subtitle: 'Choose thousands of web design online course.',
+  },
+  {
+    color: colors.purple,
+    icon: 'fas fa-book-open',
+    title: 'Business Analytics',
+    subtitle: 'Choose thousands of business analytics online course.',
+  },
+  {
+    color: colors.amber,
+    icon: 'fas fa-camera-retro',
+    title: 'Photography',
+    subtitle: 'Choose thousands of photography online course.',
+  },
+  {
+    color: colors.indigo,
+    icon: 'fas fa-video',
+    title: 'Video Creating',
+    subtitle: 'Choose thousands of video creating online course.',
+  },
+  {
+    color: colors.pink,
+    icon: 'fas fa-heartbeat',
+    title: 'Health & Fitness',
+    subtitle: 'Choose thousands of health & fitness online course.',
+  },
+  {
+    color: colors.green,
+    icon: 'fas fa-bullhorn',
+    title: 'Marketing',
+    subtitle: 'Choose thousands of marketing online course.',
+  },
+  {
+    color: colors.deepOrange,
+    icon: 'fas fa-funnel-dollar',
+    title: 'Finances & Sales',
+    subtitle: 'Choose thousands of finaces & sales online course.',
+  },
+  {
+    color: colors.red,
+    icon: 'fas fa-paint-brush',
+    title: 'Graphic Design',
+    subtitle: 'Choose thousands of graphic design online course.',
+  },
 ];

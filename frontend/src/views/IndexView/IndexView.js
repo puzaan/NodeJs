@@ -1,11 +1,12 @@
 import React from 'react';
 import { makeStyles, Divider } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
-import {  Features,  QuickStart,  Hero , AskExpert,Works, VideoSection} from './components';
+import {  Features,  QuickStart,  Hero , AskExpert,Works, VideoSection, Categories, Reviews} from './components';
 import {
-
+  courseCategories,
   partners,
   reviews
+
 
 } from './data';
 const useStyles = makeStyles(() => ({
@@ -46,6 +47,13 @@ const IndexView = ({ themeMode }) => {
       <Section className={classes.dividerSection}>
         <Divider />
       </Section>
+      <Section className={classes.dividerSection}>
+      <Categories data={courseCategories} />
+      </Section>
+      <Section>
+        <Reviews />
+      </Section>
+
     </div>
   );
 };
