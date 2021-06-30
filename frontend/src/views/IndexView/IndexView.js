@@ -51,7 +51,7 @@ const IndexView = ({ themeMode }) => {
       <Categories data={courseCategories} />
       </Section>
       <Section>
-        <Reviews />
+      <Reviews data={reviews} />
       </Section>
 
     </div>
