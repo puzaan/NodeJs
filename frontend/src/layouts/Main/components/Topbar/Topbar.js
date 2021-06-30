@@ -236,6 +236,20 @@ const Topbar = ({
             </Typography>
           </ListItem>
 
+          <ListItem
+            className={clsx(classes.listItem, 'menu-item--no-dropdown')}
+          >
+            <Typography
+              variant="body1"
+              color="textPrimary"
+              className={clsx(classes.listItemText, 'menu-item')}
+              component={Link}
+              to="/job-listing"
+            >
+              Careers
+            </Typography>
+          </ListItem>
+
 
           <ListItem
             className={clsx(classes.listItem, 'menu-item--no-dropdown')}

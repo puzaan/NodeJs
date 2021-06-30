@@ -148,31 +148,24 @@ const SidebarNav = props => {
         </Typography>
         
       </ListItem>
-
-
-
       <ListItem className={classes.listItem}>
+        <Typography variant="h6" color="textPrimary" gutterBottom
+        component={Link}
+        to='/signup-simple'
+        >
+          Contact Us
+        </Typography>
+        
       </ListItem>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <Divider className={classes.divider} />
-      </ListItem>
+      </ListItem> */}
       <ListItem className={classes.listItem}>
         <Typography variant="h6" color="textPrimary" gutterBottom>
           Traning
         </Typography>
         <TraningPages />
       </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-          variant="outlined"
-          fullWidth
-          component="a"
-          href="/signup-simple"
-        >
-          Contact Us
-        </Button>
-      </ListItem>
-      
     </List>
   );
 };
