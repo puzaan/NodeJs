@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,7 +13,6 @@ import {
   Typography,
   IconButton,
   Button,
-
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -116,7 +115,14 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...rest }) => {
+const Topbar = ({
+  themeMode,
+  themeToggler,
+  onSidebarOpen,
+  pages,
+  className,
+  ...rest
+}) => {
   const classes = useStyles();
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -132,9 +138,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
     setOpenedPopoverId(null);
   };
 
-
-
-  const traningPages = pages.traning
+  const traningPages = pages.traning;
 
   const MenuGroup = props => {
     const { item } = props;
@@ -149,12 +153,6 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
             {item.groupTitle}
           </Typography>
         </ListItem>
-
-
-
-        
-
-
 
         {item.pages.map((page, i) => (
           <ListItem disableGutters key={i} className={classes.menuGroupItem}>
@@ -175,10 +173,7 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
   };
 
   const TraningPages = () => {
-    const {
-      course,
-      
-    } = traningPages.children;
+    const { course } = traningPages.children;
     return (
       <div className={classes.menu}>
         <div className={classes.menuItem}>
@@ -188,14 +183,9 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
     );
   };
 
-  
-
   const renderPages = id => {
-    
-   
-    
-    if (id === 'traning-pages'){
-      return <TraningPages />
+    if (id === 'traning-pages') {
+      return <TraningPages />;
     }
   };
 
@@ -205,7 +195,11 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
         <a href="/" title="Achievers Group">
           <Image
             className={classes.logoImage}
-            src={themeMode === 'light' ?  'assets/achiever.svg' : 'assets/achiever.svg' }
+            src={
+              themeMode === 'light'
+                ? 'assets/achiever.svg'
+                : 'assets/achiever.svg'
+            }
             alt="Achievers Group"
             lazy={false}
           />
@@ -213,47 +207,60 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
       </div>
       <div className={classes.flexGrow} />
       <Hidden smDown>
-    
         <List disablePadding className={classes.navigationContainer}>
+          <ListItem
+            className={clsx(classes.listItem, 'menu-item--no-dropdown')}
+          >
+            <Typography
+              variant="body1"
+              color="textPrimary"
+              className={clsx(classes.listItemText, 'menu-item')}
+              component={Link}
+              to="/about"
+            >
+              About
+            </Typography>
+          </ListItem>
 
-          
-        <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-      <Typography
-                  variant="body1"
-                  color="textPrimary"
-                  className={clsx(classes.listItemText, 'menu-item')}
-                  component={Link}
-                  to='/about'
-                >
-                  About
-                </Typography>
+          <ListItem
+            className={clsx(classes.listItem, 'menu-item--no-dropdown')}
+          >
+            <Typography
+              variant="body1"
+              color="textPrimary"
+              className={clsx(classes.listItemText, 'menu-item')}
+              component={Link}
+              to="/service"
+            >
+              Services
+            </Typography>
           </ListItem>
 
 
-          <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-      <Typography
-                  variant="body1"
-                  color="textPrimary"
-                  className={clsx(classes.listItemText, 'menu-item')}
-                  component={Link}
-                  to='/service'
-                >
-                  Services
-                </Typography>
+          <ListItem
+            className={clsx(classes.listItem, 'menu-item--no-dropdown')}
+          >
+            <Typography
+              variant="body1"
+              color="textPrimary"
+              className={clsx(classes.listItemText, 'menu-item')}
+              component={Link}
+              to="/signup-simple"
+            >
+              Contact Us
+            </Typography>
           </ListItem>
 
-          <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-      <Typography
-                  variant="body1"
-                  color="textPrimary"
-                  className={clsx(classes.listItemText, 'menu-item')}
-                  component={Link}
-                  to='/job-listing'
-                >
-                  Carrers
-                </Typography>
-          </ListItem>
-          {[  traningPages].map((page, i) => (
+          <ListItem
+            className={clsx(classes.listItem, 'menu-item--no-dropdown')}
+          >
+            <Button
+              variant="outlined"
+              component="a"
+              
+              className={classes.listItemButton}
+            >
+          {[traningPages].map((page, i) => (
             <div key={page.id}>
               <ListItem
                 aria-describedby={page.id}
@@ -299,18 +306,18 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
               </Popover>
             </div>
           ))}
-          <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-            <Button
-              variant="outlined"
-              component="a"
-              href="/signup-simple"
-              className={classes.listItemButton}
-            >
-              Contact Us
+
+
+
             </Button>
           </ListItem>
-          <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-            <DarkModeToggler themeMode={themeMode} onClick={() => themeToggler()} />
+          <ListItem
+            className={clsx(classes.listItem, 'menu-item--no-dropdown')}
+          >
+            <DarkModeToggler
+              themeMode={themeMode}
+              onClick={() => themeToggler()}
+            />
           </ListItem>
         </List>
       </Hidden>
