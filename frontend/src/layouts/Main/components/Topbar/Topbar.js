@@ -244,7 +244,7 @@ const Topbar = ({
               color="textPrimary"
               className={clsx(classes.listItemText, 'menu-item')}
               component={Link}
-              to="/job-listing"
+              to="/career-list"
             >
               Careers
             </Typography>

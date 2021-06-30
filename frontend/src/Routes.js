@@ -19,6 +19,7 @@ import {
   JobListing as JobListingView,
   About as AboutView,
   SignupSimple as SignupSimpleView,
+  CareerListingMinimal as CareerListingMinimalView,
 } from './views';
 
 const Routes = () => {
@@ -92,6 +93,18 @@ const Routes = () => {
             {...matchProps}
             component={SignupSimpleView}
             layout={MinimalLayout}
+          />
+        )}
+      />
+
+<Route
+        exact
+        path="/career-list"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={CareerListingMinimalView}
+            layout={MainLayout}
           />
         )}
       />

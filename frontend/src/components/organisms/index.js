@@ -9,3 +9,4 @@ export { default as Map } from './Map';
 export { default as HeroSimpleBackground } from './HeroSimpleBackground';
 export { default as ContactForm } from './ContactForm';
 export { default as CardCategoryLink } from './CardCategoryLink';
+export { default as CardJobMinimal } from './CardJobMinimal';
