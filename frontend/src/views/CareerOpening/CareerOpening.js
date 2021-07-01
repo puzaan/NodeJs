@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
 import { Application, Newsletter } from './components';
-import { jobs } from '../JobListing/data/index';
+import { jobs } from '../CareerListingMinimal/data/index';
 import { SectionHeader, DescriptionCta } from 'components/molecules';
 import { CardBase } from 'components/organisms';
 
@@ -78,6 +78,7 @@ const CareerOpening = ({ match }) => {
                 Refer a friend
               </Button>
             }
+            
             secondaryCta={
               <Button variant="contained" color="primary" size="large">
                 Apply now

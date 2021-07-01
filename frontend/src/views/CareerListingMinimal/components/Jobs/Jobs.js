@@ -29,9 +29,9 @@ const Jobs = props => {
         {data.map((item, index) => (
           <Grid item xs={12} key={index}>
             <CardJobMinimal
-            href= '/'
+            href= {`/career-opening/${item.id}`}
               title={item.title}
-              subtitle={`${item.location} / ${item.type}`}
+              subtitle={`${item.jobTitle} / ${" "} ${item.type}`}
               showArrow
               titleProps={{
                 variant: 'h6',
