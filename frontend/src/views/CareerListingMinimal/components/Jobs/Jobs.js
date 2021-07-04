@@ -31,7 +31,7 @@ const Jobs = props => {
             <CardJobMinimal
             href= {`/career-opening/${item.id}`}
               title={item.title}
-              subtitle={`${item.jobTitle} / ${" "} ${item.type}`}
+              subtitle={`${item.jobTitle} /  ${item.type}`}
               showArrow
               titleProps={{
                 variant: 'h6',

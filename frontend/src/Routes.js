@@ -16,10 +16,10 @@ import {
   IndexView,
   CareerOpening as CareerOpeningView,
   Service as ServiceView,
-  JobListing as JobListingView,
   About as AboutView,
   SignupSimple as SignupSimpleView,
   CareerListingMinimal as CareerListingMinimalView,
+  CourseDetail as CourseDetail
 } from './views';
 
 const Routes = () => {
@@ -60,19 +60,6 @@ const Routes = () => {
           />
         )}
       />
-
-      <Route
-        exact
-        path="/job-listing"
-        render={matchProps => (
-          <WithLayout
-            {...matchProps}
-            component={JobListingView}
-            layout={MainLayout}
-          />
-        )}
-      />
-
       <Route
         exact
         path="/about"
@@ -104,6 +91,17 @@ const Routes = () => {
           <WithLayout
             {...matchProps}
             component={CareerListingMinimalView}
+            layout={MainLayout}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/course-detail"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={CourseDetail}
             layout={MainLayout}
           />
         )}
