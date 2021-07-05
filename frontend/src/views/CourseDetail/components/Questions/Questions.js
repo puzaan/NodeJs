@@ -1,13 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Grid,
-  List,
-  ListItem,
-  ListItemText,
-} from '@material-ui/core';
-import { Accordion } from 'components/organisms';
+import { Grid, List, ListItem, ListItemText } from '@material-ui/core';
+import { Accordion, CourseAcc } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -24,9 +19,7 @@ const useStyles = makeStyles(theme => ({
   fontWeight300: {
     fontWeight: 300,
   },
-  listItemAvatar: {
-    marginRight: theme.spacing(2),
-  },
+  
   listItemText: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -51,7 +44,6 @@ const Questions = props => {
         <Grid item xs={12}>
           <List>
             <ListItem disableGutters>
-              
               <ListItemText
                 primary={data.title}
                 secondary={data.subtitle}
@@ -63,12 +55,15 @@ const Questions = props => {
                 }}
               />
             </ListItem>
+            <Grid item xs={12} className={classes.accordionGrid}>
+          <CourseAcc data={data} />
+        </Grid>
             <ListItem disableGutters>
               <ListItemText
                 className={classes.listItemText}
                 primary={data.language}
                 secondaryTypographyProps={{
-                  variant: 'body1',
+                  variant: 'h3',
                   className: classes.answerCount,
                 }}
               />
@@ -77,7 +72,7 @@ const Questions = props => {
         </Grid>
         <Grid item xs={12} className={classes.accordionGrid}>
           <Accordion
-          items={data.items} 
+            items={data.items}
             titleProps={{
               variant: 'subtitle1',
               className: classes.fontWeightBold,

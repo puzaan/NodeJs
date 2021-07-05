@@ -18,7 +18,7 @@ import {
   About as AboutView,
   SignupSimple as SignupSimpleView,
   CareerListingMinimal as CareerListingMinimalView,
-  CourseDetail as CourseDetails
+  CourseDetail as CourseDetails,
 } from './views';
 
 const Routes = () => {
@@ -105,7 +105,6 @@ const Routes = () => {
           />
         )}
       />
-
       <Redirect to="/not-found-cover" />
     </Switch>
   );

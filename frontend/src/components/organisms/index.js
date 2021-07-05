@@ -12,3 +12,5 @@ export { default as CardCategoryLink } from './CardCategoryLink';
 export { default as CardJobMinimal } from './CardJobMinimal';
 export { default as HeroBackground } from './HeroBackground';
 export { default as Accordion } from './Accordion';
+export { default as CourseAcc } from './CourseSum';
+
