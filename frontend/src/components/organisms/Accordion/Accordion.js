@@ -93,7 +93,7 @@ const Accordion = props => {
                   {...textProps}
                 >
                   {
-                    item.text.map((texts) => (
+                    item.text.map(() => (
 <li> {item.text} </li>
                     ))
                     

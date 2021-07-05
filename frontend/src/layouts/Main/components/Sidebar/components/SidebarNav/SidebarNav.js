@@ -140,7 +140,7 @@ const SidebarNav = props => {
       <ListItem className={classes.listItem}>
         <Typography variant="h6" color="textPrimary" gutterBottom
         component={Link}
-        to='/job-listing'
+        to='/career-list'
         >
           Careers
         </Typography>
@@ -155,9 +155,6 @@ const SidebarNav = props => {
         </Typography>
         
       </ListItem>
-      {/* <ListItem className={classes.listItem}>
-        <Divider className={classes.divider} />
-      </ListItem> */}
       <ListItem className={classes.listItem}>
         <Typography variant="h6" color="textPrimary" gutterBottom>
           Traning

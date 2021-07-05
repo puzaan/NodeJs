@@ -8,8 +8,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import WithLayout from 'WithLayout';
 import {
   Main as MainLayout,
-  Minimal as MinimalLayout,
-  
+  Minimal as MinimalLayout, 
 } from './layouts';
 
 import {
@@ -19,7 +18,7 @@ import {
   About as AboutView,
   SignupSimple as SignupSimpleView,
   CareerListingMinimal as CareerListingMinimalView,
-  CourseDetail as CourseDetail
+  CourseDetail as CourseDetails
 } from './views';
 
 const Routes = () => {
@@ -101,7 +100,7 @@ const Routes = () => {
         render={matchProps => (
           <WithLayout
             {...matchProps}
-            component={CourseDetail}
+            component={CourseDetails}
             layout={MainLayout}
           />
         )}

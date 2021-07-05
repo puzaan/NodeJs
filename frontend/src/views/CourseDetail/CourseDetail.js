@@ -66,7 +66,6 @@ const useStyles = makeStyles(theme => ({
       position: 'sticky',
       top: '60%',
       transform: 'translateY(-50%)',
-      // paddingRight:'600px'
       
     },
   },

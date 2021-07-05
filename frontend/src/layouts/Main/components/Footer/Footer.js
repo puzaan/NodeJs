@@ -224,7 +224,7 @@ const Footer = props => {
                   color="textPrimary"
                   className={classes.menuGroupTitle}
                   component={Link}
-                  to='/job-listing'
+                  to='/career-list'
                 >
                   Career
                 </Typography>

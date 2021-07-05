@@ -49,47 +49,45 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Main = ({props})=> {
+const Main = props => {
   const { data, className, ...rest } = props;
   const classes = useStyles();
-  
+
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
   });
 
   return (
-    
-    <div className={clsx(classes.root, className)} {...rest}>
-      <DescriptionCta
-        title= '{data.title}'
-        subtitle="San Francisco, CA · Full time"
-        primaryCta={
-          <Button variant="outlined" color="primary" size="large">
-            Refer a friend
-          </Button>
-        }
-        secondaryCta={
-          <Button variant="contained" color="primary" size="large">
-            Apply now
-          </Button>
-        }
-        align={'left'}
-        titleProps={{
-          variant: 'h3',
-          className: classes.title,
-          color: 'textPrimary',
-        }}
-        subtitleProps={{
-          color: 'textPrimary',
-        }}
-      />
-      <Divider className={classes.divider} />
-      <Grid container spacing={isMd ? 4 : 2}>
-        <Grid item xs={12} md={8}>
+  <div className={clsx(classes.root, className)}{...rest}>
+          <DescriptionCta
+            title={`${data.title}`}
+            subtitle={`${data.jobTitle} \n ${data.location} `}
+            primaryCta={
+              <Button variant="outlined" color="primary" size="large">
+                Refer a friend
+              </Button>
+            }
+            
+            secondaryCta={
+              <Button variant="contained" color="primary" size="large">
+                Apply now
+              </Button>
+            }
+            align={'left'}
+            titleProps={{
+              variant: 'h3',
+              className: classes.title,
+              color: 'textPrimary',
+            }}
+            subtitleProps={{
+              color: 'textPrimary',
+            }}
+          />
+          <Divider className={classes.divider} />
           <SectionHeader
-            title="Who we are"
-            subtitle="We believe lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat elit vitae enim lacinia semper. Cras nulla lectus, porttitor vitae urna iaculis, malesuada tincidunt lectus. Proin nec tellus sit amet massa auctor imperdiet id vitae diam. Aenean gravida est nec diam suscipit iaculis. Praesent urna velit, auctor nec turpis et, vehicula lobortis sem. Vivamus convallis mi sagittis eleifend laoreet. Praesent vitae venenatis enim. Nulla tincidunt felis et lectus rhoncus laoreet."
+            title="Job Type"
+            subtitle={data.type}
             align="left"
             data-aos="fade-up"
             titleProps={{
@@ -101,99 +99,167 @@ const Main = ({props})=> {
               color: 'textPrimary',
             }}
           />
-          <SectionHeader
-            title="What we’re looking for"
-            subtitle="Aenean gravida est nec diam suscipit iaculis. Praesent urna velit, auctor nec turpis et, vehicula lobortis sem. Vivamus convallis mi sagittis eleifend laoreet. Praesent vitae venenatis enim. Nulla tincidunt felis et lectus rhoncus laoreet."
-            align="left"
-            data-aos="fade-up"
-            titleProps={{
-              className: classes.title,
-              color: 'textPrimary',
-            }}
-            subtitleProps={{
-              variant: 'body1',
-              color: 'textPrimary',
-            }}
-            disableGutter
-          />
-          <List className={classes.list}>
-            {data.map((item, index) => (
-              <ListItem disableGutters key={index} data-aos="fade-up">
-                <ListItemAvatar>
-                  <Avatar
-                    src="https://assets.maccarianagency.com/the-front/illustrations/check-icon-yellow.svg"
-                    className={classes.checkBox}
-                  />
-                </ListItemAvatar>
-                <Typography variant="body1" color="textPrimary">
-                  {item}
-                </Typography>
-              </ListItem>
-            ))}
-          </List>
-          <SectionHeader
-            title="Why to apply"
-            subtitle="We believe lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat elit vitae enim lacinia semper. Cras nulla lectus, porttitor vitae urna iaculis, malesuada tincidunt lectus. Proin nec tellus sit amet massa auctor imperdiet id vitae diam. Aenean gravida est nec diam suscipit iaculis. Praesent urna velit, auctor nec turpis et, vehicula lobortis sem. Vivamus convallis mi sagittis eleifend laoreet. Praesent vitae venenatis enim. Nulla tincidunt felis et lectus rhoncus laoreet."
-            align="left"
-            data-aos="fade-up"
-            titleProps={{
-              className: classes.title,
-              color: 'textPrimary',
-            }}
-            subtitleProps={{
-              variant: 'body1',
-              color: 'textPrimary',
-            }}
-            disableGutter
-          />
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Grid container spacing={isMd ? 4 : 2} direction="column">
-            <Grid item xs={12} data-aos="fade-up">
-              <CardBase withShadow className={classes.cardHighlighted}>
-                <SectionHeader
-                  title="Know about company"
-                  subtitle="Get free online programing tips and resources delivered directly to your inbox."
-                  ctaGroup={[<Button variant="contained">learn more</Button>]}
-                  disableGutter
-                  align="left"
-                  titleProps={{
-                    variant: 'h6',
-                    className: classes.textWhite,
-                  }}
-                  subtitleProps={{
-                    variant: 'body1',
-                    className: classes.textWhite,
-                  }}
-                />
-              </CardBase>
+          <Grid container spacing={isMd ? 4 : 2}>
+            <Grid item xs={12} md={8}>
+              <SectionHeader
+                title="Requirement"
+                align="left"
+                data-aos="fade-up"
+                titleProps={{
+                  className: classes.title,
+                  color: 'textPrimary',
+                }}
+                subtitleProps={{
+                  variant: 'body1',
+                  color: 'textPrimary',
+                }}
+                disableGutter
+              />
+              <List className={classes.list}>
+                {data.jobReq.map(req => (
+                  <ListItem disableGutters data-aos="fade-up">
+                    <ListItemAvatar>
+                      <Avatar
+                        src="https://assets.maccarianagency.com/the-front/illustrations/check-icon-yellow.svg"
+                        className={classes.checkBox}
+                      />
+                    </ListItemAvatar>
+                    <Typography variant="body1" color="textPrimary">
+                      {req}
+                    </Typography>
+                  </ListItem>
+                ))}
+              </List>
+              <SectionHeader
+                title="Exprences"
+                align="left"
+                data-aos="fade-up"
+                titleProps={{
+                  className: classes.title,
+                  color: 'textPrimary',
+                }}
+                subtitleProps={{
+                  variant: 'body1',
+                  color: 'textPrimary',
+                }}
+                disableGutter
+              />
+              <List className={classes.list}>
+                {data.exprences.map(exp => (
+                  <ListItem disableGutters data-aos="fade-up">
+                    <ListItemAvatar>
+                      <Avatar
+                        src="https://assets.maccarianagency.com/the-front/illustrations/check-icon-yellow.svg"
+                        className={classes.checkBox}
+                      />
+                    </ListItemAvatar>
+                    <Typography variant="body1" color="textPrimary">
+                      {exp}
+                    </Typography>
+                  </ListItem>
+                ))}
+              </List>
+
+              <SectionHeader
+                title="Education Requirement"
+                align="left"
+                data-aos="fade-up"
+                titleProps={{
+                  className: classes.title,
+                  color: 'textPrimary',
+                }}
+                subtitleProps={{
+                  variant: 'body1',
+                  color: 'textPrimary',
+                }}
+                disableGutter
+              />
+              <List className={classes.list}>
+                <ListItem disableGutters data-aos="fade-up">
+                  <ListItemAvatar>
+                    <Avatar
+                      src="https://assets.maccarianagency.com/the-front/illustrations/check-icon-yellow.svg"
+                      className={classes.checkBox}
+                    />
+                  </ListItemAvatar>
+                  <Typography variant="body1" color="textPrimary">
+                    {data.educationRequirement}
+                  </Typography>
+                </ListItem>
+              </List>
+
+              <SectionHeader
+                title="Additional Requirements"
+                align="left"
+                data-aos="fade-up"
+                titleProps={{
+                  className: classes.title,
+                  color: 'textPrimary',
+                }}
+                subtitleProps={{
+                  variant: 'body1',
+                  color: 'textPrimary',
+                }}
+                disableGutter
+              />
+              <List className={classes.list}>
+                {data.addInfo.map(addInfo => (
+                  <ListItem disableGutters data-aos="fade-up">
+                    <ListItemAvatar>
+                      <Avatar
+                        src="https://assets.maccarianagency.com/the-front/illustrations/check-icon-yellow.svg"
+                        className={classes.checkBox}
+                      />
+                    </ListItemAvatar>
+                    <Typography variant="body1" color="textPrimary">
+                      {addInfo}
+                    </Typography>
+                  </ListItem>
+                ))}
+              </List>
+              <SectionHeader
+                title="Salary"
+                subtitle={data.salary}
+                align="left"
+                data-aos="fade-up"
+                titleProps={{
+                  className: classes.title,
+                  color: 'textPrimary',
+                }}
+                subtitleProps={{
+                  variant: 'body1',
+                  color: 'textPrimary',
+                }}
+              />
             </Grid>
-            <Grid item xs={12} data-aos="fade-up">
-              <CardBase withShadow>
-                <SectionHeader
-                  title="Don't see a job for you?"
-                  titleVariant="h6"
-                  subtitle="Get free online programing tips and resources delivered directly to your inbox."
-                  ctaGroup={[
-                    <Button variant="contained" color="primary">
-                      See other vacances
-                    </Button>,
-                  ]}
-                  disableGutter
-                  align="left"
-                  subtitleProps={{
-                    variant: 'body1',
-                  }}
-                />
-              </CardBase>
+            <Grid item xs={12} md={4}>
+              <Grid container spacing={isMd ? 4 : 2} direction="column">
+                <Grid item xs={12} data-aos="fade-up">
+                  <CardBase withShadow className={classes.cardHighlighted}>
+                    <SectionHeader
+                      title={data.vacancy}
+                      subtitle="Vacancies"
+                      disableGutter
+                      align="left"
+                      titleProps={{
+                        variant: 'h6',
+                        className: classes.textWhite,
+                      }}
+                      subtitleProps={{
+                        variant: 'body1',
+                        className: classes.textWhite,
+                      }}
+                    ></SectionHeader>
+                  </CardBase>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </Grid>
-    </div>
-  );
+        </div>
+        
 
-  
+
+  );
 };
 
 Main.propTypes = {
