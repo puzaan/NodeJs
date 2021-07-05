@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@material-ui/core/styles';
-import { useMediaQuery, Grid, Button } from '@material-ui/core';
+import { useMediaQuery, Grid} from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
 import { CardJobMinimal } from 'components/organisms';
 

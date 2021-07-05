@@ -5,7 +5,7 @@ import { Divider } from '@material-ui/core';
 import { Section } from 'components/organisms';
 import { Hero,Questions, SidePage} from './components';
 
-import { questions } from './data';
+import { questions,team } from './data';
 
 
 const useStyles = makeStyles(theme => ({
@@ -49,34 +49,28 @@ const useStyles = makeStyles(theme => ({
       top: 0,
       left: 0,
       width: '30%',
-      maxWidth: 470,
+      maxWidth: 450,
       height: '100%',
       marginLeft: 0,
       marginRight: 0,
       marginBottom: 0,
       paddingLeft: 0,
       paddingRight: 0,
-      paddingTop: 350,
+      paddingTop: 500,
       paddingBottom: 0,
     },
   },
   coverContent: {
+    
     [theme.breakpoints.up('md')]: {
       position: 'sticky',
-      top: '50%',
-     transform: 'translateY(-50%)',
-      padding: theme.spacing(2),
+      top: '60%',
+      transform: 'translateY(-50%)',
+      // paddingRight:'600px'
+      
     },
   },
-  image: {
-    width: '100%',
-    maxWidth: 500,
-    [theme.breakpoints.up('md')]: {
-      maxWidth: '100%',
-      width: 'auto',
-      height: 'auto',
-    },
-  },
+
   content: {
     flex: '0 0 100%',
     maxWidth: '100%',
@@ -111,8 +105,7 @@ const CourseDetail = () => {
           <div className={classes.cover}>
             <div>
               <div className={classes.coverContent}>
-                <SidePage />
-                
+                <SidePage data={team}/> 
               </div>
             </div>
           </div>

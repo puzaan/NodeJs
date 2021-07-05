@@ -14,18 +14,17 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ImageIcon from '@material-ui/icons/Image';
-import WorkIcon from '@material-ui/icons/Work';
-import BeachAccessIcon from '@material-ui/icons/BeachAccess';
+
 
 const useStyles = makeStyles(theme => ({
-  coverContent: {
-    [theme.breakpoints.up('md')]: {
-      position: 'relative',
-      top: '50%',
-      //  transform: 'translateY(-50%)',
-      padding: theme.spacing(2),
-    },
-  },
+  // coverContent: {
+  //   [theme.breakpoints.up('md')]: {
+  //     position: 'absolute',
+  //     // top: '60%',
+  //     //  transform: 'translateY(-50%)',
+  //     // padding: theme.spacing(2),
+  //   },
+  // },
   line: {
     display: 'flex',
   },
@@ -39,11 +38,12 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const SidePage = () => {
+const SidePage = props => {
+  const {data} = props;
   const classes = useStyles();
 
   return (
-    <div className={classes.coverContent}>
+    <div >
       <Box
         marginBottom={2}
         justifyContent="space-evenly"
@@ -99,31 +99,21 @@ const SidePage = () => {
         <Typography variant="h5" gutterBottom>
           Related Courses
         </Typography>
+        {data.map((tit)=> (
         <List className={classes.divider}>
+
           <ListItem>
             <ListItemAvatar>
                 <ImageIcon />
               
             </ListItemAvatar>
-            <ListItemText primary="Java" />
+            
+              <ListItemText primary={tit.title} />
           </ListItem>
           <Divider variant="inset" component="li" />
-          <ListItem>
-            <ListItemAvatar>
-                <ImageIcon /> 
-            </ListItemAvatar>
-            <ListItemText primary="PHP" />
-          </ListItem>
-          <Divider variant="inset" component="li" />
-          <ListItem>
-            <ListItemAvatar>
-              
-                <ImageIcon />
-              
-            </ListItemAvatar>
-            <ListItemText primary="MERN Stack"/>
-          </ListItem>
+
         </List>
+        ))}
       </Box>
     </div>
   );

@@ -6,8 +6,6 @@ import { useMediaQuery, Grid, Typography, Button, ListItem , List} from '@materi
 import { HeroBackground } from 'components/organisms';
 import TimerIcon from '@material-ui/icons/Timer';
 import { IconAlternate } from 'components/molecules';
-import { CardBase } from 'components/organisms';
-import { SectionHeader} from 'components/molecules';
 
 const useStyles = makeStyles(theme => ({
   textWhite: {
