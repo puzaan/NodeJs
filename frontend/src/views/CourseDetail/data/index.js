@@ -83,7 +83,7 @@ export const questions = {
           'Environment to prove oneself in a competitive environment',
           'Quick results for projects that are popular in Nepal',
       ],
-      des:'Broadway is the best institution to learn C# at as it offers trained instructor to run its classes. The demand of C# developers is soaring around the world; however the companies are struggling to hire the qualified C# programmers. Therefore reserve your seat at the earliest in order to appear in upcoming C# training sessions and enhance your C# skills.',
+      des:'Achievers Groups is the best institution to learn C# at as it offers trained instructor to run its classes. The demand of C# developers is soaring around the world; however the companies are struggling to hire the qualified C# programmers. Therefore reserve your seat at the earliest in order to appear in upcoming C# training sessions and enhance your C# skills.',
     },
     
     {

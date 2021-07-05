@@ -38,6 +38,9 @@ const CourAcc = props => {
                         </Typography>
                             ))
                         }
+                        <br />
+                        <Typography variant="body1">{syb.des}
+                        </Typography>
                         
                         
                         </Typography>
