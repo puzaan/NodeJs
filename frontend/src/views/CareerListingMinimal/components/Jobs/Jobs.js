@@ -18,11 +18,6 @@ const Jobs = props => {
         title="Let’s find you an open position."
         subtitle="Keep track of what's happening with your data, change permissions, and run reports against your data anywhere in the world."
         subtitleColor="textPrimary"
-        ctaGroup={[
-          <Button color="primary" size="large" variant="contained">
-            About the company
-          </Button>,
-        ]}
         data-aos="fade-up"
       />
       <Grid container spacing={isMd ? 4 : 2}>

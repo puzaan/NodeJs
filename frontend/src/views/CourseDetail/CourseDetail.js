@@ -2,12 +2,11 @@ import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from '@material-ui/core';
-import { Image } from 'components/atoms';
 import { Section } from 'components/organisms';
 import { Hero,Questions, SidePage} from './components';
 
-import { team, questions } from './data';
-import { SectionHeader } from 'components/molecules';
+import { questions } from './data';
+
 
 const useStyles = makeStyles(theme => ({
   root: {

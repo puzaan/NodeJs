@@ -39,9 +39,8 @@ const Accordion = props => {
     items,
     className,
     titleProps,
-    subtitleProps,
     textProps,
-    linkProps,
+  
     ...rest
   } = props;
 
@@ -93,7 +92,12 @@ const Accordion = props => {
                   className="accordion__collapsable-text"
                   {...textProps}
                 >
-                  {item.text}
+                  {
+                    item.text.map((texts) => (
+<li> {item.text} </li>
+                    ))
+                    
+                  }
                 </Typography>
               </Grid>
               
@@ -107,9 +111,9 @@ const Accordion = props => {
 
 Accordion.defaultProps = {
   titleProps: {},
-  subtitleProps: {},
+
   textProps: {},
-  linkProps: {},
+
 };
 
 Accordion.propTypes = {
