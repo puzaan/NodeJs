@@ -14,6 +14,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ImageIcon from '@material-ui/icons/Image';
+import Link from '@material-ui/core/Link';
 
 
 const useStyles = makeStyles(theme => ({
@@ -99,10 +100,10 @@ const SidePage = props => {
         <Typography variant="h5" gutterBottom>
           Related Courses
         </Typography>
-        {data.map((tit)=> (
+        {data.map((tit, id)=> (
         <List className={classes.divider}>
 
-          <ListItem>
+          <ListItem  button component={Link} href={`/course-detail/${tit.id}`}>
             <ListItemAvatar>
                 <ImageIcon />
               

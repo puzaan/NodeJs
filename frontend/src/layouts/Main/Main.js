@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery, Divider } from '@material-ui/core';
 import { Topbar, Footer, Sidebar } from './components';
+import {page} from '../../views/CourseDetail/data'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,41 +20,7 @@ const Main = ({ children, themeToggler, themeMode }) => {
     defaultMatches: true,
   });
 
-  const pages = {
-    traning: {
-      title: 'Traning',
-      id: 'traning-pages',
-      children: {
-        course: {
-          groupTitle: 'Course',
-          pages: [
-            {
-              title: 'App Devlopment',
-              href: "/course-detail",
-            },
-            {
-              title: 'Web Devlopment',
-              href:"/course-detail",
-            },
-            {
-              title: 'entrepreneur program',
-              href: "/course-detail",
-            },
-            {
-              title: 'Digital Marketing',
-              href: "/course-detail",
-            },
-            {
-              title: 'AWS Certification',
-              href: "/course-detail",
-            },
-          ],
-        },
-      },
-    },
-
-  };
-
+ 
   const [openSidebar, setOpenSidebar] = useState(false);
 
   const handleSidebarOpen = () => {
@@ -72,18 +39,18 @@ const Main = ({ children, themeToggler, themeMode }) => {
         [classes.root]: true,
       })}
     >
-      <Topbar onSidebarOpen={handleSidebarOpen} pages={pages} themeMode={themeMode} themeToggler={themeToggler} />
+      <Topbar onSidebarOpen={handleSidebarOpen} pages={page} themeMode={themeMode} themeToggler={themeToggler} />
       <Sidebar
         onClose={handleSidebarClose}
         open={open}
         variant="temporary"
-        pages={pages}
+        pages={page}
       />
       <main>
         <Divider />
         {children}
       </main>
-      <Footer pages={pages} />
+      <Footer pages={page} />
     </div>
   );
 };

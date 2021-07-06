@@ -5,7 +5,7 @@ import { Divider } from '@material-ui/core';
 import { Section } from 'components/organisms';
 import { Hero,Questions, SidePage} from './components';
 
-import { questions,team } from './data';
+import { page } from './data';
 
 
 const useStyles = makeStyles(theme => ({
@@ -92,24 +92,27 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const CourseDetail = () => {
+const CourseDetail = ({ match }) => {
   const classes = useStyles();
+  const related = page.traning.children.course.pages 
+  const course = page.traning.children.course.pages.find(p =>p.id === match.params.id )
+  console.log(course)
 
   return (
 <div>
-<Hero data={questions}/>
+<Hero data={course}/>
     <div className={classes.root}>
       <Section className={clsx(classes.pagePaddingTop, classes.section)}>
         <div className={classes.wrapper}>
           <div className={classes.cover}>
             <div>
               <div className={classes.coverContent}>
-                <SidePage data={team}/> 
+                <SidePage data={related}/> 
               </div>
             </div>
           </div>
           <div className={classes.content} >
-            <Questions data={questions} className={classes.contentSection} />
+            <Questions data={course} className={classes.contentSection} />
           </div>
         </div>
       </Section>

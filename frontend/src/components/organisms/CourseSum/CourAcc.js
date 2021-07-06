@@ -35,7 +35,7 @@ const CourAcc = props => {
                         {
                             syb.text.map((list)=> (
 <Typography variant="subtitle1">{list}
-                        </Typography>
+                        </Typography> 
                             ))
                         }
                         <br />
@@ -45,7 +45,6 @@ const CourAcc = props => {
                         
                         </Typography>
                         
-
                     </AccordionDetails>
                     
                     

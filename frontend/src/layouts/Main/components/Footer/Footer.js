@@ -120,7 +120,7 @@ const Footer = props => {
             <Typography
               variant="body2"
               component={'a'}
-              href={page.href}
+              href={`/course-detail/${page.id}`}
               className={clsx(classes.navLink, 'submenu-item')}
             >
               {page.title}

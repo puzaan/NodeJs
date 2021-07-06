@@ -18,7 +18,6 @@ const useStyles = makeStyles(theme => ({
     background: theme.palette.primary.dark,
   },
 }));
-
 const Hero = props => {
   const { data, className, ...rest } = props;
   const classes = useStyles();
@@ -31,42 +30,47 @@ const Hero = props => {
   return (
     <div className={className} {...rest}>
       <HeroBackground backgroundImg="https://assets.maccarianagency.com/the-front/photos/expo-gallery/gallery3@2x.jpg">
-        <Grid container spacing={4}>
-          <Grid item xs={12}>
-            <List>
-              <ListItem> 
-          
-                <IconAlternate
-                  fontIconClass={data.icon}
-                  size="large"
-                  color={data.color}
-                  
-                />
+  
+              <Grid container spacing={4}>
+              <Grid item xs={12}>
+                
+                <List>
+                  <ListItem> 
               
-            <Typography
-            
-              variant="h3"
-              className={clsx(classes.textWhite, classes.title)}
-            >
-              {data.course}
-            </Typography>
-            </ListItem>
-              </List>
-          </Grid>
-          <Grid item xs={12} >
-            <Typography variant="h5" className={classes.textWhite} gutterBottom>
-              {data.location}
-            </Typography>
-            <Typography variant="h5" className={classes.textWhite}>
-            <TimerIcon />
-              {data.duration}
-            </Typography> 
-            <Button size={isMd ? 'large' : 'medium'} variant="contained"  disableGuteer>
-            We also offer online classes for trainees who cannot attend the classes physically
-            </Button>
-          </Grid>
+                    <IconAlternate
+                      fontIconClass={data.icon}
+                      size="large"
+                      color={data.color}
+                      
+                    />
+                  
+                <Typography
+                
+                  variant="h3"
+                  className={clsx(classes.textWhite, classes.title)}
+                >
+                  {data.title}
+                </Typography>
+                </ListItem>
+                  </List>
+              </Grid>
+              <Grid item xs={12} >
+                <Typography variant="h5" className={classes.textWhite} gutterBottom>
+                {data.location}
+                </Typography>
+                <Typography variant="h5" className={classes.textWhite}>
+                <TimerIcon />
+                {data.duration}
+                </Typography> 
+                <Button size={isMd ? 'large' : 'medium'} variant="contained"  >
+                We also offer online classes for trainees who cannot attend the classes physically
+                </Button>
+              </Grid>
+              
+            </Grid>
           
-        </Grid>
+              
+        
       </HeroBackground>
     </div>
   );

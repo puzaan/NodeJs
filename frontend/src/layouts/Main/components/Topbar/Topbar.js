@@ -159,7 +159,7 @@ const Topbar = ({
             <Typography
               variant="body1"
               component={'a'}
-              href={page.href}
+              href={`/course-detail/${page.id}`}
               className={clsx(classes.navLink, 'submenu-item')}
               color="textSecondary"
               onClick={handleClose}

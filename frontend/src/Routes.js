@@ -96,7 +96,7 @@ const Routes = () => {
       />
       <Route
         exact
-        path="/course-detail"
+        path="/course-detail/:id"
         render={matchProps => (
           <WithLayout
             {...matchProps}
