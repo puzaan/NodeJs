@@ -11,6 +11,7 @@ const useStyles = makeStyles(theme => ({
   accordionGrid: {
     '& .accordion__item-wrapper': {
       boxShadow: '0 1.5rem 4rem rgba(22,28,45,.05)',
+      margin:'5px'
     },
   },
   fontWeightBold: {

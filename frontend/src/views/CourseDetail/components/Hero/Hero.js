@@ -10,13 +10,19 @@ import { IconAlternate } from 'components/molecules';
 const useStyles = makeStyles(theme => ({
   textWhite: {
     color: 'white',
+    marginLeft:'17px'
   },
   title: {
     fontWeight: 'bold',
+    marginLeft: '10px'
   },
   cardHighlighted: {
     background: theme.palette.primary.dark,
   },
+  duration:{
+marginTop: '10px',
+marginLeft: '17px'
+  }
 }));
 const Hero = props => {
   const { data, className, ...rest } = props;
@@ -39,7 +45,7 @@ const Hero = props => {
               
                     <IconAlternate
                       fontIconClass={data.icon}
-                      size="large"
+                      size="medium"
                       color={data.color}
                       
                     />
@@ -62,7 +68,7 @@ const Hero = props => {
                 <TimerIcon />
                 {data.duration}
                 </Typography> 
-                <Button size={isMd ? 'large' : 'medium'} variant="contained"  >
+                <Button size={isMd ? 'large' : 'medium'} variant="contained"  className= {classes.duration}>
                 We also offer online classes for trainees who cannot attend the classes physically
                 </Button>
               </Grid>

@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
     paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(3),
+    //paddingBottom: theme.spacing(3),
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(-8),
       marginRight: theme.spacing(-8),
@@ -79,13 +79,13 @@ const useStyles = makeStyles(theme => ({
     },
   },
   contentSection: {
-    paddingBottom: theme.spacing(6),
+    paddingBottom: theme.spacing(2),
     [theme.breakpoints.up('sm')]: {
       paddingBottom: theme.spacing(12),
     },
   },
   pagePaddingTop: {
-    paddingTop: 0,
+    paddingTop: 50,
     [theme.breakpoints.up('md')]: {
       paddingTop: theme.spacing(5),
     },
