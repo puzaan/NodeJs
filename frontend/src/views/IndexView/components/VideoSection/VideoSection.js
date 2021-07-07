@@ -103,6 +103,7 @@ const VideoSection = props => {
             />
           </Grid>
         </Grid>
+      
       </Grid>
     </div>
   );

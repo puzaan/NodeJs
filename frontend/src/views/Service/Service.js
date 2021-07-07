@@ -84,6 +84,8 @@ const Service = () => {
     setOpenBottombar(false);
   };
 
+ 
+
   return (
     <div className={classes.root}>
       <Section className={classes.pagePaddingTop}>
@@ -95,16 +97,8 @@ const Service = () => {
         <VideoSection />
         <Section>
           <Divider />
-        </Section>
-        <Advantages data={advantages} />
-        <Section>
           <Divider />
         </Section>
-        <Reviews data={reviews} />
-        <Section>
-          <Divider />
-        </Section>
-        <Integrations data={integrations} />
         <Section>
           <Divider />
         </Section>
@@ -112,7 +106,11 @@ const Service = () => {
         <Section>
           <Divider />
         </Section>
-        <Team data={team} />
+        <Integrations data={integrations} />
+        <Section>
+          <Divider />
+        </Section>
+        <Reviews data={reviews} />
         </>
       </Section>
       <Divider />

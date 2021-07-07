@@ -6,6 +6,7 @@ import { useMediaQuery } from '@material-ui/core';
 import { Grid, Button, Typography } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
+import ReactPlayer from 'react-player'
 
 const useStyles = makeStyles(theme => ({
   video: {
@@ -34,6 +35,11 @@ const useStyles = makeStyles(theme => ({
     zIndex: 1300,
     boxShadow: `0 8px 21px 0 ${theme.palette.cardShadow}`,
     borderRadius: '100%',
+  },
+  videoIframe: {
+    boxShadow: `0 5px 12px 0 ${theme.palette.cardShadow}`,
+    borderRadius: '20px',
+
   },
 }));
 
@@ -89,14 +95,18 @@ const VideoSection = props => {
           md={6}
           data-aos={'fade-up'}
         >
-          <div className={classes.video}>
-            <Image src="https://assets.maccarianagency.com/the-front/illustrations/dashboard.svg" alt="Dashboard" />
-            <i
-              className={clsx(classes.videoPlayButton, 'fas fa-play-circle')}
+          <Grid container justify="center">
+            <ReactPlayer url='https://www.youtube.com/watch?v=UNCq01LNNrg' 
+            controls 
+          
+            className={classes.videoIframe}
+            
             />
-            <div className={classes.videoCover} />
-          </div>
+          </Grid>
         </Grid>
+        
+          
+        
       </Grid>
     </div>
   );

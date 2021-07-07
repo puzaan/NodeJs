@@ -1,7 +1,9 @@
 export const partners = [
   {
+    
     name: 'Airbnb',
     logo: 'https://assets.maccarianagency.com/the-front/logos/airbnb.svg',
+    video:'https://youtu.be/hBEauTk9uWM'
   },
   {
     name: 'Coinbase',
@@ -151,29 +153,52 @@ export const customizations = [
   },
 ];
 
-export const team = [
+export const servces = [
   {
+    id:'1',
     title: 'UI/UX Designer',
-    authorPhoto: {
-      src: 'https://assets.maccarianagency.com/the-front/photos/people/kate-segelson.jpg',
-      srcSet: 'https://assets.maccarianagency.com/the-front/photos/people/kate-segelson@2x.jpg 2x',
-    },
-    authorName: 'Kate Segelson',
+    list:[
+      'Wireframes Designing',
+      'Strategic Design Consulting',
+      'High/Low fidelity Prototype',
+      'Mobile App Design',
+      'Responsive Web Design',
+      'Information Architecture',
+      "UX Analysis",
+      'UI Design'
+
+    ],
+    image: 'https://d1i2cp4a5c819e.cloudfront.net/wp-content/uploads/2020/02/services-mobile-app-development.webp',
+      
+  
+    body: 'UI/UX design is the catalyst behind the success of any web or mobile app. IndiaNIC is a leading web design and mobile app design agency with a knack of turning great ideas into meaningful interactions. Starting from conceptualization, information architecture, visual identity, and UX design; hire UI/UX designers from IndiaNIC for timely delivery of appealing websites and mobile apps resulting maximum user engagement.'
   },
   {
-    title: 'Web Backend Developer',
-    authorPhoto: {
-      src: 'https://assets.maccarianagency.com/the-front/photos/people/alex-johnson.jpg',
-      srcSet: 'https://assets.maccarianagency.com/the-front/photos/people/alex-johnson@2x.jpg 2x',
-    },
-    authorName: 'Alex Johnson',
+    id:'2',
+    title: 'Web  Developer',
+    list:[
+
+    ],
+    image:'https://d1i2cp4a5c819e.cloudfront.net/wp-content/uploads/2020/01/img-services-web-development.webp',
+    url:'https://www.youtube.com/watch?v=UNCq01LNNrg',
+    
+    body: 'Being a leading website application development company, our certified developers have unparalleled expertise in working with the latest web technologies to deliver custom web solutions. Whether creating a web presence for your company, an information hub for your business or empowering your apps/IoT devices through backend- IndiaNIC does it all by covering a wide spectrum of web solutions and framework.',
   },
   {
-    title: 'Web Frontend Developer',
-    authorPhoto: {
-      src: 'https://assets.maccarianagency.com/the-front/photos/people/valeria-kogan.jpg',
-      srcSet: 'https://assets.maccarianagency.com/the-front/photos/people/valeria-kogan@2x.jpg 2x',
-    },
-    authorName: 'Valeria Kogan',
+    id:'4',
+    title: 'App Developer',
+    list:[
+'Native iOS App Development',
+'Native Android App Development',
+'Cross-platform App Development',
+'Hybrid App Development',
+'Wearable App Development',
+'React Native App Development',
+'Xamarin App Development',
+'Flutter App Development'
+    ],
+    image: 'https://d1i2cp4a5c819e.cloudfront.net/wp-content/uploads/2020/01/img-services-ui-ux-design.webp',
+      
+    body: 'From B2B or B2E apps for enterprises, small businesses, and startups, we have a proven track record of offering high-impact, result driven and engaging mobile application development services. IndiaNIC is a top mobile app development company that is renowned for delivering native Android app development, native iOS app development, hybrid and cross-platform app development services to build next-gen mobile applications using the latest technology stack.',
   },
 ];

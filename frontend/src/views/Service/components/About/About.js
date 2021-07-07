@@ -5,6 +5,7 @@ import { useMediaQuery } from '@material-ui/core';
 import { Grid, Typography, Button } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
+import {servces} from '../../data'
 
 const useStyles = makeStyles(theme => ({
   promoLogo: {
@@ -21,23 +22,29 @@ const About = props => {
     defaultMatches: true,
   });
 
+
+const odd = servces.filter((items, idx)=> idx % 2 !== 0);
+const even = servces.filter((items, idx)=> idx % 2 === 0);
+console.log(servces);
+console.log(odd);
+console.log(even);
+
   return (
     <div className={className} data-aos="fade-up" {...rest}>
+      {servces.map((data)=> (
       <Grid container justify="space-between" spacing={isMd ? 4 : 0}>
         <Grid item xs={12} md={6} data-aos={'fade-up'}>
           <Grid container spacing={2} alignItems="flex-start">
-            <Grid item xs={12}>
+            
+              <Grid item xs={12}>
               <SectionHeader
                 title={
-                  <span>
-                    Guaranted{' '}
+                    
                     <Typography component="span" variant="inherit" color="primary">
-                      Company Growth
-                    </Typography>{' '}
-                    with Targeted Leads
-                  </span>
+                      {data.title}
+                    </Typography>
                 }
-                subtitle="We will help you to understand your leads and you will increase your company growth by converting the qualified leads into sales."
+                subtitle={data.body}
                 ctaGroup={[
                   <Button
                     variant="contained"
@@ -67,7 +74,7 @@ const About = props => {
               >
                 TRUSTED BY:
               </Typography>
-              <Grid container justify="space-between">
+              {/* <Grid container justify="space-between">
                 {data.map((partner, index) => (
                   <Grid
                     item
@@ -77,16 +84,22 @@ const About = props => {
                     sm={2}
                     key={index}
                   >
-                    <Image
+                    
+                      <Image
                       src={partner.logo}
                       alt={partner.name}
                       className={classes.promoLogo}
                       lazy={false}
                     />
+                    
+                    
+                    
                   </Grid>
                 ))}
               </Grid>
+             */}
             </Grid>
+          
           </Grid>
         </Grid>
         <Grid
@@ -98,11 +111,13 @@ const About = props => {
           data-aos={'fade-up'}
         >
           <Image
-            src="https://assets.maccarianagency.com/the-front/illustrations/dashboard-extended.svg"
+            src={data.image}
             alt="Dashboard"
           />
         </Grid>
       </Grid>
+    
+    ))}
     </div>
   );
 };
