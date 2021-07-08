@@ -15,16 +15,20 @@ import { SectionHeader } from 'components/molecules';
 import { Section } from 'components/organisms';
 
 const useStyles = makeStyles((theme) => ({
+  
+  color:{
+    color:'#013220'
+  },
   grid: {
     maxWidth: '100%',
-    background: theme.palette.primary.dark,
+    background: '#013220'
   },
   textWhite: {
     color: 'white',
   },
   checkBox: {
-    background: 'transparent',
-    borderRadius: 0,
+    background: '#013220',
+    borderRadius: 10,
   },
   title: {
     fontWeight: 'bold',
@@ -65,7 +69,8 @@ const Features = props => {
                   <ListItemAvatar>
                     <Avatar
                       src="https://assets.maccarianagency.com/the-front/illustrations/check-icon-yellow.svg"
-                      className={classes.checkBox}
+                      
+                      
                     />
                   </ListItemAvatar>
                   <Typography

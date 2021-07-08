@@ -9,6 +9,23 @@ const useStyles = makeStyles(() => ({
   image: {
     maxWidth: 560,
   },
+  btn: {
+    background: '#013220',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    '&:hover': {
+      background: 'black',
+      color: 'white'
+
+    }
+    
+  },
+  color:{
+    color:'#013220'
+  },
 }));
 
 const About = props => {
@@ -48,7 +65,7 @@ const About = props => {
                 variant: 'body1',
               }}
               ctaGroup={[
-                <Button color="primary" variant="contained" size="large">
+                <Button color="primary" variant="contained" size="large" className={classes.btn}>
                   View open positions
                 </Button>,
               ]}

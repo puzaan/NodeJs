@@ -14,7 +14,7 @@ import { Section } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    background: theme.palette.primary.dark,
+    background: '#013220',
     backgroundSize: 'cover',
     borderRadius: theme.spacing(2),
   },
