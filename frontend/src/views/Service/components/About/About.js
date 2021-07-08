@@ -2,14 +2,59 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
-import { Grid, Typography, Button } from '@material-ui/core';
+import { Grid,} from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 import {servces} from '../../data'
 
 const useStyles = makeStyles(theme => ({
+  headerSection:{
+marginBottom: '150px'
+  },
+  listGrid: {
+    overflow: 'hidden',
+    marginBottom: theme.spacing(3),
+    '&:last-child': {
+      marginBottom: theme.spacing(0),
+    },
+  },
   promoLogo: {
     maxWidth: 100,
+  },
+dowmMargin:{
+marginBottom: '20px'
+},
+  video: {
+    position: 'relative',
+  },
+  videoCover: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    bottom: 0,
+    right: 0,
+    width: '100%',
+    height: '100%',
+    background: theme.palette.primary.main,
+    opacity: '0.3',
+    borderRadius: theme.spacing(1),
+    cursor: 'pointer',
+  },
+  videoPlayButton: {
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    transform: 'translate(-50%, -50%)',
+    color: 'white',
+    fontSize: 70,
+    zIndex: 1300,
+    boxShadow: `0 8px 21px 0 ${theme.palette.cardShadow}`,
+    borderRadius: '100%',
+  },
+  videoIframe: {
+    boxShadow: `0 5px 12px 0 ${theme.palette.cardShadow}`,
+    borderRadius: '20px',
+
   },
 }));
 
@@ -22,102 +67,52 @@ const About = props => {
     defaultMatches: true,
   });
 
-
-const odd = servces.filter((items, idx)=> idx % 2 !== 0);
-const even = servces.filter((items, idx)=> idx % 2 === 0);
-console.log(servces);
-console.log(odd);
-console.log(even);
-
   return (
     <div className={className} data-aos="fade-up" {...rest}>
-      {servces.map((data)=> (
-      <Grid container justify="space-between" spacing={isMd ? 4 : 0}>
-        <Grid item xs={12} md={6} data-aos={'fade-up'}>
-          <Grid container spacing={2} alignItems="flex-start">
-            
-              <Grid item xs={12}>
+      <SectionHeader
+      className = {classes.headerSection}
+        title="Web and Mobile Software Development Services"
+        subtitle="A successful offshore software application development company since 1997, providing a full range of website and mobile app development, games development, IoT, AR-VR and other IT services and solutions globally."
+      />
+      
+      <Grid container justify="center">
+        {servces.map((item, index) => (
+          <Grid
+            data-aos="fade-up"
+            key={index}
+            item
+            container
+            xs={12}
+            spacing={isMd ? 4 : 2}
+            direction={index % 2 === 1 ? 'row-reverse' : 'row'}
+            className={classes.listGrid}
+          >
+            <Grid item xs={12} sm={6}>
               <SectionHeader
-                title={
-                    
-                    <Typography component="span" variant="inherit" color="primary">
-                      {data.title}
-                    </Typography>
-                }
-                subtitle={data.body}
-                ctaGroup={[
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    size={isMd ? 'large' : 'medium'}
-                  >
-                    Start a Free Trial
-                  </Button>,
-                  <Button
-                    variant="outlined"
-                    color="primary"
-                    size={isMd ? 'large' : 'medium'}
-                  >
-                    Learn more
-                  </Button>,
-                ]}
-                align={isMd ? 'left' : 'center'}
+                titleVariant="h5"
+                title={item.title}
+                subtitle={item.body}
+                // ctaGroup={[<LearnMoreLink title="Learn more" variant="h6" />]}
+                align="left"
                 disableGutter
               />
+
             </Grid>
-            <Grid item xs={12}>
-              <Typography
-                variant="h6"
-                color="primary"
-                align={isMd ? 'left' : 'center'}
-                gutterBottom
-              >
-                TRUSTED BY:
-              </Typography>
-              {/* <Grid container justify="space-between">
-                {data.map((partner, index) => (
-                  <Grid
-                    item
-                    container
-                    justify="center"
-                    xs={6}
-                    sm={2}
-                    key={index}
-                  >
-                    
-                      <Image
-                      src={partner.logo}
-                      alt={partner.name}
-                      className={classes.promoLogo}
-                      lazy={false}
-                    />
-                    
-                    
-                    
-                  </Grid>
-                ))}
-              </Grid>
-             */}
-            </Grid>
+            <Grid item container justify="center" xs={12} sm={6}>
+              <Image src={item.image} alt= {item.title}
+            //   {
+            //   <ReactPlayer url={item.url} 
+            // controls 
           
+            // className={classes.videoIframe}
+            
+            // />} 
+            />
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid
-          item
-          container
-          justify="center"
-          xs={12}
-          md={6}
-          data-aos={'fade-up'}
-        >
-          <Image
-            src={data.image}
-            alt="Dashboard"
-          />
-        </Grid>
+        ))}
+        
       </Grid>
-    
-    ))}
     </div>
   );
 };

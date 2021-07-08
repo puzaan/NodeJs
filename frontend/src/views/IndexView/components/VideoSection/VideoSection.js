@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery, Grid, Typography, Button } from '@material-ui/core';
-
+import ReactPlayer from 'react-player'
 import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 
@@ -92,14 +92,12 @@ const VideoSection = props => {
         </Grid>
         <Grid item xs={12} md={6} data-aos={'fade-up'}>
           <Grid container justify="center">
-            <iframe
-              className={classes.videoIframe}
-              title="video"
-              width="100%"
-              height="315"
-              src="https://www.youtube.com/embed/ClIbn_IF31U"
-              frameBorder="0"
-              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+            
+            <ReactPlayer url='https://www.youtube.com/watch?v=UNCq01LNNrg'
+            controls 
+          
+            className={classes.videoIframe}
+            
             />
           </Grid>
         </Grid>

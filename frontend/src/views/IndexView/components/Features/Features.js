@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, colors, makeStyles } from '@material-ui/core';
+import { Grid, colors, makeStyles,Button } from '@material-ui/core';
 import { SectionHeader, IconAlternate } from 'components/molecules';
 import { CardBase, DescriptionListIcon } from 'components/organisms';
 
@@ -8,6 +8,9 @@ const useStyles = makeStyles(() => ({
   fontWeight900: {
     fontWeight: 1000,
   },
+  btn:{
+    marginTop:'50px'
+  }
 }));
 
 const data = [ {
@@ -86,6 +89,12 @@ const Features = ({ className, ...rest }) => {
           </Grid>
         ))}
       </Grid>
+      
+      <Grid item container justify="center" xs={12} className={classes.btn}>
+          <Button variant="contained" color="primary" href='/service'>
+            Read More
+          </Button>
+        </Grid>
     </div>
   );
 };

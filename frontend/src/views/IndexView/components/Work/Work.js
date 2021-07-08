@@ -50,7 +50,7 @@ const Work = props => {
                 titleVariant="h5"
                 title={item.title}
                 subtitle={item.description}
-                ctaGroup={[<LearnMoreLink title="Learn more" variant="h6" />]}
+                //ctaGroup={[<LearnMoreLink title="Learn more" variant="h6" />]}
                 align="left"
                 disableGutter
               />
@@ -61,8 +61,8 @@ const Work = props => {
           </Grid>
         ))}
         <Grid item container justify="center" xs={12}>
-          <Button variant="contained" color="primary">
-            Contact us
+          <Button variant="contained" color="primary" href='/service'>
+            Read More
           </Button>
         </Grid>
       </Grid>

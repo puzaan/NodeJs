@@ -11,21 +11,16 @@ import ForumIcon from '@material-ui/icons/Forum';
 import { Section, ContactForm } from 'components/organisms';
 import {
   About,
-  Advantages,
   Features,
   Integrations,
   Reviews,
-  Team,
-  VideoSection,
 } from './components';
 
 import {
   partners,
-  advantages,
   reviews,
   integrations,
   customizations,
-  team,
 } from './data';
 
 const useStyles = makeStyles(theme => ({
@@ -90,16 +85,10 @@ const Service = () => {
     <div className={classes.root}>
       <Section className={classes.pagePaddingTop}>
         <>
-        <About data={partners} />
-        <Section>
-          <Divider />
-        </Section>
-        <VideoSection />
+        <About data={partners}  className={classes.pagePaddingTop}/>
         <Section>
           <Divider />
           <Divider />
-        </Section>
-        <Section>
           <Divider />
         </Section>
         <Features data={customizations} />

@@ -185,8 +185,25 @@ export const servces = [
     body: 'Being a leading website application development company, our certified developers have unparalleled expertise in working with the latest web technologies to deliver custom web solutions. Whether creating a web presence for your company, an information hub for your business or empowering your apps/IoT devices through backend- IndiaNIC does it all by covering a wide spectrum of web solutions and framework.',
   },
   {
-    id:'4',
+    id:'3',
     title: 'App Developer',
+    list:[
+'Native iOS App Development',
+'Native Android App Development',
+'Cross-platform App Development',
+'Hybrid App Development',
+'Wearable App Development',
+'React Native App Development',
+'Xamarin App Development',
+'Flutter App Development'
+    ],
+    image: 'https://d1i2cp4a5c819e.cloudfront.net/wp-content/uploads/2020/01/img-services-ui-ux-design.webp',
+      
+    body: 'From B2B or B2E apps for enterprises, small businesses, and startups, we have a proven track record of offering high-impact, result driven and engaging mobile application development services. IndiaNIC is a top mobile app development company that is renowned for delivering native Android app development, native iOS app development, hybrid and cross-platform app development services to build next-gen mobile applications using the latest technology stack.',
+  },
+  {
+    id:'4',
+    title: 'AI ',
     list:[
 'Native iOS App Development',
 'Native Android App Development',
