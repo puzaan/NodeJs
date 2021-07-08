@@ -7,6 +7,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
   },
+  color:{
+    color:'#013220'
+  },
 }));
 
 const schema = {
@@ -141,10 +144,11 @@ const ContactForm = () => {
               Fields that are marked with * sign are required.
             </Typography>
             <Button
+            className={classes.color}
               size="large"
               variant="contained"
               type="submit"
-              color="primary"
+              color="primy"
               disabled={!formState.isValid}
             >
               Send

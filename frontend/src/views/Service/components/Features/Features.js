@@ -11,6 +11,9 @@ const useStyles = makeStyles(theme => ({
   learnMoreLink: {
     marginTop: theme.spacing(2),
   },
+  color:{
+    color:'#013220'
+  },
 }));
 
 const Features = props => {
@@ -28,7 +31,7 @@ const Features = props => {
         title={
           <span>
             A Website Builder Tool that{' '}
-            <Typography color="secondary" variant="inherit" component="span">Works for You</Typography>
+            <Typography color="secondary" variant="inherit" component="span" className={classes.color}>Works for You</Typography>
           </span>
         }
         subtitle="Companies from across the globe have had fantastic experiences using TheFront."
@@ -36,7 +39,7 @@ const Features = props => {
           <Button
             variant="outlined"
             size={isMd ? 'large' : 'medium'}
-            color="secondary"
+            className={classes.color}
           >
             See all integrations
           </Button>,
@@ -64,7 +67,8 @@ const Features = props => {
                   <IconAlternate
                     fontIconClass={item.icon}
                     size="medium"
-                    color={colors.blue}
+                    color='colors.green'
+                    className={classes.color}
                   />
                 }
                 align="left"
@@ -74,7 +78,8 @@ const Features = props => {
                 title="Learn more"
                 variant="body1"
                 className={classes.learnMoreLink}
-                color="secondary"
+                color='jhbgg'
+                className={classes.color}
               />
             </CardBase>
           </Grid>

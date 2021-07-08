@@ -7,6 +7,20 @@ const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
   },
+  btn: {
+    background: '#013220',
+    borderRadius: 3,
+    border: 0,
+    height:47,
+    color: 'white',
+    padding: '0 30px',
+    '&:hover': {
+      background: 'black',
+      color: 'white'
+
+    }
+    
+  },
 }));
 
 const schema = {
@@ -166,8 +180,9 @@ const Form = () => {
               size="large"
               variant="contained"
               type="submit"
-              color="primary"
+              //color="primary"
               fullWidth
+              className={classes.btn}
             >
               Send
             </Button>

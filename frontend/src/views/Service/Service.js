@@ -13,9 +13,8 @@ import {
   About,
   Features,
   Integrations,
-  Reviews,
 } from './components';
-
+import {Reviews} from '../IndexView/components/index'
 import {
   partners,
   reviews,
@@ -46,12 +45,12 @@ const useStyles = makeStyles(theme => ({
     right: theme.spacing(3),
     left: 'auto',
     top: theme.spacing(-3),
-    background: theme.palette.primary.main,
+    background: '#024b42',
     width: 55,
     height: 55,
     boxShadow: `0 2px 10px 0 ${theme.palette.cardShadow}`,
     '&:hover': {
-      background: theme.palette.primary.main,
+      background: '#003333',
     },
   },
   forumIcon: {
@@ -63,6 +62,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3, 2),
     maxWidth: 800,
     margin: '0 auto',
+    
   },
 }));
 
@@ -115,6 +115,7 @@ const Service = () => {
             anchor="bottom"
             open={openBottombar}
             onClose={handleBottombarClose}
+            
           >
             <div className={classes.contactForm}>
               <ContactForm />

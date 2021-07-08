@@ -8,6 +8,9 @@ import { SectionHeader } from 'components/molecules';
 import { DescriptionListIcon } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
+  color:{
+    color:'#013220'
+  },
   avatar: {
     width: 70,
     height: 70,
@@ -35,6 +38,7 @@ const Integrations = props => {
             variant="outlined"
             size={isMd ? 'large' : 'medium'}
             color="primary"
+            className={classes.color}
           >
             See all integrations
           </Button>,

@@ -37,6 +37,9 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
+  color:{
+    color:'#013220'
+  },
 }));
 
 const SidePage = props => {
@@ -103,7 +106,7 @@ const SidePage = props => {
         {data.map((tit, id)=> (
         <List className={classes.divider}>
 
-          <ListItem  button component={Link} href={`/course-detail/${tit.id}`}>
+          <ListItem  button component={Link} href={`/course-detail/${tit.id}`} className={classes.color}>
             <ListItemAvatar>
                 <ImageIcon />
               
