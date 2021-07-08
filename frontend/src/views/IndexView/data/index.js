@@ -192,3 +192,31 @@ export const process = [
       'When the project is ready, we help you to launch it and push it live. After that, we meet with your team to train them on how to edit, update and scale it.',
   },
 ];
+
+export const quikeStart = [
+  {
+    end:'10',
+    suffix:'+',
+    lable:'Placement',
+
+  },
+  {
+    end:'150',
+    suffix:'+',
+    lable:'Technology export',
+    
+  },
+  {
+    end:'1500',
+    suffix:'+',
+    lable:'Solution Deleverd',
+    
+  },
+  {
+    end:'50',
+    suffix:'+',
+    lable:'Raised by out client',
+    
+  },
+  
+];

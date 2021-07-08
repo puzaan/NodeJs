@@ -7,6 +7,24 @@ import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 
 const useStyles = makeStyles(theme => ({
+  color:{
+    
+color: '#013220'
+  },
+  btn: {
+    background: '#013220',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    '&:hover': {
+      background: 'black',
+      color: 'white'
+
+    }
+    
+  },
   videoIframe: {
     boxShadow: `0 5px 12px 0 ${theme.palette.cardShadow}`,
     borderRadius: theme.spacing(1),
@@ -47,6 +65,7 @@ const VideoSection = props => {
                     variant="contained"
                     color="primary"
                     size={isMd ? 'large' : 'medium'}
+                    className={classes.btn}
                   >
                     Contact Us
                   </Button>,
@@ -60,6 +79,7 @@ const VideoSection = props => {
               <Grid container spacing={2} data-aos="fade-up">
                 <Grid item xs={12}>
                   <Typography
+                  className={classes.color}
                     variant="h6"
                     color="primary"
                     align={isMd ? 'left' : 'center'}

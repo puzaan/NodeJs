@@ -14,6 +14,20 @@ const useStyles = makeStyles(theme => ({
       marginBottom: theme.spacing(0),
     },
   },
+  btn: {
+    background: '#013220',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    '&:hover': {
+      background: 'black',
+      color: 'white'
+
+    },
+    
+  },
 }));
 
 
@@ -61,7 +75,7 @@ const Work = props => {
           </Grid>
         ))}
         <Grid item container justify="center" xs={12}>
-          <Button variant="contained" color="primary" href='/service'>
+          <Button variant="contained" color="primary" size='small' href='/service' className={classes.btn}>
             Read More
           </Button>
         </Grid>

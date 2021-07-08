@@ -8,7 +8,8 @@ import {
   reviews,
   workReviews,
   work,
-  process
+  process,
+  quikeStart
 
 
 } from './data';
@@ -32,7 +33,7 @@ const IndexView = ({ themeMode }) => {
       <Hero themeMode={themeMode} />
 
       <SectionAlternate className={classes.sectionAlternateNoPaddingTop}>
-        <QuickStart />
+        <QuickStart data={quikeStart}/>
       </SectionAlternate>
       <SectionAlternate>
         <VideoSection data={partners} />

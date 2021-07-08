@@ -1,25 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useTheme } from '@material-ui/core/styles';
+import { useTheme, makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery, Grid, Typography } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
 import { CardCategoryLink } from 'components/organisms';
-
+const useStyles = makeStyles(theme => ({
+  color:{
+    fontWeight: 900,
+color: '#013220'
+  },
+}));
 const Categories = props => {
   const { data, className, ...rest } = props;
+  
 
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
   });
-
+  const classes = useStyles();
   return (
+    
     <div className={className} {...rest}>
       <SectionHeader
         title={
           <span>
             Choose your course by{' '}
-            <Typography color="secondary" variant="inherit" component="span">categories</Typography>
+            <Typography color="secondary" variant="inherit" component="span" className={classes.color}>categories</Typography>
           </span>
         }
         subtitle="Browse the available course categories, choose your favourite one and start learning."
@@ -28,6 +35,7 @@ const Categories = props => {
       <Grid container spacing={isMd ? 4 : 2}>
         {data.map((item, index) => (
           <Grid
+          className={classes.color}
             key={index}
             item
             container
@@ -39,6 +47,7 @@ const Categories = props => {
             data-aos="fade-up"
           >
             <CardCategoryLink
+            
               variant="outlined"
               align={isMd ? 'left' : 'center'}
               liftUp
@@ -46,7 +55,8 @@ const Categories = props => {
               subtitle={item.subtitle}
               href="#"
               fontIconClass={item.icon}
-              color={item.color}
+              color= 'colors.green'
+              className={classes.color}
             />
           </Grid>
         ))}

@@ -37,9 +37,14 @@ const useStyles = makeStyles(theme => ({
   logoImg: {
     maxWidth: 100,
   },
+  color:{
+    
+color: '#013220'
+  },
 }));
 
-const QuickStart = ({ className, ...rest }) => {
+const QuickStart =  props => {
+  const {data, className, ...rest} = props;
   const classes = useStyles();
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
@@ -64,46 +69,26 @@ const QuickStart = ({ className, ...rest }) => {
                 titleProps={{ className: classes.fontWeightBold }}
                 className={classes.quickStartSection}
               />
-            </Grid>
-            
+            </Grid>   
           </Grid>
         </Grid>
         <Grid item xs={12}>
           <Grid container justify="space-between" spacing={isMd ? 4 : 2} direction={isMd ? 'row': 'column-reverse'}>
             <Grid item xs={12} container alignItems="center" md={12} data-aos={'fade-right'}>
               <Grid container alignItems="center" spacing={2}>
+              {data.map((lst)=> (
                 <Grid item xs={12} md={3}>
-                <CountUpNumber
-                end={10}
-                suffix="+"
-                label="Placement"
-                textColor="primary"
-              />
+                  
+                    <CountUpNumber
+                    end={lst.end}
+                    suffix={lst.suffix}
+                    label={lst.lable}
+                    //textColor="primary"
+                    className={classes.color}
+                  />
                 </Grid>
-                <Grid item xs={12} md={3}>
-                <CountUpNumber
-                end={1500}
-                suffix="+"
-                label="Solution Deleverd"
-                textColor="primary"
-              />
-                </Grid>
-                <Grid item xs={12} md={3}>
-                <CountUpNumber
-                end={150}
-                suffix="+"
-                label="Technology export"
-                textColor="primary"
-              />
-                </Grid>
-                <Grid item xs={12} md={3}>
-                <CountUpNumber
-                end={50}
-                suffix="M+"
-                label="Raised by out client"
-                textColor="primary"
-              />
-                </Grid>
+                ))}
+
               </Grid>
             </Grid>
           </Grid>

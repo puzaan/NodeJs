@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles,} from '@material-ui/core/styles';
 import { Button, Typography } from '@material-ui/core';
 import { SectionHeader, TypedText } from 'components/molecules';
 import { HeroShaped } from 'components/organisms';
-
 const useStyles = makeStyles(theme => ({
   fontWeight900: {
     fontWeight: 900,
+  },
+  color:{
+    fontWeight: 900,
+color: '#013220'
   },
   leftSideContent: {
     '& .section-header__cta-container': {
@@ -67,7 +70,24 @@ const useStyles = makeStyles(theme => ({
       transform: 'rotate(-13deg) translateY(-80%)',
     },
   },
+  btn: {
+    background: '#013220',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    '&:hover': {
+      background: 'black',
+      color: 'white'
+
+    },
+    
+  },
+  
 }));
+
+
 
 const Hero = ({ themeMode = 'light', className, ...rest }) => {
   const classes = useStyles();
@@ -79,8 +99,8 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
       <TypedText
         component="span"
         variant="h2"
-        color="secondary"
-        className={classes.fontWeight900}
+        color="primary"
+        className={classes.color}
         typedProps={{
           strings: [
             'Enhancing business agility',
@@ -99,15 +119,17 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
   const subtitle = 'Achieverss Groups will make your product look modern and professional while saving you precious time.';
 
   const redButton = (
-    <Button
+<Button
       size="large"
       variant="contained"
-      color="primary"
+      //color="primary"
       component="a"
       href="/home"
+      className={classes.btn}
     >
       Read more
     </Button>
+    
   );
 
   const leftSideContent = (

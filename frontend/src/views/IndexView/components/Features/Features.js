@@ -4,18 +4,40 @@ import { Grid, colors, makeStyles,Button } from '@material-ui/core';
 import { SectionHeader, IconAlternate } from 'components/molecules';
 import { CardBase, DescriptionListIcon } from 'components/organisms';
 
+
 const useStyles = makeStyles(() => ({
   fontWeight900: {
     fontWeight: 1000,
+    
   },
-  btn:{
+  btn: {
+    background: '#013220',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    '&:hover': {
+      background: 'black',
+      color: 'white'
+
+    }
+    
+  },
+  btnGrid:{
+    
     marginTop:'50px'
-  }
+  },
+  color:{
+    color:'#013220'
+  },
 }));
+
+
 
 const data = [ {
   icon: 'fas fa-palette',
-  color: colors.indigo,
+  color: colors.green,
   title: 'Digital Consulting',
   subtitle: 'Our research based and goal driven approach in consulting, lays the perfect foundation and strategy.',
 }, {
@@ -25,12 +47,12 @@ const data = [ {
   subtitle: 'Be it complex web applications, or informative lead-gen websites, we have a portfolio which speaks.',
 }, {
   icon: 'fas fa-moon',
-  color: colors.indigo,
+  color: colors.green,
   title: 'Mobile App Solutions',
   subtitle: 'Immersive mobile app solutions, that transforms businesses and deliver great customer experience.',
 }, {
   icon: 'fas fa-rocket',
-  color: colors.indigo,
+  color: colors.indigo[50],
   title: 'UX/UI Design',
   subtitle: 'World Class UX/UI Design solutions, following the best-in-class process and practices.',
 }, {
@@ -42,7 +64,6 @@ const data = [ {
 
 const Features = ({ className, ...rest }) => {
   const classes = useStyles();
-
   return (
     <div className={className} {...rest}>
       <SectionHeader
@@ -53,6 +74,7 @@ const Features = ({ className, ...rest }) => {
           variant: 'h3',
           color: 'textPrimary',
           className: classes.fontWeight900,
+
         }}
       />
       <Grid container spacing={2}>
@@ -68,15 +90,17 @@ const Features = ({ className, ...rest }) => {
             data-aos="fade-up"
           >
             <CardBase
+            className={classes.color}
               liftUp
               variant="outlined"
-              style={{ borderTop: `5px solid ${adv.color[500]}` }}
+              style={{ borderTop: `5px solid`}}
             >
               <DescriptionListIcon
                 icon={
                   <IconAlternate
+                  className={classes.color}
                     fontIconClass={adv.icon}
-                    color={adv.color}
+                    color='colors.green'
                     shape="circle"
                     size="small"
                   />
@@ -90,8 +114,8 @@ const Features = ({ className, ...rest }) => {
         ))}
       </Grid>
       
-      <Grid item container justify="center" xs={12} className={classes.btn}>
-          <Button variant="contained" color="primary" href='/service'>
+      <Grid item container justify="center" xs={12} className={classes.btnGrid}>
+          <Button variant="contained" color="primary" href='/service'className={classes.btn}>
             Read More
           </Button>
         </Grid>

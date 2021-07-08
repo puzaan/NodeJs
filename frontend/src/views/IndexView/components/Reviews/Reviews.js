@@ -10,6 +10,24 @@ const useStyles = makeStyles(() => ({
   sectionHeadlineStars: {
     maxWidth: 120,
   },
+  color:{
+    color:'#013220'
+  },
+
+btn: {
+  background: '#013220',
+  borderRadius: 3,
+  border: 0,
+  color: 'white',
+  height: 48,
+  padding: '0 30px',
+  '&:hover': {
+    background: 'black',
+    color: 'white'
+
+  }
+  
+},
 }));
 
 const Reviews = props => {
@@ -34,7 +52,7 @@ const Reviews = props => {
         }
         title={
           <span>
-            <Typography component="span" variant="inherit" color="primary">Rated 5 out of 5</Typography>{' '}
+            <Typography component="span" variant="inherit" color="primary" className={classes.color}>Rated 5 out of 5</Typography>{' '}
             stars by our customers!
           </span>
         }
@@ -59,8 +77,9 @@ const Reviews = props => {
               text={review.feedback}
               icon={
                 <IconAlternate
-                  color={colors.blue}
+                  color='colors.green'
                   fontIconClass="fas fa-quote-right"
+                  className={classes.color}
                 />
               }
               authorName={review.authorName}
@@ -70,7 +89,7 @@ const Reviews = props => {
           </Grid>
         ))}
         <Grid item container xs={12} justify="center">
-          <Button variant="outlined" size="large" color="primary">
+          <Button variant="outlined" size="large" color="primary" className={classes.btn}>
             See all reviews
           </Button>
         </Grid>

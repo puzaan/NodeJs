@@ -8,12 +8,38 @@ import { DescriptionListIcon } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
   cta: {
+    background: '#013220',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    '&:hover': {
+      background: 'black',
+      color: 'white'
+
+    },
     marginTop: theme.spacing(2),
     [theme.breakpoints.up('md')]: {
       marginTop: theme.spacing(3),
     },
   },
+  color:{
+    color:'#013220'
+  },
 }));
+
+const data = [{
+  title:'Investing made easy',
+  subtitle:'Three simple options- cautions, balanced, adventurous. Expert will take care of rest!',
+  icon: "fas fa-comment-dollar"
+},
+{
+  title:'Schedule a meeting',
+  subtitle:'Expert will give you the best advice. Schedule a meeting with the expert to know mutual funds better.',
+  icon: "far fa-calendar-alt"
+}
+]
 
 const AskExpert = props => {
   const { className, ...rest } = props;
@@ -36,16 +62,18 @@ const AskExpert = props => {
               data-aos="fade-up"
             />
             <Grid container spacing={2}>
-              <Grid item container xs={12} sm={6} data-aos="fade-up">
+              {data.map((data)=> (
+                <Grid item container xs={12} sm={6} data-aos="fade-up">
                 <DescriptionListIcon
                   icon={
                     <IconAlternate
-                      fontIconClass="fas fa-comment-dollar"
-                      color={colors.indigo}
+                    className={classes.color}
+                      fontIconClass={data.icon}
+                      color='colors.green'
                     />
                   }
-                  title="Investing made easy"
-                  subtitle="Three simple options- cautions, balanced, adventurous. Expert will take care of rest!"
+                  title={data.title}
+                  subtitle={data.subtitle}
                   align="left"
                 />
                 <div style={{ flexGrow: 1 }} />
@@ -58,29 +86,10 @@ const AskExpert = props => {
                   Contact us
                 </Button>
               </Grid>
-              <Grid item container xs={12} sm={6} data-aos="fade-up">
-                <DescriptionListIcon
-                  icon={
-                    <IconAlternate
-                      fontIconClass="far fa-calendar-alt"
-                      color={colors.indigo}
-                    />
-                  }
-                  title="Schedule a meeting"
-                  subtitle="Expert will give you the best advice. Schedule a meeting with the expert to know mutual funds better."
-                  align="left"
-                />
-                <div style={{ flexGrow: 1 }} />
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size="large"
-                  className={classes.cta}
-                >
-                  Contact us
-                </Button>
-              </Grid>
-            </Grid>
+              
+              ))}
+              
+          </Grid>
           </div>
         </Grid>
         {isMd ? (
