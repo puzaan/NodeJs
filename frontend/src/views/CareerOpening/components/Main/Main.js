@@ -17,6 +17,24 @@ import { SectionHeader, DescriptionCta } from 'components/molecules';
 import { CardBase } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
+  btn: {
+    background: '#013220',
+    borderRadius: 7,
+    border: 0,
+    color: 'white',
+    height: 40,
+    padding: '0 30px',
+    '&:hover': {
+      background: 'black',
+      color: 'white'
+
+    }
+    
+  },
+  color:{
+    color:'#013220'
+  },
+
   root: {
     '& .description-cta__button-group': {
       flexWrap: 'nowrap',
@@ -35,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     color: 'white',
   },
   cardHighlighted: {
-    background: theme.palette.primary.dark,
+    background: '#013220',
   },
   checkBox: {
     background: 'transparent',
@@ -63,14 +81,8 @@ const Main = props => {
           <DescriptionCta
             title={`${data.title}`}
             subtitle={`${data.jobTitle} \n ${data.location} `}
-            primaryCta={
-              <Button variant="outlined" color="primary" size="large">
-                Refer a friend
-              </Button>
-            }
-            
             secondaryCta={
-              <Button variant="contained" color="primary" size="large">
+              <Button variant="contained" color="primary" size="large" className={classes.btn}>
                 Apply now
               </Button>
             }

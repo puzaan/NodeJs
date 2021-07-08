@@ -6,6 +6,24 @@ import { IconText } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 
 const useStyles = makeStyles(theme => ({
+
+  color:{
+    color:'#013220'
+  },
+btn: {
+  background: '#013220',
+  borderRadius: 3,
+  border: 0,
+  color: 'white',
+  height: 48,
+  padding: '0 30px',
+  '&:hover': {
+    background: 'black',
+    color: 'white'
+
+  }
+  
+},
   icon: {
     background: 'transparent',
     borderRadius: 0,
@@ -32,6 +50,10 @@ const useStyles = makeStyles(theme => ({
     border: '1px solid transparent',
     background: theme.palette.alternate.dark,
     textTransform: 'lowercase',
+    '&.hover':{
+      background: 'black',
+    color: 'white'
+    },
     '& .icon-text': {
       width: 'auto',
     },
@@ -107,8 +129,9 @@ const Application = props => {
               className={classes.uploadButton}
             >
               <IconText
+              className={classes.color}
                 fontIconClass="fas fa-cloud-upload-alt"
-                color={theme.palette.primary.main}
+                
                 title="Upload CV"
                 typographyProps={{
                   className: classes.iconText,
@@ -122,14 +145,15 @@ const Application = props => {
               variant="outlined"
               component="label"
               color="primary"
+              
               fullWidth
               size="large"
               className={classes.uploadButton}
             >
               <IconText
                 fontIconClass="fas fa-cloud-upload-alt"
-                color={theme.palette.primary.main}
                 title="Upload cover letter"
+                className={classes.color}
                 typographyProps={{
                   className: classes.iconText,
                 }}
@@ -160,6 +184,7 @@ const Application = props => {
               type="submit"
               color="primary"
               size="large"
+              className={classes.btn}
             >
               Apply now
             </Button>
