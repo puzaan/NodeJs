@@ -20,9 +20,9 @@ import PinterestIcon from '@material-ui/icons/Pinterest';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(6, 0),
+    padding: theme.spacing(2, 0),
     [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(12, 0),
+      padding: theme.spacing(6, 0),
     },
     background: theme.palette.background.footer,
   },
