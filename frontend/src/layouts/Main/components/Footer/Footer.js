@@ -1,20 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles} from '@material-ui/core/styles';
 import {
   Typography,
   IconButton,
   Grid,
   List,
   ListItem,
+  ListItemText,
+  
 } from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import PinterestIcon from '@material-ui/icons/Pinterest';
-
 
 
 const useStyles = makeStyles(theme => ({
@@ -40,13 +41,11 @@ const useStyles = makeStyles(theme => ({
   logoContainer: {
     width: 100,
     height: 30,
-    
   },
   logoImage: {
-    marginTop:'-10px',
+    marginTop: '-10px',
     width: '150px',
     height: '50',
-    
   },
   groupTitle: {
     textTransform: 'uppercase',
@@ -96,9 +95,12 @@ const useStyles = makeStyles(theme => ({
   navLink: {
     color: 'rgba(255,255,255,.6)',
   },
-  tcolor:{
-    color: 'white'
-  }
+  tcolor: {
+    color: 'white',
+  },
+  middle: {
+    alignContent: 'center',
+  },
 }));
 
 const Footer = props => {
@@ -106,14 +108,17 @@ const Footer = props => {
 
   const classes = useStyles();
 
-  const traningPages = pages.traning
-
+  const traningPages = pages.traning;
 
   const MenuGroup = props => {
+
+    
+
+
     const { item } = props;
     return (
-      <List disablePadding className={classes.menuItem}>
-        <ListItem disableGutters className={classes.menuGroupItem}>
+      <List>
+        <ListItem>
           <Typography variant="body2" className={classes.menuGroupTitle}>
             {item.groupTitle}
           </Typography>
@@ -134,44 +139,25 @@ const Footer = props => {
     );
   };
 
-
-
-
   const TraningPages = () => {
-    const {
-      course,
-      
-    } = traningPages.children;
-    return (
-      <div className={classes.menu}>
-        <div>
-          <MenuGroup item={course} />
-        </div>
-      </div>
-    );
+    const { course } = traningPages.children;
+    return <MenuGroup item={course} />;
   };
 
   return (
     <div {...rest} className={clsx(classes.root, className)}>
       <div className={classes.footerContainer}>
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={2}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={4}>
             <List disablePadding>
               <ListItem disableGutters className={classes.logoContainerItem}>
                 <div className={classes.logoContainer}>
                   <a href="/" title="Achievers Groups">
-                    {/* <Image
+                    <img
+                      src={'/Achiever_Groups_LIGHT.png'}
+                      alt="Acheiver"
                       className={classes.logoImage}
-                      src='/Achiever_Groups_LIGHT.png'
-                      alt="Achievers Groups"
-                      lazy={false}
-                    /> */}
-
-<img src={
-            '/Achiever_Groups_LIGHT.png'
-            } alt="Acheiver" 
-          className={classes.logoImage}
-            />
+                    />
                   </a>
                 </div>
               </ListItem>
@@ -191,62 +177,129 @@ const Footer = props => {
               </ListItem>
             </List>
           </Grid>
-          <Grid item xs={12} md={10} className={classes.menuListContainer}>
+
+          <Grid item xs={12} md={4} className={classes.menuListContainer}>
             <Grid container spacing={0}>
-              
-              
-              <Grid item>
-              <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-      <Typography
-                  
+              <List disablePadding>
+                <Typography
                   color="textPrimary"
                   className={classes.menuGroupTitle}
                   component={Link}
-                  to='/about'
+                  to="/about"
                 >
                   About
                 </Typography>
-          </ListItem>
-              </Grid>
-
-
-              <Grid item>
-              <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-      <Typography
-                  
-                  color="textPrimary"
-                  className={classes.menuGroupTitle}
-                  component={Link}
-                  to='/service'
+                <ListItem
+                  className={classes.menuListContainer}
+                  disableGutters
+                  data-aos="fade-up"
                 >
-                  Services
-                </Typography>
-          </ListItem>
-              </Grid>
-
-
-
-              <Grid item>
-              <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-      <Typography
-                  
-                  color="textPrimary"
-                  className={classes.menuGroupTitle}
-                  component={Link}
-                  to='/career-list'
+                  <Typography
+                    color="textPrimary"
+                    className={classes.menuGroupTitle}
+                    component={Link}
+                    to="/service"
+                  >
+                    Services
+                  </Typography>
+                </ListItem>
+                <ListItem
+                  className={classes.menuListContainer}
+                  disableGutters
+                  data-aos="fade-up"
                 >
-                  Career
-                </Typography>
-                
-          </ListItem>
-          
-              </Grid>
-
-              <TraningPages />
+                  <Typography
+                    color="textPrimary"
+                    className={classes.menuGroupTitle}
+                    component={Link}
+                    to="/career-list"
+                  >
+                    Career
+                  </Typography>
+                </ListItem>
+                <ListItem
+                  className={classes.menuListContainer}
+                  disableGutters
+                  data-aos="fade-up"
+                >
+                  <TraningPages />
+                </ListItem>
+              </List>
             </Grid>
           </Grid>
+          
+          <Grid item xs={12} md={4} className={classes.menuListContainer}>
+            <Grid container spacing={0}>
+              <List disablePadding>
+                <Typography
+                  color="textPrimary"
+                  className={classes.menuGroupTitle}
+                  component={Link}
+                >
+                  Contact Us
+                </Typography>
+                <ListItem
+                  className={classes.menuListContainer}
+                  disableGutters
+                  data-aos="fade-up"
+                >
+                  <ListItemText
+                    primary="Phone"
+                    secondary="+39 659-657-0133"
+                    primaryTypographyProps={{
+                      variant: 'subtitle1',
+                      color: 'textSecondary',
+                    }}
+                    secondaryTypographyProps={{
+                      variant: 'subtitle1',
+                      color: 'textSecondary',
+                    }}
+                  />
+                </ListItem>
+                <ListItem
+                  className={classes.menuListContainer}
+                  disableGutters
+                  data-aos="fade-up"
+                >
+                  <ListItemText
+                    primary="Email"
+                    secondary="hi@maccarianagency.com"
+                    primaryTypographyProps={{
+                      variant: 'subtitle1',
+                      color: 'textSecondary',
+                    }}
+                    secondaryTypographyProps={{
+                      variant: 'subtitle1',
+                      color: 'textSecondary',
+                    }}
+                  />
+                </ListItem>
+                <ListItem
+                  className={classes.menuListContainer}
+                  disableGutters
+                  data-aos="fade-up"
+                >
+                  <ListItemText
+                    primary="Head Office"
+                    secondary="Via E. Golla 4"
+                    primaryTypographyProps={{
+                      variant: 'subtitle1',
+                      color: 'textSecondary',
+                    }}
+                    secondaryTypographyProps={{
+                      variant: 'subtitle1',
+                      color: 'textSecondary',
+                    }}
+                  />
+                </ListItem>
+              </List>
+            </Grid>
+          </Grid>
+        
         </Grid>
+        
       </div>
+      
     </div>
   );
 };

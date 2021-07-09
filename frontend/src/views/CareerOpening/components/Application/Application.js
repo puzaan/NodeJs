@@ -7,23 +7,7 @@ import { SectionHeader } from 'components/molecules';
 
 const useStyles = makeStyles(theme => ({
 
-  color:{
-    color:'#013220'
-  },
-btn: {
-  background: '#013220',
-  borderRadius: 3,
-  border: 0,
-  color: 'white',
-  height: 48,
-  padding: '0 30px',
-  '&:hover': {
-    background: 'black',
-    color: 'white'
 
-  }
-  
-},
   icon: {
     background: 'transparent',
     borderRadius: 0,
