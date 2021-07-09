@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { Toolbar } from '@material-ui/core';
-import { Image } from 'components/atoms';
+
 
 const useStyles = makeStyles(theme => ({
   toolbar: {

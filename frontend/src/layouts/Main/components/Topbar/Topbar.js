@@ -16,7 +16,7 @@ import {
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Image, DarkModeToggler } from 'components/atoms';
+import {  DarkModeToggler } from 'components/atoms';
 
 const useStyles = makeStyles(theme => ({
   flexGrow: {

@@ -14,7 +14,7 @@ import {
   Avatar,
 } from '@material-ui/core';
 import { SectionHeader, DescriptionCta } from 'components/molecules';
-import { CardBase } from 'components/organisms';
+
 
 const useStyles = makeStyles(theme => ({
   btn: {

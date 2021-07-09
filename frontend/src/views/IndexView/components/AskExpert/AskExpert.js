@@ -1,33 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
 import { useMediaQuery, Grid, Button } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader, IconAlternate } from 'components/molecules';
 import { DescriptionListIcon } from 'components/organisms';
 
-const useStyles = makeStyles(theme => ({
-  cta: {
-    background: '#013220',
-    borderRadius: 3,
-    border: 0,
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
-    '&:hover': {
-      background: 'black',
-      color: 'white'
 
-    },
-    marginTop: theme.spacing(2),
-    [theme.breakpoints.up('md')]: {
-      marginTop: theme.spacing(3),
-    },
-  },
-  color:{
-    color:'#013220'
-  },
-}));
 
 const data = [{
   title:'Investing made easy',
@@ -43,7 +22,7 @@ const data = [{
 
 const AskExpert = props => {
   const { className, ...rest } = props;
-  const classes = useStyles();
+  
 
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
