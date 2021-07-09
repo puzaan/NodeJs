@@ -176,37 +176,53 @@ const Footer = props => {
 
           <Grid item xs={12} md={4} className={classes.menuListContainer}>
             <Grid container spacing={0}>
+              
               <List disablePadding>
                 <Typography
                   color="textPrimary"
                   className={classes.menuGroupTitle}
                   component={Link}
-                  to="/about"
+                  
                 >
-                  About
+                  Usefull Links
                 </Typography>
                 <ListItem
-                  className={classes.menuListContainer}
+                  className={classes.menuGroupItem}
                   disableGutters
                   data-aos="fade-up"
                 >
                   <Typography
-                    color="textPrimary"
-                    className={classes.menuGroupTitle}
+                    
+                    className={clsx(classes.navLink, 'submenu-item')}
+                    component={Link}
+                    to="/about"
+                  >
+                    About
+                  </Typography>
+                </ListItem>
+                <ListItem
+                  className={classes.menuGroupItem}
+                  disableGutters
+                  data-aos="fade-up"
+                >
+                  <Typography
+                    
+                    className={clsx(classes.navLink, 'submenu-item')}
                     component={Link}
                     to="/service"
                   >
                     Services
                   </Typography>
                 </ListItem>
+                
                 <ListItem
-                  className={classes.menuListContainer}
+                  className={classes.menuGroupItem}
                   disableGutters
                   data-aos="fade-up"
                 >
                   <Typography
                     color="textPrimary"
-                    className={classes.menuGroupTitle}
+                    className={clsx(classes.navLink, 'submenu-item')}
                     component={Link}
                     to="/career-list"
                   >
