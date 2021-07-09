@@ -181,7 +181,7 @@ const Footer = props => {
                 <Typography
                   color="textPrimary"
                   className={classes.menuGroupTitle}
-                  component={Link}
+                  
                   
                 >
                   Usefull Links
@@ -246,7 +246,7 @@ const Footer = props => {
                 <Typography
                   color="textPrimary"
                   className={classes.menuGroupTitle}
-                  component={Link}
+                  
                 >
                   Contact Us
                 </Typography>
