@@ -83,8 +83,8 @@ const QuickStart =  props => {
                     end={lst.end}
                     suffix={lst.suffix}
                     label={lst.lable}
-                    //textColor="primary"
-                    className={classes.color}
+                    textColor="primary"
+                    
                   />
                 </Grid>
                 ))}

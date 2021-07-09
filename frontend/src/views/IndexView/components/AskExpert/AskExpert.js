@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { useMediaQuery, colors, Grid, Button } from '@material-ui/core';
+import { useMediaQuery, Grid, Button } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader, IconAlternate } from 'components/molecules';
 import { DescriptionListIcon } from 'components/organisms';
@@ -67,9 +67,9 @@ const AskExpert = props => {
                 <DescriptionListIcon
                   icon={
                     <IconAlternate
-                    className={classes.color}
+                    
                       fontIconClass={data.icon}
-                      color='colors.green'
+                      color='primary'
                     />
                   }
                   title={data.title}
@@ -81,7 +81,7 @@ const AskExpert = props => {
                   variant="contained"
                   color="primary"
                   size="large"
-                  className={classes.cta}
+                  
                 >
                   Contact us
                 </Button>

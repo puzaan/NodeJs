@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: colors.indigo[900],
   },
   modeTogglerIcon: {
-    fill: theme.palette.secondary.main,
+    fill: theme.palette.secondary.yellow,
     marginTop: theme.spacing(1/2),
     marginLeft: theme.spacing(1/2),
     [theme.breakpoints.up('md')]: {

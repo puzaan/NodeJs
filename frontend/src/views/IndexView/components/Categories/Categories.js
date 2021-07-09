@@ -26,7 +26,7 @@ const Categories = props => {
         title={
           <span>
             Choose your course by{' '}
-            <Typography color="secondary" variant="inherit" component="span" className={classes.color}>categories</Typography>
+            <Typography color="secondary" variant="inherit" component="span" >categories</Typography>
           </span>
         }
         subtitle="Browse the available course categories, choose your favourite one and start learning."
@@ -55,8 +55,8 @@ const Categories = props => {
               subtitle={item.subtitle}
               href="#"
               fontIconClass={item.icon}
-              color= 'colors.green'
-              className={classes.color}
+              color= 'primary'
+              
             />
           </Grid>
         ))}

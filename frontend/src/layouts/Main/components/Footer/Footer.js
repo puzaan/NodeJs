@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(12, 0),
     },
-    background: '#013220',
+    background: theme.palette.background.footer,
   },
   footerContainer: {
     maxWidth: theme.layout.contentWidth,
@@ -38,12 +38,15 @@ const useStyles = makeStyles(theme => ({
     paddingTop: 0,
   },
   logoContainer: {
-    width: 120,
-    height: 32,
+    width: 100,
+    height: 30,
+    
   },
   logoImage: {
-    width: '100%',
-    height: '100%',
+    marginTop:'-10px',
+    width: '150px',
+    height: '50',
+    
   },
   groupTitle: {
     textTransform: 'uppercase',
@@ -157,12 +160,18 @@ const Footer = props => {
               <ListItem disableGutters className={classes.logoContainerItem}>
                 <div className={classes.logoContainer}>
                   <a href="/" title="Achievers Groups">
-                    <Image
+                    {/* <Image
                       className={classes.logoImage}
-                      src="assets/achiever.svg"
+                      src='/Achiever_Groups_LIGHT.png'
                       alt="Achievers Groups"
                       lazy={false}
-                    />
+                    /> */}
+
+<img src={
+            '/Achiever_Groups_LIGHT.png'
+            } alt="Acheiver" 
+          className={classes.logoImage}
+            />
                   </a>
                 </div>
               </ListItem>

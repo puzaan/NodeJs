@@ -126,10 +126,10 @@ const Application = props => {
               color="primary"
               fullWidth
               size="large"
-              className={classes.uploadButton}
+              
             >
               <IconText
-              className={classes.color}
+              
                 fontIconClass="fas fa-cloud-upload-alt"
                 
                 title="Upload CV"
@@ -148,12 +148,12 @@ const Application = props => {
               
               fullWidth
               size="large"
-              className={classes.uploadButton}
+              
             >
               <IconText
                 fontIconClass="fas fa-cloud-upload-alt"
                 title="Upload cover letter"
-                className={classes.color}
+                
                 typographyProps={{
                   className: classes.iconText,
                 }}
@@ -184,7 +184,7 @@ const Application = props => {
               type="submit"
               color="primary"
               size="large"
-              className={classes.btn}
+              
             >
               Apply now
             </Button>

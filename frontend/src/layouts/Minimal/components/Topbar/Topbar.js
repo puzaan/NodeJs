@@ -17,15 +17,16 @@ const useStyles = makeStyles(theme => ({
   },
   logoContainer: {
     width: 100,
-    height: 28,
+    height: 30,
     [theme.breakpoints.up('md')]: {
-      width: 120,
-      height: 32,
+      width: 100,
+      height: 30,
     },
   },
   logoImage: {
-    width: '100%',
-    height: '100%',
+    width: '150px',
+    height: '50',
+    marginTop:'-15px'
   },
 }));
 
@@ -36,12 +37,13 @@ const Topbar = ({ themeMode, className, ...rest }) => {
     <Toolbar className={clsx(classes.toolbar, className)} {...rest}>
       <div className={classes.logoContainer}>
         <a href="/" title="AchieverGroups">
-          <Image
-            className={classes.logoImage}
-            src={themeMode === 'light' ? 'assets/achiever.svg' : 'assets/achiever.svg'}
-            alt="AchieverGroups"
-            lazy={false}
-          />
+        <img src={
+              themeMode === 'light'
+                ? '/Achiever_Groups_DARK.png'
+                : '/Achiever_Groups_LIGHT.png'
+            } alt="Acheiver" 
+          className={classes.logoImage}
+            />
         </a>
       </div>
     </Toolbar>

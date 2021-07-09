@@ -100,7 +100,7 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
         component="span"
         variant="h2"
         color="primary"
-        className={classes.color}
+        
         typedProps={{
           strings: [
             'Enhancing business agility',
@@ -122,10 +122,10 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
 <Button
       size="large"
       variant="contained"
-      //color="primary"
+      color='primary'
       component="a"
       href="/home"
-      className={classes.btn}
+      
     >
       Read more
     </Button>

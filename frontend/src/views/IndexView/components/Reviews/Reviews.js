@@ -52,7 +52,7 @@ const Reviews = props => {
         }
         title={
           <span>
-            <Typography component="span" variant="inherit" color="primary" className={classes.color}>Rated 5 out of 5</Typography>{' '}
+            <Typography component="span" variant="inherit" color="primary" >Rated 5 out of 5</Typography>{' '}
             stars by our customers!
           </span>
         }
@@ -79,7 +79,7 @@ const Reviews = props => {
                 <IconAlternate
                   color='colors.green'
                   fontIconClass="fas fa-quote-right"
-                  className={classes.color}
+                  
                 />
               }
               authorName={review.authorName}
@@ -89,7 +89,7 @@ const Reviews = props => {
           </Grid>
         ))}
         <Grid item container xs={12} justify="center">
-          <Button variant="outlined" size="large" color="primary" className={classes.btn}>
+          <Button variant="outlined" size="large" color="primary" >
             See all reviews
           </Button>
         </Grid>

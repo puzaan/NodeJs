@@ -38,7 +38,7 @@ const Integrations = props => {
             variant="outlined"
             size={isMd ? 'large' : 'medium'}
             color="primary"
-            className={classes.color}
+            
           >
             See all integrations
           </Button>,

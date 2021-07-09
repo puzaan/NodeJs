@@ -106,7 +106,7 @@ const SidePage = props => {
         {data.map((tit, id)=> (
         <List className={classes.divider}>
 
-          <ListItem  button component={Link} href={`/course-detail/${tit.id}`} className={classes.color}>
+          <ListItem  button component={Link} href={`/course-detail/${tit.id}`} >
             <ListItemAvatar>
                 <ImageIcon />
               

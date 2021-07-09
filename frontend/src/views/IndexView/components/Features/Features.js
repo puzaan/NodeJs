@@ -115,7 +115,7 @@ const Features = ({ className, ...rest }) => {
       </Grid>
       
       <Grid item container justify="center" xs={12} className={classes.btnGrid}>
-          <Button variant="contained" color="primary" href='/service'className={classes.btn}>
+          <Button variant="contained" color="primary" href='/service'>
             Read More
           </Button>
         </Grid>

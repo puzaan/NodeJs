@@ -38,6 +38,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     '& .description-cta__button-group': {
       flexWrap: 'nowrap',
+      align:'center'
     },
   },
   title: {
@@ -60,6 +61,7 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 0,
   },
   list: {
+    align:'center',
     marginBottom: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
       marginBottom: theme.spacing(4),
@@ -79,10 +81,11 @@ const Main = props => {
   return (
   <div className={clsx(classes.root, className)}{...rest}>
           <DescriptionCta
+          
             title={`${data.title}`}
             subtitle={`${data.jobTitle} \n ${data.location} `}
             secondaryCta={
-              <Button variant="contained" color="primary" size="large" className={classes.btn}>
+              <Button variant="contained" color="primary" size="large" >
                 Apply now
               </Button>
             }
@@ -100,7 +103,7 @@ const Main = props => {
           <SectionHeader
             title="Job Type"
             subtitle={data.type}
-            align="left"
+            align="center"
             data-aos="fade-up"
             titleProps={{
               className: classes.title,
@@ -112,14 +115,15 @@ const Main = props => {
             }}
           />
           <Grid container spacing={isMd ? 4 : 2}>
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12} >
               <SectionHeader
                 title="Requirement"
-                align="left"
+                
                 data-aos="fade-up"
                 titleProps={{
                   className: classes.title,
                   color: 'textPrimary',
+                  
                 }}
                 subtitleProps={{
                   variant: 'body1',
@@ -132,11 +136,12 @@ const Main = props => {
                   <ListItem disableGutters data-aos="fade-up">
                     <ListItemAvatar>
                       <Avatar
+                      align='center'
                         src="https://assets.maccarianagency.com/the-front/illustrations/check-icon-yellow.svg"
                         className={classes.checkBox}
                       />
                     </ListItemAvatar>
-                    <Typography variant="body1" color="textPrimary">
+                    <Typography variant="body1" color="textPrimary" align='center'>
                       {req}
                     </Typography>
                   </ListItem>
@@ -144,7 +149,7 @@ const Main = props => {
               </List>
               <SectionHeader
                 title="Exprences"
-                align="left"
+                align='center'
                 data-aos="fade-up"
                 titleProps={{
                   className: classes.title,
@@ -174,7 +179,7 @@ const Main = props => {
 
               <SectionHeader
                 title="Education Requirement"
-                align="left"
+                align='center'
                 data-aos="fade-up"
                 titleProps={{
                   className: classes.title,
@@ -202,7 +207,7 @@ const Main = props => {
 
               <SectionHeader
                 title="Additional Requirements"
-                align="left"
+                align='center'
                 data-aos="fade-up"
                 titleProps={{
                   className: classes.title,
@@ -232,7 +237,21 @@ const Main = props => {
               <SectionHeader
                 title="Salary"
                 subtitle={data.salary}
-                align="left"
+                align='center'
+                data-aos="fade-up"
+                titleProps={{
+                  className: classes.title,
+                  color: 'textPrimary',
+                }}
+                subtitleProps={{
+                  variant: 'body1',
+                  color: 'textPrimary',
+                }}
+              />
+              <SectionHeader
+                title="Vacancies"
+                subtitle={data.vacancy}
+                align='center'
                 data-aos="fade-up"
                 titleProps={{
                   className: classes.title,
@@ -244,29 +263,8 @@ const Main = props => {
                 }}
               />
             </Grid>
-            <Grid item xs={12} md={4}>
-              <Grid container spacing={isMd ? 4 : 2} direction="column">
-                <Grid item xs={12} data-aos="fade-up">
-                  <CardBase withShadow className={classes.cardHighlighted}>
-                    <SectionHeader
-                      title={data.vacancy}
-                      subtitle="Vacancies"
-                      disableGutter
-                      align="left"
-                      titleProps={{
-                        variant: 'h6',
-                        className: classes.textWhite,
-                      }}
-                      subtitleProps={{
-                        variant: 'body1',
-                        className: classes.textWhite,
-                      }}
-                    ></SectionHeader>
-                  </CardBase>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
+            
+          </Grid> 
         </div>
         
 

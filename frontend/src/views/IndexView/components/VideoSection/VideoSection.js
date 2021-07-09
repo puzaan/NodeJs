@@ -65,7 +65,7 @@ const VideoSection = props => {
                     variant="contained"
                     color="primary"
                     size={isMd ? 'large' : 'medium'}
-                    className={classes.btn}
+                    
                   >
                     Contact Us
                   </Button>,
@@ -79,7 +79,7 @@ const VideoSection = props => {
               <Grid container spacing={2} data-aos="fade-up">
                 <Grid item xs={12}>
                   <Typography
-                  className={classes.color}
+                  
                     variant="h6"
                     color="primary"
                     align={isMd ? 'left' : 'center'}

@@ -65,7 +65,7 @@ const About = props => {
                 variant: 'body1',
               }}
               ctaGroup={[
-                <Button color="primary" variant="contained" size="large" className={classes.btn}>
+                <Button color="primary" variant="contained" size="large" >
                   View open positions
                 </Button>,
               ]}

@@ -8,20 +8,20 @@ import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 
 const useStyles = makeStyles(theme => ({
-  btn: {
-    background: '#013220',
-    borderRadius: 3,
-    border: 0,
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
-    '&:hover': {
-      background: 'black',
-      color: 'white'
+  // btn: {
+  //   background: '#013220',
+  //   borderRadius: 3,
+  //   border: 0,
+  //   color: 'white',
+  //   height: 48,
+  //   padding: '0 30px',
+  //   '&:hover': {
+  //     background: 'black',
+  //     color: 'white'
 
-    }
+  //   }
     
-  },
+  // },
   reviewAuthor: {
     fontWeight: 'bold',
     marginTop: theme.spacing(3),
@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
       width: theme.spacing(6),
       height: theme.spacing(6),
       padding: theme.spacing(3),
-      background: '#013220',
+      background: theme.palette.primary.main,
       borderRadius: '100%',
       boxShadow: `0 2px 10px 0 ${theme.palette.cardShadow}`,
       border: `2px solid ${theme.palette.background.paper}`,
@@ -159,8 +159,7 @@ const Works = props => {
               color="primary"
               component="a"
               href="/signup-simple"
-              className={classes.btn}
-              size="small"
+              size="medium"
             >
               Contact us
             </Button>

@@ -75,7 +75,7 @@ const Work = props => {
           </Grid>
         ))}
         <Grid item container justify="center" xs={12}>
-          <Button variant="contained" color="primary" size='small' href='/service' className={classes.btn}>
+          <Button variant="contained" color="primary" size='medium' href='/service' >
             Read More
           </Button>
         </Grid>

@@ -16,19 +16,16 @@ import { Section } from 'components/organisms';
 
 const useStyles = makeStyles((theme) => ({
   
-  color:{
-    color:'#013220'
-  },
   grid: {
     maxWidth: '100%',
-    background: '#013220'
+    background: theme.palette.primary.main,
   },
   textWhite: {
     color: 'white',
   },
   checkBox: {
-    background: '#013220',
-    borderRadius: 10,
+    background: 'transparent',
+    borderRadius: 0,
   },
   title: {
     fontWeight: 'bold',
@@ -75,8 +72,8 @@ const Features = props => {
                   </ListItemAvatar>
                   <Typography
                     variant="body1"
-                    color="textPrimary"
-                    className={classes.textWhite}
+                    color="textwhite" 
+                    className= {classes.textWhite}
                   >
                     {item}
                   </Typography>

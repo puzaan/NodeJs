@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Button, colors } from '@material-ui/core';
+import { Grid, Button,} from '@material-ui/core';
 import { SectionHeader, IconAlternate } from 'components/molecules';
 import { CardBase, DescriptionListIcon } from 'components/organisms';
 import { makeStyles,} from '@material-ui/core/styles';
@@ -18,6 +18,7 @@ const useStyles = makeStyles (()=> ({
       color: 'white'
 
     }
+    
     
   },color:{
     color:'#013220'
@@ -63,7 +64,7 @@ const Process = props => {
           </Grid>
         ))}
         <Grid item container xs={12} justify="center">
-          <Button variant="contained" size="large" color="primary" className={classes.btn}>
+          <Button variant="contained" size="large" color="primary" >
             Contact us
           </Button>
         </Grid>
