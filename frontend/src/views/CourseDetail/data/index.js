@@ -83,7 +83,8 @@ export const page = {
 
             location: 'Putalisadak, Kathmandu, Nepal',
             duration: ' Duration: 2.5 ',
-            courseImage: '',
+            courseImage: '/ml.jpg',
+            alt: 'Machine Learning',
             sylabus: [
               {
                 id: 'faq-1',
@@ -281,6 +282,8 @@ export const page = {
 
             location: 'Putalisadak, Kathmandu, Nepal',
             duration: ' Duration: 2.5 ',
+            courseImage: '/mern.jpg',
+            alt: 'MERN',
 
             authorPhoto: {
               src:
@@ -507,6 +510,8 @@ export const page = {
 
             location: 'Putalisadak, Kathmandu, Nepal',
             duration: ' Duration: 2.5 ',
+            courseImage: '',
+            alt: 'Python',
 
             authorPhoto: {
               src:
@@ -795,7 +800,8 @@ export const page = {
 
             location: 'Putalisadak, Kathmandu, Nepal',
             duration: ' Duration: 2.5 ',
-
+            courseImage: '',
+            alt: 'Flutter',
             authorPhoto: {
               src:
                 'https://assets.maccarianagency.com/the-front/photos/people/veronica-adams.jpg',

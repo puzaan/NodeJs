@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { Divider } from '@material-ui/core';
 import { Section } from 'components/organisms';
-import { Hero,Questions, SidePage} from './components';
+import { Hero,Questions, SidePage, Image} from './components';
 
 import { page } from './data';
 
