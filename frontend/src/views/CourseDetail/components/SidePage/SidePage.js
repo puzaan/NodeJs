@@ -30,7 +30,8 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
   },
   space: {
-    margin: '20px',
+    padding: '20px',
+    marginBottom: '5px',
   },
   divider: {
     width: '100%',

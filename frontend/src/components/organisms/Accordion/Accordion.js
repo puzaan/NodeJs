@@ -48,6 +48,7 @@ const Accordion = props => {
 
   return (
     <div {...rest} className={clsx('accordion', classes.root, className)}>
+      <h2>Course Sylabus</h2>
       {items.map(item => (
         <MuiAccordion
           className={clsx('accordion__item-wrapper', classes.listItem)}
@@ -93,8 +94,8 @@ const Accordion = props => {
                   {...textProps}
                 >
                   {
-                    item.text.map(() => (
-<li> {item.text} </li>
+                    item.text.map((lst) => (
+<li> {lst} </li>
                     ))
                     
                   }

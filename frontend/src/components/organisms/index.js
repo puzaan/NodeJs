@@ -13,4 +13,6 @@ export { default as CardJobMinimal } from './CardJobMinimal';
 export { default as HeroBackground } from './HeroBackground';
 export { default as Accordion } from './Accordion';
 export { default as CourseAcc } from './CourseSum';
+export { default as CourseOutcome } from './CourseOutcome';
+
 

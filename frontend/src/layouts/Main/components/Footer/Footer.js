@@ -26,6 +26,7 @@ const useStyles = makeStyles(theme => ({
     },
     background: theme.palette.background.footer,
   },
+
   footerContainer: {
     maxWidth: theme.layout.contentWidth,
     width: '100%',
@@ -37,14 +38,15 @@ const useStyles = makeStyles(theme => ({
   },
   logoContainerItem: {
     paddingTop: 0,
+    
   },
   logoContainer: {
-    width: 100,
-    height: 30,
+    width: 200,
+    height: 50,
   },
   logoImage: {
-    marginTop: '-10px',
-    width: '150px',
+    marginTop: '50px',
+    width: '200px',
     height: '50',
   },
   groupTitle: {
@@ -53,6 +55,8 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(1),
   },
   socialIcon: {
+    marginTop: '50px',
+    paddingTop: '20px',
     padding: 0,
     marginRight: theme.spacing(1),
     color: 'rgba(255,255,255,.6)',
@@ -73,9 +77,11 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
   },
   menuItem: {
+    
     margin: theme.spacing(2),
     '&:last-child': {
       marginBottom: 0,
+
     },
   },
   menuGroupItem: {
@@ -144,8 +150,8 @@ const Footer = props => {
     <div {...rest} className={clsx(classes.root, className)}>
       <div className={classes.footerContainer}>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={4}>
-            <List disablePadding>
+          <Grid item xs={12} md={3} >
+            <List  >
               <ListItem disableGutters className={classes.logoContainerItem}>
                 <div className={classes.logoContainer}>
                   <a href="/" title="Achievers Groups">
@@ -174,7 +180,7 @@ const Footer = props => {
             </List>
           </Grid>
 
-          <Grid item xs={12} md={4} className={classes.menuListContainer}>
+          <Grid item xs={12} md={3} className={classes.menuListContainer}>
             <Grid container spacing={0}>
               
               <List disablePadding>
@@ -240,7 +246,74 @@ const Footer = props => {
             </Grid>
           </Grid>
           
-          <Grid item xs={12} md={4} className={classes.menuListContainer}>
+          <Grid item xs={12} md={3} className={classes.menuListContainer}>
+            <Grid container spacing={0}>
+              <List disablePadding>
+                <Typography
+                  color="textPrimary"
+                  className={classes.menuGroupTitle}
+                  
+                >
+                  Contact Us
+                </Typography>
+                <ListItem
+                  className={classes.menuListContainer}
+                  disableGutters
+                  data-aos="fade-up"
+                >
+                  <ListItemText
+                    primary="Phone"
+                    secondary="+39 659-657-0133"
+                    primaryTypographyProps={{
+                      variant: 'subtitle1',
+                      color: 'textSecondary',
+                    }}
+                    secondaryTypographyProps={{
+                      variant: 'subtitle1',
+                      color: 'textSecondary',
+                    }}
+                  />
+                </ListItem>
+                <ListItem
+                  className={classes.menuListContainer}
+                  disableGutters
+                  data-aos="fade-up"
+                >
+                  <ListItemText
+                    primary="Email"
+                    secondary="hi@maccarianagency.com"
+                    primaryTypographyProps={{
+                      variant: 'subtitle1',
+                      color: 'textSecondary',
+                    }}
+                    secondaryTypographyProps={{
+                      variant: 'subtitle1',
+                      color: 'textSecondary',
+                    }}
+                  />
+                </ListItem>
+                <ListItem
+                  className={classes.menuListContainer}
+                  disableGutters
+                  data-aos="fade-up"
+                >
+                  <ListItemText
+                    primary="Head Office"
+                    secondary="Via E. Golla 4"
+                    primaryTypographyProps={{
+                      variant: 'subtitle1',
+                      color: 'textSecondary',
+                    }}
+                    secondaryTypographyProps={{
+                      variant: 'subtitle1',
+                      color: 'textSecondary',
+                    }}
+                  />
+                </ListItem>
+              </List>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} md={3} className={classes.menuListContainer}>
             <Grid container spacing={0}>
               <List disablePadding>
                 <Typography

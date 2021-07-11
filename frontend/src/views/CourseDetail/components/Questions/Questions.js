@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, List, ListItem, ListItemText } from '@material-ui/core';
-import { Accordion, CourseAcc } from 'components/organisms';
+import { Grid, List, ListItem, ListItemText,Typography, } from '@material-ui/core';
+import { Accordion, CourseAcc,CourseOutcome } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -47,17 +47,38 @@ const Questions = props => {
             <ListItem disableGutters>
               <ListItemText
                 primary={data.title}
-                secondary={data.subtitle}
+                
                 primaryTypographyProps={{
                   variant: 'h2',
                 }}
-                secondaryTypographyProps={{
-                  variant: 'h6',
-                }}
+                
               />
+              
+              
             </ListItem>
+            <Grid item xs={12} className={classes.accordionGrid}> 
+            <div>
+              {data.subtitle.map((des)=> (
+                <Typography
+                variant="h6"
+                color="textPrimary"
+                className="accorion_item-title"
+              >
+                {des}
+              </Typography>
+              ))}
+              
+</div>
+            </Grid>
+            <br/>
+            <br/>
             <Grid item xs={12} className={classes.accordionGrid}>
           <CourseAcc data={data} />
+        </Grid>
+        <br/>
+            <br/>
+            <Grid item xs={12} className={classes.accordionGrid}>
+          <CourseOutcome data={data} />
         </Grid>
             <ListItem disableGutters>
               <ListItemText

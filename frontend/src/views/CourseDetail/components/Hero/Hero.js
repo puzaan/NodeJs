@@ -14,13 +14,13 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     fontWeight: 'bold',
-    marginLeft: '10px'
+    marginLeft: '30px'
   },
   cardHighlighted: {
     background: theme.palette.primary.dark,
   },
   duration:{
-marginTop: '10px',
+marginTop: '8px',
 marginLeft: '17px'
   }
 }));
@@ -71,8 +71,7 @@ const Hero = props => {
                 <Button size={isMd ? 'large' : 'medium'} variant="contained"  className= {classes.duration}>
                 We also offer online classes for trainees who cannot attend the classes physically
                 </Button>
-              </Grid>
-              
+              </Grid>             
             </Grid>
           
               

@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
         fontWeight: theme.typography.fontWeightRegular,
     },
 }));
-const CourAcc = props => {
+const CourseOutcome = props => {
     const { data } = props;
     const classes = useStyles();
     return (
@@ -26,9 +26,9 @@ const CourAcc = props => {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                    <Typography  className={classes.heading}>Course Features</Typography>
+                    <Typography  className={classes.heading}>Course Outcome</Typography>
                 </AccordionSummary>
-                {data.feature.map(syb => (
+                {data.outcome.map(syb => (
                     <AccordionDetails>
                         <li>
                         
@@ -52,4 +52,4 @@ const CourAcc = props => {
     );
 };
 
-export default CourAcc;
+export default CourseOutcome;
