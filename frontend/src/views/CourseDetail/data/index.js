@@ -69,7 +69,7 @@ export const page = {
     id: 'traning-pages',
     children: {
       course: {
-        groupTitle: 'Course',
+        // groupTitle: 'Coursesss',
         pages: [
           {
             id: '01',

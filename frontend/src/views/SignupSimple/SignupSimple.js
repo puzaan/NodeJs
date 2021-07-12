@@ -27,7 +27,7 @@ const SignupSimple = () => {
   return (
     <div>
       <Section className={classes.section}>
-        <div className={classes.formContainer}>
+        {/* <div className={classes.formContainer}>
           <SectionHeader
             title="Contact us"
             subtitle="Need information fill up form and send us"
@@ -35,9 +35,9 @@ const SignupSimple = () => {
               variant: 'h3',
             }}
           />
-          <Form />
+          <Form /> 
           
-        </div>
+        </div> */}
         <Contact data={mapData} />
       </Section>
     </div>

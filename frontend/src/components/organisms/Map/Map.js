@@ -75,7 +75,7 @@ const Map = props => {
 };
 
 Map.defaultProps = {
-  zoom: 10,
+  zoom: 50,
   center: [0, 0],
 };
 

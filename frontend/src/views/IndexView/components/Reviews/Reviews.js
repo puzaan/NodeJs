@@ -52,7 +52,7 @@ const Reviews = props => {
         }
         title={
           <span>
-            <Typography component="span" variant="inherit" color="primary" >Rated 5 out of 5</Typography>{' '}
+            <Typography component="span" variant="inherit" color="secondary" >Rated 5 out of 5</Typography>{' '}
             stars by our customers!
           </span>
         }

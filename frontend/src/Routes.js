@@ -78,7 +78,7 @@ const Routes = () => {
           <WithLayout
             {...matchProps}
             component={SignupSimpleView}
-            layout={MinimalLayout}
+            layout={MainLayout}
           />
         )}
       />

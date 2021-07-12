@@ -41,9 +41,9 @@ const IndexView = ({ themeMode }) => {
       <Section>
         <Works data={workReviews} />
       </Section>
-      <SectionAlternate>
+      {/* <SectionAlternate>
         <Features />
-      </SectionAlternate>
+      </SectionAlternate> */}
       <Section>
         <AskExpert />
       </Section>

@@ -14,6 +14,18 @@ const useStyles = makeStyles(theme => ({
         fontSize: theme.typography.pxToRem(20),
         fontWeight: theme.typography.fontWeightRegular,
     },
+    panelSummary: {
+        flexDirection: "row-reverse",
+        paddingLeft: "0px"
+      },
+      
+      innerMenuItem: {
+        paddingLeft: "32px"
+      },
+      expanded: {
+        padding: "0px"
+      }
+    
 }));
 const CourseOutcome = props => {
     const { data } = props;
@@ -22,30 +34,26 @@ const CourseOutcome = props => {
         <div>
             <Accordion>
                 <AccordionSummary
+                className={classes.panelSummary}
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
+                    
                 >
-                    <Typography  className={classes.heading}>Course Outcome</Typography>
+                    <Typography className={classes.heading}>Course Outcome</Typography>
                 </AccordionSummary>
                 {data.outcome.map(syb => (
-                    <AccordionDetails>
+                    <AccordionDetails >
                         <li>
-                        
-                        <br />
-                        {
-                            syb.text.map((list)=> (
-<Typography variant="subtitle1">
-      {list} 
-                        </Typography> 
-                            ))
-                        }
-                        <br />
+                            <br />
+                            {syb.text.map(list => (
+                                <Typography variant="subtitle1">{list}</Typography>
+                            ))}
+                            <br />
                         </li>
 
+                        
                     </AccordionDetails>
-                    
-                    
                 ))}
             </Accordion>
         </div>

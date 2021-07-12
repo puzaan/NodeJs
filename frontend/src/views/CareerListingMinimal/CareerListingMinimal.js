@@ -15,9 +15,6 @@ const CareerListingMinimal = () => (
     <SectionAlternate>
       <Jobs data={jobs} />
     </SectionAlternate>
-    <Section>
-      <Newsletter />
-    </Section>
     <Divider />
   </div>
 );

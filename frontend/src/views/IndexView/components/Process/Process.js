@@ -52,8 +52,8 @@ const Process = props => {
                 icon={
                   <IconAlternate
                     fontIconClass={item.icon}
-                    color='colors.green'
-                    className={classes.color}
+                    color='primary'
+                    // className={classes.color}
                   />
                 }
                 title={item.title}

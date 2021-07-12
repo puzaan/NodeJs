@@ -99,7 +99,7 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
       <TypedText
         component="span"
         variant="h2"
-        color="primary"
+        color="secondary"
         
         typedProps={{
           strings: [

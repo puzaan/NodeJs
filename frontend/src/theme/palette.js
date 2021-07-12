@@ -47,9 +47,9 @@ export const dark = {
   },
   "type": "dark",
   "primary": {
-    "main": "#90caf9",
+    "main": "#8fbc8f",
     "light": "rgb(166, 212, 250)",
-    "dark": "rgb(100, 141, 174)",
+    "dark": "#2d482d",
     "contrastText": "rgba(0, 0, 0, 0.87)",
     "blue": "rgb(100, 141, 174)",
   },

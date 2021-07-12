@@ -37,6 +37,7 @@ const Features = props => {
           <Button
             variant="outlined"
             size={isMd ? 'large' : 'medium'}
+            color="primary"
             
           >
             See all integrations
