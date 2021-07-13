@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useTheme } from '@material-ui/core/styles';
+import { useTheme, makeStyles } from '@material-ui/core/styles';
 import { useMediaQuery, Grid, Button } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader, IconAlternate } from 'components/molecules';
@@ -48,7 +48,7 @@ const AskExpert = props => {
                     <IconAlternate
                     
                       fontIconClass={data.icon}
-                      color='primary'
+                      color='colors.green'
                     />
                   }
                   title={data.title}

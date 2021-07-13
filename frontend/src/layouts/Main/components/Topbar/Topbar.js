@@ -103,7 +103,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
   },
   menuItem: {
-    marginRight: theme.spacing(5),
+    marginRight: theme.spacing(1),
     '&:last-child': {
       marginRight: 0,
     },
@@ -145,16 +145,7 @@ const Topbar = ({
     const { item } = props;
     return (
       <List disablePadding>
-        <ListItem disableGutters>
-          <Typography
-            variant="body2"
-            color="primary"
-            className={classes.menuGroupTitle}
-          >
-            {item.groupTitle}
-          </Typography>
-        </ListItem>
-
+        
         {item.pages.map((page, i) => (
           <ListItem disableGutters key={i} className={classes.menuGroupItem}>
             <Typography
