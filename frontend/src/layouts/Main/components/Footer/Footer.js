@@ -298,8 +298,8 @@ const Footer = props => {
                   data-aos="fade-up"
                 >
                   <ListItemText
-                    primary="Head Office"
-                    secondary="Via E. Golla 4"
+                    primary="Office"
+                    secondary="Putalisadak, kathmandu Nepal"
                     primaryTypographyProps={{
                       variant: 'subtitle1',
                       color: 'textSecondary',
@@ -321,7 +321,7 @@ const Footer = props => {
                   className={classes.menuGroupTitle}
                   
                 >
-                  Contact Us
+                  Our Services
                 </Typography>
                 <ListItem
                   className={classes.menuListContainer}
@@ -329,16 +329,13 @@ const Footer = props => {
                   data-aos="fade-up"
                 >
                   <ListItemText
-                    primary="Phone"
-                    secondary="+39 659-657-0133"
+                    primary="App Development"
+                    
                     primaryTypographyProps={{
                       variant: 'subtitle1',
                       color: 'textSecondary',
                     }}
-                    secondaryTypographyProps={{
-                      variant: 'subtitle1',
-                      color: 'textSecondary',
-                    }}
+                    
                   />
                 </ListItem>
                 <ListItem
@@ -347,16 +344,13 @@ const Footer = props => {
                   data-aos="fade-up"
                 >
                   <ListItemText
-                    primary="Email"
-                    secondary="hi@maccarianagency.com"
+                    primary="Web Devlopment"
+                    
                     primaryTypographyProps={{
                       variant: 'subtitle1',
                       color: 'textSecondary',
                     }}
-                    secondaryTypographyProps={{
-                      variant: 'subtitle1',
-                      color: 'textSecondary',
-                    }}
+                    
                   />
                 </ListItem>
                 <ListItem
@@ -365,16 +359,13 @@ const Footer = props => {
                   data-aos="fade-up"
                 >
                   <ListItemText
-                    primary="Head Office"
-                    secondary="Via E. Golla 4"
+                    primary="Research"
+                    
                     primaryTypographyProps={{
                       variant: 'subtitle1',
                       color: 'textSecondary',
                     }}
-                    secondaryTypographyProps={{
-                      variant: 'subtitle1',
-                      color: 'textSecondary',
-                    }}
+                   
                   />
                 </ListItem>
               </List>
