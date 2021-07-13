@@ -68,10 +68,10 @@ const useStyles = makeStyles(theme => ({
     minWidth: 'auto',
   },
   popover: {
-    padding: theme.spacing(4),
+    padding: theme.spacing(2),
     border: theme.spacing(2),
     boxShadow: '0 0.5rem 2rem 2px rgba(116, 123, 144, 0.09)',
-    minWidth: 350,
+    minWidth: 280,
     marginTop: theme.spacing(2),
   },
   iconButton: {
