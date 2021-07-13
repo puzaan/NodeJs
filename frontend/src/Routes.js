@@ -8,7 +8,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import WithLayout from 'WithLayout';
 import {
   Main as MainLayout,
-  Minimal as MinimalLayout, 
 } from './layouts';
 
 import {

@@ -1,16 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { useTheme} from '@material-ui/core/styles';
 import { useMediaQuery, Grid, Button } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader, IconAlternate } from 'components/molecules';
 import { DescriptionListIcon } from 'components/organisms';
 
-const useStyle = makeStyles(()=>{
-  // color:{
-  //   color:'#2d482d'
-  // }
-})
 
 const data = [{
   title:'Investing made easy',
