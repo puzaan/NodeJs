@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Section, SectionAlternate } from 'components/organisms';
 import {
-  Contact,
+  
   Gallery,
   Hero,
   Partners,
@@ -10,8 +10,9 @@ import {
   Team,
   WhoWeAre,
 } from './components';
-
-import { team, companies, mapData, gallery } from './data';
+import {Contact} from '../SignupSimple/components'
+import { team, companies,  gallery } from './data';
+import { mapData} from '../SignupSimple/data';
 
 const useStyles = makeStyles(theme => ({
   root: {
