@@ -6,7 +6,11 @@ import { Image } from 'components/atoms';
 import { SectionHeader, IconAlternate } from 'components/molecules';
 import { DescriptionListIcon } from 'components/organisms';
 
-
+const useStyle = makeStyles(()=>{
+  // color:{
+  //   color:'#2d482d'
+  // }
+})
 
 const data = [{
   title:'Investing made easy',

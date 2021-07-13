@@ -68,7 +68,7 @@ const IconAlternate = props => {
       <Icon
         size={size}
         fontIconClass={fontIconClass}
-        fontIconColor={color[500]}
+        fontIconColor="#447044"
         className="icon-alternate__icon"
         {...iconProps}
       />
