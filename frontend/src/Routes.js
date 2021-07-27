@@ -18,6 +18,7 @@ import {
   SignupSimple as SignupSimpleView,
   CareerListingMinimal as CareerListingMinimalView,
   CourseDetail as CourseDetails,
+  EnrollForm as EnrollForm,
 } from './views';
 
 const Routes = () => {
@@ -34,7 +35,17 @@ const Routes = () => {
           />
         )}
       />
-      
+      <Route
+        exact
+        path={`/enroll`}
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={EnrollForm}
+            layout={MainLayout}
+          />
+        )}
+      />
 
       <Route
         exact

@@ -5,4 +5,4 @@ export { default as About } from './About';
 export { default as SignupSimple} from './SignupSimple';
 export { default as CareerListingMinimal } from './CareerListingMinimal';
 export { default as CourseDetail } from './CourseDetail';
-
+export { default as EnrollForm } from './EnrollForm';
