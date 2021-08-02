@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { DataGrid } from "@material-ui/data-grid";
 
 import "./user.css";
 import { Typography } from "@material-ui/core";
-
+import { useDispatch, useSelector } from "react-redux";
+import {listForms} from '../../../action/FormDetailsAction'
 const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
@@ -76,6 +77,19 @@ const rows = [
 ];
 
 export default function UserForm() {
+
+    const dispatch = useDispatch();
+
+    const formList = useSelector((state) => state.formList)
+
+    const {loading, error, lists} = formList;
+    useEffect(()=> {
+        dispatch(listForms())
+        console.log(lists)
+    }, [dispatch])
+
+
+
     return (
         <div className="userList">
             

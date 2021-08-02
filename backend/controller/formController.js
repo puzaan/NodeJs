@@ -6,7 +6,15 @@ const addFormData = catcAsync(async(req, res) => {
         if (!req.body) {
             throw new Error(`Is missing parameter :  Table data`);
         }
-        
+        // let courseArray = [];
+        // req.body.course.forEach((e) => {
+        //     const course = {
+        //         courseName: e.courseName,
+        //         id: e.id
+        //     }
+        //     courseArray.push(course)
+        // })
+
         const createForm = FormData({
             course: req.body.course,
             fullName: req.body.fullName,
@@ -15,6 +23,7 @@ const addFormData = catcAsync(async(req, res) => {
             education:req.body.education,
             college: req.body.college,
             message: req.body.message,
+            
 
         });
         createForm.save()
@@ -29,11 +38,11 @@ const addFormData = catcAsync(async(req, res) => {
 
         
     } catch (error) {
-        this.logger.error({
-            data: req.body,
-            error: error,
-            source: 'Error in function createCourses'
-        });
+        // this.logger.error({
+        //     data: req.body,
+        //     error: error,
+        //     source: 'Error in function createCourses'
+        // });
         res.status(500);
         return res.send({ error: (error.message) ? error.message : "Internal server error" });
     

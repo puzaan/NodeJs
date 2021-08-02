@@ -2,13 +2,13 @@ import axios from 'axios'
 import { ENROLL_CREATE_FAIL, ENROLL_CREATE_REQUEST, ENROLL_CREATE_SUCESS } from 'constants/enrollContants'
 
 
-export const EnrollForm = (fullName, email,phone,education ,college, message) => async(dispatch) => {
+export const EnrollForm = (fullName, email,phone,education ,college, message, course) => async(dispatch) => {
     try{
         dispatch({
             type: ENROLL_CREATE_REQUEST
         });
         const {data} = await axios.post('http://localhost:5000/api/form/add', {
-            fullName, email,phone,education ,college, message
+            fullName, email,phone,education ,college, message, course
         })
             
         

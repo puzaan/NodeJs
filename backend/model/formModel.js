@@ -26,11 +26,7 @@ const formSchema = Mongoose.Schema({
     message:{
         type: String,
     },
-    course:[{
-        courseName:{
-            type: String,
-        }
-    }]
+    course:[Object]
 },{ timestamps: true}
 
 )

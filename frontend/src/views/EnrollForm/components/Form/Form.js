@@ -24,44 +24,63 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const data = [
+  {
+    id: '1',
+    courseName: 'Machine Learning (Foundation/Intermediate/Advanced)',
+  },
+  {
+    id: '2',
+    courseName: 'Python (Django)',
+  },
+  {
+    id: '3',
+    courseName: 'Database (Beginner to advance complete solution)',
+  },
+  {
+    id: '4',
+    courseName: 'Flutter (Complete Application Development)',
+  },
+  {
+    id: '5',
+    courseName: 'JavaScript Fundamental',
+  },
+  {
+    id: '6',
+    courseName: 'Wordpress',
+  },
+  {
+    id: '7',
+    courseName: 'Quality Assurance QA (Beginner to Advance) ',
+  },
+  {
+    id: '8',
+    courseName: 'React Development (In Typescript)',
+  },
+  {
+    id: '9',
+    courseName: 'MERN/MEVN (Full stack development)',
+  },
+  {
+    id: '10',
+    courseName: '.Net (Enterprise Web Application Development)',
+  },
+  {
+    id: '11',
+    courseName: 'UI/UX Essential Training',
+  },
+  {
+    id: '12',
+    courseName: 'IOT Training (complete guide to IOT)',
+  },
+  {
+    id: '13',
+    courseName: 'Digital Marketing',
+  },
+];
+
 const Form = () => {
   const classes = useStyles();
-
-  const [checkbox, setcheckbox] = useState({
-    MachineLearning: true,
-    Python: false,
-    Database: false,
-    Flutter: false,
-    JavaScriptFundamental: false,
-    Wordpress: false,
-    QualityAssurance: false,
-    ReactDevelopment: false,
-    MERN_MEVN: false,
-    DoteNet: false,
-    UI_UX: false,
-    IOT: false,
-    DigitalMarketing: false,
-  });
-
-  const handlecheck = e => {
-    setcheckbox({ ...checkbox, [e.target.name]: e.target.checked });
-    console.log(e.target.name);
-  };
-  const {
-    MachineLearning,
-    Python,
-    Database,
-    Flutter,
-    JavaScriptFundamental,
-    Wordpress,
-    QualityAssurance,
-    ReactDevelopment,
-    MERN_MEVN,
-    DoteNet,
-    UI_UX,
-    IOT,
-    DigitalMarketing,
-  } = checkbox;
 
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -69,26 +88,28 @@ const Form = () => {
   const [college, setCollege] = useState('');
   const [message, setMessage] = useState('');
   const [education, setEducation] = useState('Bachlores');
+  const [inputs, setInputs] = useState([]);
 
+  console.log(inputs);
   const dispatch = useDispatch();
-const enrollList = useSelector((state)=> state.enrollList)
-const {loading, error, FormData} = enrollList;
-const history = useHistory();
+  const enrollList = useSelector(state => state.enrollList);
+  const { loading, error, FormData } = enrollList;
+  const history = useHistory();
 
-useEffect(() => {
-  if (FormData) {
-    history.push('/')
+  useEffect(() => {
+    if (FormData) {
+      history.push('/');
     }
-  
-});
+  });
   const handleSubmit = event => {
     event.preventDefault();
-      dispatch(EnrollForm(fullName, email, phone, education, college, message));
+    dispatch(
+      EnrollForm(fullName, email, phone, education, college, message, inputs),
+    );
   };
 
   return (
     <div className={classes.root}>
-      
       <form name="password-reset-form" onSubmit={handleSubmit}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -138,132 +159,31 @@ useEffect(() => {
                 In which course you want to enroll in? *
               </Typography>
               <FormGroup>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={MachineLearning}
-                      onChange={handlecheck}
-                      name="MachineLearning"
+                {data.map(form => {
+                  return (
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          value={form.courseName}
+                          onClick={() => {
+                            const index = inputs.findIndex(
+                              item => item === form.courseName,
+                            );
+                            if (~index) {
+                              setInputs([
+                                ...inputs.slice(0, index),
+                                ...inputs.slice(index + 1),
+                              ]);
+                            } else {
+                              setInputs([...inputs, form.courseName]);
+                            }
+                          }}
+                        />
+                      }
+                      label={form.courseName}
                     />
-                  }
-                  label="Machine Learning (Foundation/Intermediate/Advanced)"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={Python}
-                      onChange={handlecheck}
-                      name="Python"
-                    />
-                  }
-                  label="Python (Django)"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={Database}
-                      onChange={handlecheck}
-                      name="Database"
-                    />
-                  }
-                  label="Database (Beginner to advance complete solution)"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={Flutter}
-                      onChange={handlecheck}
-                      name="Flutter"
-                    />
-                  }
-                  label="Flutter (Complete Application Development)"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={JavaScriptFundamental}
-                      onChange={handlecheck}
-                      name="JavaScriptFundamental"
-                    />
-                  }
-                  label="JavaScript Fundamental"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={Wordpress}
-                      onChange={handlecheck}
-                      name="Wordpress"
-                    />
-                  }
-                  label="Wordpress"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={QualityAssurance}
-                      onChange={handlecheck}
-                      name="QualityAssurance"
-                    />
-                  }
-                  label="Quality Assurance QA (Beginner to Advance)"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={ReactDevelopment}
-                      onChange={handlecheck}
-                      name="ReactDevelopment"
-                    />
-                  }
-                  label="React Development (In Typescript)"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={MERN_MEVN}
-                      onChange={handlecheck}
-                      name="MERN_MEVN"
-                    />
-                  }
-                  label="MERN/MEVN (Full stack development)"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={DoteNet}
-                      onChange={handlecheck}
-                      name="DoteNet"
-                    />
-                  }
-                  label=".Net (Enterprise Web Application Development)"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={UI_UX}
-                      onChange={handlecheck}
-                      name="UI_UX"
-                    />
-                  }
-                  label="UI/UX Essential Training"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox checked={IOT} onChange={handlecheck} name="IOT" />
-                  }
-                  label="IOT Training (complete guide to IOT)"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={DigitalMarketing}
-                      onChange={handlecheck}
-                      name="DigitalMarketing"
-                    />
-                  }
-                  label="Digital Marketing"
-                />
+                  );
+                })}
               </FormGroup>
             </FormControl>
           </Grid>
@@ -351,15 +271,13 @@ useEffect(() => {
               fullWidth
             >
               Send
-              
             </Button>
           </Grid>
           <Grid item xs={12}>
-          {error && <Message severity = 'error'>{error}</Message>}
+            {error && <Message severity="error">{error}</Message>}
           </Grid>
         </Grid>
       </form>
-      
     </div>
   );
 };
