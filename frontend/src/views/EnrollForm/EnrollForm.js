@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const EnrollForm = () => {
+const EnrollForm = ({history}) => {
   const classes = useStyles();
 
   return (

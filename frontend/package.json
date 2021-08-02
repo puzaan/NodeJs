@@ -32,6 +32,7 @@
     "@material-ui/pickers": "^3.2.10",
     "@material-ui/styles": "^4.2.1",
     "aos": "^2.3.4",
+    "axios": "^0.21.1",
     "clsx": "^1.0.4",
     "formik": "^2.2.9",
     "get-youtube-id": "^1.0.1",
@@ -47,12 +48,16 @@
     "react-lazy-load-image-component": "^1.5.0",
     "react-leaflet": "^2.7.0",
     "react-player": "^2.9.0",
+    "react-redux": "^7.2.4",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^4.0.0",
     "react-syntax-highlighter": "^15.4.3",
     "react-typed": "^1.2.0",
     "react-visibility-sensor": "^5.1.1",
     "react-youtube": "^7.13.1",
+    "redux": "^4.1.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
     "start": "^5.1.0",
     "swiper": "^5.4.1",
     "validate.js": "^0.13.1"
@@ -77,5 +82,9 @@
     "prettier-eslint-cli": "^5.0.0",
     "rimraf": "^3.0.2",
     "typescript": "^3.5.1"
-  }
+  },
+  "description": "��#\u0000 \u0000d\u0000e\u0000p\u0000l\u0000o\u0000y\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

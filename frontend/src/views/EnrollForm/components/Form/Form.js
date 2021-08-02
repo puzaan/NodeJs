@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Typography,
   Grid,
   Button,
   TextField,
-  Card,
   FormControl,
-  FormLabel,
   FormGroup,
   Checkbox,
   FormControlLabel,
   RadioGroup,
   Radio,
 } from '@material-ui/core';
+import { EnrollForm } from '../../../../action/enrollAction';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
+import { Message } from 'components/message.js';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,161 +26,107 @@ const useStyles = makeStyles(theme => ({
 
 const Form = () => {
   const classes = useStyles();
-  const [data, setData] = useState({
-    fullname: '',
-    email: '',
-    phone: '',
-    college: '',
-    message: '',
-  });
-  const inputchange = e => {
-    console.log(e.target.name);
-    console.log(e.target.value);
-
-
-
-    const {value, name} = e.target;
-    setData(preValue => {
-      if (name === 'fullname') {
-        return {
-          fullname: value,
-          email: preValue.email,
-          phone: preValue.phone,
-          college: preValue.college,
-          message: preValue.message,
-        };
-      } else if (name === 'email') {
-        return {
-          fullname: preValue.fullname,
-          email: value,
-          phone: preValue.phone,
-          college: preValue.college,
-          message: preValue.message,
-        };
-      } else if (name === 'phone') {
-        return {
-          fullname: preValue.fullname,
-          email: preValue.email,
-          phone: value,
-          college: preValue.college,
-          message: preValue.message,
-        };
-      } else if (name === 'college') {
-        return {
-          fullname: preValue.fullname,
-          email: preValue.email,
-          phone: preValue.phone,
-          college: value,
-          message: preValue.message,
-        };
-      } else if (name === 'message') {
-        return {
-          fullname: preValue.fullname,
-          email: preValue.email,
-          phone: preValue.phone,
-          college: preValue.college,
-          message: value,
-        };
-      }
-    });
-  };
-  const [value, setValue] = useState('male');
-
-  const handleChanges = event => {
-    setValue(event.target.value);
-  };
 
   const [checkbox, setcheckbox] = useState({
     MachineLearning: true,
     Python: false,
     Database: false,
-    Flutter : false,
+    Flutter: false,
     JavaScriptFundamental: false,
-    Wordpress : false,
+    Wordpress: false,
     QualityAssurance: false,
     ReactDevelopment: false,
-    MERN_MEVN : false,
+    MERN_MEVN: false,
     DoteNet: false,
     UI_UX: false,
     IOT: false,
-    DigitalMarketing: false
-
+    DigitalMarketing: false,
   });
 
+  const handlecheck = e => {
+    setcheckbox({ ...checkbox, [e.target.name]: e.target.checked });
+    console.log(e.target.name);
+  };
+  const {
+    MachineLearning,
+    Python,
+    Database,
+    Flutter,
+    JavaScriptFundamental,
+    Wordpress,
+    QualityAssurance,
+    ReactDevelopment,
+    MERN_MEVN,
+    DoteNet,
+    UI_UX,
+    IOT,
+    DigitalMarketing,
+  } = checkbox;
 
-const handlecheck = (e) => {
-  console.log(e.target.name)
-  setcheckbox({...checkbox, [e.target.name]: e.target.checked})
-}
-const {MachineLearning,
-  Python,
-  Database,
-  Flutter,
-  JavaScriptFundamental,
-  Wordpress,
-  QualityAssurance,
-  ReactDevelopment,
-  MERN_MEVN,
-  DoteNet,
-  UI_UX,
-  IOT,
-  DigitalMarketing,
-} = checkbox
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [college, setCollege] = useState('');
+  const [message, setMessage] = useState('');
+  const [education, setEducation] = useState('Bachlores');
 
+  const dispatch = useDispatch();
+const enrollList = useSelector((state)=> state.enrollList)
+const {loading, error, FormData} = enrollList;
+const history = useHistory();
+
+useEffect(() => {
+  if (FormData) {
+    history.push('/')
+    }
+  
+});
   const handleSubmit = event => {
     event.preventDefault();
-    if(data.email && data.college && data.fullname && data.message && data.phone){
-      alert('form submitted');
-    }
-    
+      dispatch(EnrollForm(fullName, email, phone, education, college, message));
   };
 
   return (
     <div className={classes.root}>
-      <form name="password-reset-form" method="post" onSubmit={handleSubmit}>
+      
+      <form name="password-reset-form" onSubmit={handleSubmit}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Typography>
-              <h3> Full Name * </h3>
-            </Typography>
+            <Typography variant="h5">Full Name *</Typography>
             <TextField
               placeholder="Full name *"
               variant="outlined"
               size="medium"
               name="fullname"
-              onChange={inputchange}
-              value={data.fullname}
+              onChange={e => setFullName(e.target.value)}
+              value={fullName}
               fullWidth
             />
           </Grid>
           <Grid item xs={12}>
-            <Typography>
-              <h3> Email * </h3>
-            </Typography>
+            <Typography variant="h5">Email *</Typography>
             <TextField
               placeholder="E-mail *"
               variant="outlined"
               size="medium"
               name="email"
               type="email"
-              onChange={inputchange}
-              value={data.email}
+              onChange={e => setEmail(e.target.value)}
+              value={email}
               fullWidth
-              autoComplete= 'off'
+              autoComplete="off"
             />
           </Grid>
 
           <Grid item xs={12}>
-            <Typography>
-              <h3> Phone No * </h3>
-            </Typography>
+            <Typography variant="h5">Phone No *</Typography>
             <TextField
               placeholder="Phone No *"
               variant="outlined"
               size="medium"
               name="phone"
-              onChange={inputchange}
-              value={data.phone}
+              onChange={e => setPhone(e.target.value)}
+              value={phone}
               fullWidth
               type="number"
             />
@@ -186,60 +134,134 @@ const {MachineLearning,
 
           <Grid item xs={12}>
             <FormControl component="fieldset">
-              <Typography>
-                <h3> In which course you want to enroll in? * </h3>
+              <Typography variant="h5">
+                In which course you want to enroll in? *
               </Typography>
               <FormGroup>
                 <FormControlLabel
-                  control={<Checkbox  checked={MachineLearning} onChange={handlecheck} name="MachineLearning"/>}
+                  control={
+                    <Checkbox
+                      checked={MachineLearning}
+                      onChange={handlecheck}
+                      name="MachineLearning"
+                    />
+                  }
                   label="Machine Learning (Foundation/Intermediate/Advanced)"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={Python} onChange={handlecheck} name="Python" />}
+                  control={
+                    <Checkbox
+                      checked={Python}
+                      onChange={handlecheck}
+                      name="Python"
+                    />
+                  }
                   label="Python (Django)"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={Database} onChange={handlecheck} name="Database" />}
+                  control={
+                    <Checkbox
+                      checked={Database}
+                      onChange={handlecheck}
+                      name="Database"
+                    />
+                  }
                   label="Database (Beginner to advance complete solution)"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={Flutter} onChange={handlecheck} name="Flutter" />}
+                  control={
+                    <Checkbox
+                      checked={Flutter}
+                      onChange={handlecheck}
+                      name="Flutter"
+                    />
+                  }
                   label="Flutter (Complete Application Development)"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={JavaScriptFundamental} onChange={handlecheck} name="JavaScriptFundamental" />}
+                  control={
+                    <Checkbox
+                      checked={JavaScriptFundamental}
+                      onChange={handlecheck}
+                      name="JavaScriptFundamental"
+                    />
+                  }
                   label="JavaScript Fundamental"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={Wordpress} onChange={handlecheck} name="Wordpress" />}
+                  control={
+                    <Checkbox
+                      checked={Wordpress}
+                      onChange={handlecheck}
+                      name="Wordpress"
+                    />
+                  }
                   label="Wordpress"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={QualityAssurance} onChange={handlecheck} name="QualityAssurance" />}
+                  control={
+                    <Checkbox
+                      checked={QualityAssurance}
+                      onChange={handlecheck}
+                      name="QualityAssurance"
+                    />
+                  }
                   label="Quality Assurance QA (Beginner to Advance)"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={ReactDevelopment} onChange={handlecheck} name="ReactDevelopment" />}
+                  control={
+                    <Checkbox
+                      checked={ReactDevelopment}
+                      onChange={handlecheck}
+                      name="ReactDevelopment"
+                    />
+                  }
                   label="React Development (In Typescript)"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={MERN_MEVN} onChange={handlecheck} name="MERN_MEVN" />}
+                  control={
+                    <Checkbox
+                      checked={MERN_MEVN}
+                      onChange={handlecheck}
+                      name="MERN_MEVN"
+                    />
+                  }
                   label="MERN/MEVN (Full stack development)"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={DoteNet} onChange={handlecheck} name="DoteNet" />}
+                  control={
+                    <Checkbox
+                      checked={DoteNet}
+                      onChange={handlecheck}
+                      name="DoteNet"
+                    />
+                  }
                   label=".Net (Enterprise Web Application Development)"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={UI_UX} onChange={handlecheck} name="UI_UX" />}
+                  control={
+                    <Checkbox
+                      checked={UI_UX}
+                      onChange={handlecheck}
+                      name="UI_UX"
+                    />
+                  }
                   label="UI/UX Essential Training"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={IOT} onChange={handlecheck} name="IOT" />}
+                  control={
+                    <Checkbox checked={IOT} onChange={handlecheck} name="IOT" />
+                  }
                   label="IOT Training (complete guide to IOT)"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={DigitalMarketing} onChange={handlecheck} name="DigitalMarketing" />}
+                  control={
+                    <Checkbox
+                      checked={DigitalMarketing}
+                      onChange={handlecheck}
+                      name="DigitalMarketing"
+                    />
+                  }
                   label="Digital Marketing"
                 />
               </FormGroup>
@@ -248,37 +270,45 @@ const {MachineLearning,
 
           <Grid item xs={12}>
             <FormControl component="fieldset">
-              <Typography>
-                <h3> Gender </h3>
-              </Typography>
+              <Typography variant="h5">Your Qualification?</Typography>
               <RadioGroup
-                aria-label="gender"
-                name="gender1"
-                onChange={handleChanges}
-                value={value}
+                aria-label="Qualification"
+                name="Qualification"
+                onChange={e => setEducation(e.target.value)}
+                value={education}
               >
                 <FormControlLabel
-                  value="female"
+                  value="Masters"
                   control={<Radio />}
-                  label="Female"
+                  label="Masters Running/ Completed"
                 />
                 <FormControlLabel
-                  value="male"
+                  value="Bachlores"
                   control={<Radio />}
-                  label="Male"
+                  label="Bachlores Running/ Completed"
+                />
+                <FormControlLabel
+                  value="college"
+                  control={<Radio />}
+                  label="+2 Running/ Completed"
+                />
+                <FormControlLabel
+                  value="SEE"
+                  control={<Radio />}
+                  label="SEE Completed"
                 />
                 <FormControlLabel
                   value="other"
                   control={<Radio />}
-                  label="Other"
+                  label="other"
                 />
               </RadioGroup>
             </FormControl>
           </Grid>
 
           <Grid item xs={12}>
-            <Typography>
-              <h3> Your college/ Institution Name? * </h3>
+            <Typography variant="h5">
+              Your college/ Institution Name? *
             </Typography>
             <TextField
               placeholder="Your college/ Institution Name? *"
@@ -286,23 +316,21 @@ const {MachineLearning,
               size="medium"
               name="college"
               type="text"
-              onChange={inputchange}
-              value={data.college}
+              onChange={e => setCollege(e.target.value)}
+              value={college}
               fullWidth
             />
           </Grid>
           <Grid item xs={12}>
-            <Typography>
-              <h3> Do you want to ask anything? </h3>
-            </Typography>
+            <Typography variant="h5">Do you want to ask anything?</Typography>
             <TextField
               placeholder="Do you want to ask anything? "
               variant="outlined"
               size="medium"
               name="message"
               type="text"
-              onChange={inputchange}
-              value={data.message}
+              onChange={e => setMessage(e.target.value)}
+              value={message}
               fullWidth
             />
           </Grid>
@@ -323,10 +351,15 @@ const {MachineLearning,
               fullWidth
             >
               Send
+              
             </Button>
+          </Grid>
+          <Grid item xs={12}>
+          {error && <Message severity = 'error'>{error}</Message>}
           </Grid>
         </Grid>
       </form>
+      
     </div>
   );
 };
