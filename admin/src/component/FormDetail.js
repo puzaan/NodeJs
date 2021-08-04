@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Typography } from "@material-ui/core";
 import { DataGrid } from "@material-ui/data-grid";
 import {formLists} from '../action/FormDetailAction'
+import Alerts from './Alert';
+import Loder from './Loder'
 
 const columns = [
     // { field: "id", headerName: "ID", width: 90 },
@@ -80,10 +82,13 @@ history.push('/');
         dispatch(formLists())
     }, [dispatch])
 
+    
     return (
         <div>
             <div style={{ height: 400, width: '100%' }}>
             <Typography variant = 'h4'>User Forms Details</Typography>
+            {error && <Alerts severity = "error"> {error}</Alerts>}
+               {loding && <Loder />}
             <DataGrid
                 rows={lists}
                 columns={columns}
