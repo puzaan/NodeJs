@@ -2,6 +2,11 @@ import mongoose from 'mongoose'
 import bscrypt from 'bcryptjs'
 
 const UserSchema = mongoose.Schema({
+    id:{
+        type: String,
+        required: true,
+        default: Date.now
+            },
     name:{
         type: String,
         required: true

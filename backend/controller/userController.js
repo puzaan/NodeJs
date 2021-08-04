@@ -72,3 +72,30 @@ if(user){
     throw new Error('invalid user data')
 }
 })
+
+
+
+
+export const admins = AsyncHandel(async(req, res) =>{
+    // parse data from req body
+    const {email, password} = req.body;
+
+    // find user if it exist in database 
+
+    const user = await User.findOne({email })
+
+    if(user && (await user.matchPassword(password) && user.isAdmin == true)){
+        console.log('user exist in database')
+       return res.json({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            isAdmin: user.isAdmin,
+            token: generateToken(user._id)
+        })
+    }else{
+        res.status(401);
+        throw new Error('Not authorized user as admin or invalid Email or Password')
+    }
+    
+})
