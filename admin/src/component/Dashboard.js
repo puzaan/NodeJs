@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import AppBars from './appBar'
 
 const Dashboard = ({history}) => {
     const dispatch = useDispatch()
@@ -14,9 +15,19 @@ const Dashboard = ({history}) => {
     })
     return (
         <div>
-            Dashboard page
+           <AppBars />
+           <h1> Dashboard panal</h1>
         </div>
     )
 }
 
 export default Dashboard
+
+
+
+
+
+
+
+
+
